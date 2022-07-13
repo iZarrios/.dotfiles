@@ -1,7 +1,8 @@
 let mapleader = " "
 let g:neoformat_try_node_exe = 1
 
-call plug#begin('C:\Users\eyad4\AppData\Local\nvim\autoload\plugged')
+" call plug#begin('C:\Users\eyad4\AppData\Local\nvim\autoload\plugged')
+call plug#begin()
 
 
 " Syntax Highlighting ( TSInstall <LANUAGE>
@@ -41,7 +42,7 @@ Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 
-colorscheme gruvbox 
+colorscheme github_dark 
 
 
 
@@ -49,22 +50,24 @@ colorscheme gruvbox
 " NerdTree Config
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " Telescope Config
  
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+"nnoremap <leader>ff <cmd>Telescope find_files<cr>
+"nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+"nnoremap <leader>fb <cmd>Telescope buffers<cr>
+"nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 " Using Lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+"nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <C-\> <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " External configs
-source C:\Users\eyad4\AppData\Local\nvim\lua\me.lua
-source C:\Users\eyad4\AppData\Local\nvim\sets.vim
+source ~/Development/.dotfiles/nvim/sets.vim
+source ~/Development/.dotfiles/nvim/lua/me.lua
