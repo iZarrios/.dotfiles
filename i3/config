@@ -15,7 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:UbuntuMono Nerd 8 
+#font pango:UbuntuMono Nerd 8 
+font pango:monospace 8 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -28,7 +29,7 @@ floating_modifier $mod
 
 # start a terminal
 
-#bindsym $mod+Return exec alacritty 
+
 bindsym $mod+Return exec kitty 
 
 # kill focused window
@@ -124,7 +125,7 @@ workspace 1 output $m_left
 workspace 2 output $m_main
 workspace 3 output $m_main
 workspace 4 output $m_left
-
+workspace 5 output $m_main
 # reload the configuration file
 #
 bindsym $mod+Shift+c reload
