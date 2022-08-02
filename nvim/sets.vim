@@ -11,6 +11,7 @@ set hidden
 set nowrap
 set smartcase
 set smartindent
+set clipboard=unnamedplus
 set noerrorbells
 set nobackup
 set incsearch

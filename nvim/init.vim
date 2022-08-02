@@ -7,11 +7,15 @@ call plug#begin()
 
 " Syntax Highlighting ( TSInstall <LANUAGE>
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
+" Plug 'theprimeagen/tree-navigation'
+
 
 Plug 'scrooloose/nerdtree' 
 
 " neovim LSP
 Plug 'neovim/nvim-lspconfig' 
+
 " LSP autocomplete
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -42,10 +46,12 @@ Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 
-colorscheme github_dark 
+colorscheme gruvbox 
 
 
-
+" My Own Mappings
+inoremap kj <ESC>
+inoremap jj <ESC>
 
 " NerdTree Config
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -63,7 +69,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " Using Lua functions
 "nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <C-\> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<CR>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>

@@ -106,11 +106,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias ping-="ping 4.2.2.1"
 alias python="python3"
+alias rp="realpath"
 # `alias
-#
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source /home/biluka/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 # Adding GO to the PATH
-export PATH=$PATH:/usr/local/go/bin:/home/biluka/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman
+export PATH=$PATH:/usr/local/go/bin:/home/biluka/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/biluka/go/bin
