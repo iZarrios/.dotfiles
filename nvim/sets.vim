@@ -18,6 +18,7 @@ set incsearch
 set scrolloff=8
 set mouse=a
 set autoread
+set autoread
 
 
 " set exrc

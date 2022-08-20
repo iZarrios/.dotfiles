@@ -1,8 +1,18 @@
 --vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]] 
 --:vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.code_action(1)]]
 --vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
-vim.cmd [[autocmd BufWritePre * Neoformat]]
 
+vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_transparent_sidebar =true 
+vim.g.tokyonight_italic_functions = true
+
+vim.g.tokyonight_colors = {hint = "orange", error = "#ff0000"}
+
+vim.cmd [[colorscheme tokyonight]]
+
+vim.api.nvim_set_keymap('n','<leader>u',':UndotreeToggle', {noremap = true})
+vim.cmd [[autocmd BufWritePre * Neoformat]]
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -46,7 +56,10 @@ require'lspconfig'.gopls.setup{
 }
 
 
-
+require 'lspconfig'.clangd.setup{
+    capabilities = capabilities,
+    on_attach = on_attach
+}
 
 
 

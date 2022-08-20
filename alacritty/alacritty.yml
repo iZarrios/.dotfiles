@@ -1,4 +1,6 @@
 
+window:
+  opacity: 1.0
 # Colors (Gruvbox dark)
 colors:
   # Default colors
