@@ -27,7 +27,11 @@ local on_attach = function(client,bufnr)
 	buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 	buf_set_keymap("n", "<leader>ca", "<cmd>Telescope lsp_code_actions<CR>", opts)
 	buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-	
+    buf_set_keymap("x","<A-j>", ":move '>+1<CR>gv-gv", opts)
+    buf_set_keymap("x","<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+
+
     vim.keymap.set("n","K",vim.lsp.buf.hover,{buffer=0})  
     vim.keymap.set("n","gd",vim.lsp.buf.definition,{buffer=0})
     vim.keymap.set("n","<leader>r",vim.lsp.buf.rename,{buffer=0})

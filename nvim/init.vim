@@ -61,6 +61,8 @@ call plug#end()
 " colorscheme gruvbox 
 
 
+
+
 " My Own Mappings
 inoremap kj <ESC>
 inoremap jj <ESC>
