@@ -110,11 +110,11 @@ alias rp="realpath"
 # `alias
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# source /home/biluka/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 # Adding GO to the PATH
-export PATH=$PATH:/usr/local/go/bin:/home/biluka/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/biluka/go/bin
+export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/zarrios/go/bin
 
 
-always_exec "nitrogen --restore"
-always_exec "xrandr --output eDP-1 --primary --mode 1920x1080 --rate 120 --output HDMI-1-0 --mode 1920x1080 --left-of eDP-1"
+# exec_always "nitrogen --restore"
+# exec_always "xrandr --output eDP-1 --primary --mode 1920x1080 --rate 120 --output HDMI-1-0 --mode 1920x1080 --left-of eDP-1"

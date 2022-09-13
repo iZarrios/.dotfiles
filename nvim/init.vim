@@ -36,9 +36,9 @@ Plug 'tpope/vim-commentary'
 Plug 'sbdchd/neoformat'
 
 " Color Scheme
-Plug 'joshdick/onedark.vim'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'https://github.com/morhetz/gruvbox'
+" Plug 'joshdick/onedark.vim'
+" Plug 'projekt0n/github-nvim-theme'
+" Plug 'https://github.com/morhetz/gruvbox'
 Plug 'folke/tokyonight.nvim',{'branch' :'main'}
 
 Plug 'TimUntersberger/neogit'
@@ -68,10 +68,10 @@ inoremap kj <ESC>
 inoremap jj <ESC>
 
 " NerdTree Config
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-b> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-b> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 " Telescope Config
  
