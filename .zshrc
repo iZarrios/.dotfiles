@@ -114,3 +114,7 @@ alias rp="realpath"
 #
 # Adding GO to the PATH
 export PATH=$PATH:/usr/local/go/bin:/home/biluka/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/biluka/go/bin
+
+
+always_exec "nitrogen --restore"
+always_exec "xrandr --output eDP-1 --primary --mode 1920x1080 --rate 120 --output HDMI-1-0 --mode 1920x1080 --left-of eDP-1"
