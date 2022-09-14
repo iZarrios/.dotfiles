@@ -95,6 +95,9 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -107,7 +110,10 @@ source $ZSH/oh-my-zsh.sh
 alias ping-="ping 4.2.2.1"
 alias python="python3"
 alias rp="realpath"
-# `alias
+alias cclip="xclip -selection clipboard"
+alias pclip="xclip -selection clipboard"
+alias grep="ripgrep"
+
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
