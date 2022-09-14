@@ -170,3 +170,5 @@ bar {
 
 # to restore desktop wallpaper
 # bindsym $mod+Shift+q exec nitrogen --restore  
+exec_always nitrogen --restore
+exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --rate 120 --output HDMI-1-0 --mode 1920x1080 --left-of eDP-1
