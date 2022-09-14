@@ -1,19 +1,19 @@
 
 window:
-  opacity: 1.0
+  opacity: 1
 # Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
     # hard contrast: background = '0x1d2021'
-# background: '0x282828'
+    # background: '0x282828'
     background: '0x1d2021'
-    # soft contrast: background = '0x32302f'
+      # soft contrast: background = '0x32302f'
     foreground: '0xebdbb2'
 
-  # Normal colors
-  normal:
-    black:   '0x282828'
+      # Normal colors
+    normal:
+      black:   '0x282828'
     red:     '0xcc241d'
     green:   '0x98971a'
     yellow:  '0xd79921'
@@ -22,9 +22,9 @@ colors:
     cyan:    '0x689d6a'
     white:   '0xa89984'
 
-  # Bright colors
-  bright:
-    black:   '0x928374'
+      # Bright colors
+    bright:
+      black:   '0x928374'
     red:     '0xfb4934'
     green:   '0xb8bb26'
     yellow:  '0xfabd2f'
