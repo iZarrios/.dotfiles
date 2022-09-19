@@ -91,4 +91,5 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " External configs
 source ~/Development/.dotfiles/nvim/sets.vim
+" source ~/Development/.dotfiles/nvim/auto-reload.vim
 source ~/Development/.dotfiles/nvim/lua/me.lua

@@ -18,7 +18,7 @@ set incsearch
 set scrolloff=8
 set mouse=a
 set autoread
-
+au CursorHold * checktime
 
 " set exrc
 " set guicursor=
