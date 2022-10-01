@@ -92,9 +92,6 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# setting moniters variables
-set $m_left "HDMI-1-0"
-set $m_main "eDP-1"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -119,6 +116,10 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# setting moniters variables
+set $m_left "eDP-1"
+set $m_main "HDMI-1-0"
 
 #assign workspace to moniters
 workspace 1 output $m_left
@@ -171,4 +172,4 @@ bar {
 # to restore desktop wallpaper
 # bindsym $mod+Shift+q exec nitrogen --restore  
 exec_always nitrogen --restore
-exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60 --output HDMI-1-0 --rate 144 --mode 1920x1080 --left-of eDP-1
+exec_always xrandr --output HDMI-1-0  --primary --mode 1920x1080 --rate 144 --output eDP-1 --rate 60 --mode 1920x1080 --left-of HDMI-1-0

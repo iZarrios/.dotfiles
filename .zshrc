@@ -112,8 +112,7 @@ alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
-alias grep="ripgrep"
-alias find="fdfind"
+alias fd="fdfind"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -121,7 +120,3 @@ alias find="fdfind"
 #
 # Adding GO to the PATH
 export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/zarrios/go/bin
-
-
-# exec_always "nitrogen --restore"
-# exec_always "xrandr --output eDP-1 --primary --mode 1920x1080 --rate 120 --output HDMI-1-0 --mode 1920x1080 --left-of eDP-1"

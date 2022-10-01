@@ -30,6 +30,10 @@ Plug  'saadparwaiz1/cmp_luasnip'
 " Commenting
 Plug 'tpope/vim-commentary'
 
+" Status line
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Format
 " Plug 'mhartington/formatter.nvim'
