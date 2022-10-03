@@ -4,7 +4,6 @@ let g:neoformat_try_node_exe = 1
 " call plug#begin('C:\Users\eyad4\AppData\Local\nvim\autoload\plugged')
 call plug#begin()
 
-
 " Syntax Highlighting ( TSInstall <LANUAGE>
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'nvim-treesitter/playground'
@@ -42,8 +41,8 @@ Plug 'sbdchd/neoformat'
 " Color Scheme
 " Plug 'joshdick/onedark.vim'
 " Plug 'projekt0n/github-nvim-theme'
-" Plug 'https://github.com/morhetz/gruvbox'
-Plug 'folke/tokyonight.nvim',{'branch' :'main'}
+Plug 'https://github.com/morhetz/gruvbox'
+" Plug 'folke/tokyonight.nvim',{'branch' :'main'}
 
 Plug 'TimUntersberger/neogit'
 
@@ -55,14 +54,17 @@ Plug 'mbbill/undotree'
 
 " idk
 Plug 'nvim-lua/plenary.nvim'
-
+Plug 'ThePrimeagen/harpoon'
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
 
+" Plug 'williamboman/mason.nvim'
 call plug#end()
 
 
-" colorscheme gruvbox 
+
+colorscheme gruvbox 
+hi Normal guibg=NONE ctermbg=NONE
 
 
 
@@ -92,6 +94,10 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" Harpoon mappings
+nnoremap <leader>a <cmd>lua require('harpoon.mark').add_file()<cr>
+nnoremap <leader>e <cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>
 
 " External configs
 source ~/Development/.dotfiles/nvim/sets.vim
