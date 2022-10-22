@@ -165,7 +165,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-    # status_command polybar
     status_command i3status #--config ~/.i3status.conf
 }
 
