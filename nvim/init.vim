@@ -58,6 +58,10 @@ Plug 'ThePrimeagen/harpoon'
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
 
+" Prettier
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/prettier.nvim'
+
 " Plug 'williamboman/mason.nvim'
 call plug#end()
 
@@ -72,12 +76,6 @@ hi Normal guibg=NONE ctermbg=NONE
 " My Own Mappings
 inoremap kj <ESC>
 inoremap jj <ESC>
-
-" NerdTree Config
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
-" nnoremap <C-b> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
 
 " Telescope Config
  
@@ -101,5 +99,4 @@ nnoremap <leader>e <cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>
 
 " External configs
 source ~/Development/.dotfiles/nvim/sets.vim
-" source ~/Development/.dotfiles/nvim/auto-reload.vim
 source ~/Development/.dotfiles/nvim/lua/me.lua
