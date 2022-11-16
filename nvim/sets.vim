@@ -15,7 +15,7 @@ set clipboard=unnamedplus
 set noerrorbells
 set nobackup
 set incsearch
-set scrolloff=8
+set scrolloff=16
 set mouse=a
 set autoread
 au CursorHold * checktime

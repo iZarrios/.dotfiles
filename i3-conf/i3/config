@@ -118,8 +118,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # setting moniters variables
-set $m_left "eDP-1"
-set $m_main "HDMI-1-0"
+set $m_main "eDP-1"
+set $m_left "HDMI-1-0"
 
 #assign workspace to moniters
 workspace 1 output $m_left
@@ -164,11 +164,11 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	position top
+	position bottom
     status_command i3status #--config ~/.i3status.conf
 }
 
 # to restore desktop wallpaper
 # bindsym $mod+Shift+q exec nitrogen --restore  
+exec_always xrandr --output $m_main --primary --mode 1920x1080 --rate 60 --output $m_left --rate 144 --mode 1920x1080 --left-of $m_main
 exec_always nitrogen --restore
-exec_always xrandr --output HDMI-1-0  --primary --mode 1920x1080 --rate 144 --output eDP-1 --rate 60 --mode 1920x1080 --left-of HDMI-1-0

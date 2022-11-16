@@ -102,7 +102,10 @@ require 'lspconfig'.clangd.setup{
     on_attach = on_attach
 }
 
-
+require'lspconfig'.bashls.setup{
+    capabilities = capabilities,
+    on_attach = on_attach
+}
 
 
 
