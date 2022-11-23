@@ -3,8 +3,6 @@
 --vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
 
-
---
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -47,9 +45,10 @@ require('lualine').setup {
 }
 
 
-vim.api.nvim_set_keymap('n','<leader>u',':UndotreeToggle', {noremap = true})
+vim.api.nvim_set_keymap('n','<leader>u',':UndotreeToggle<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n','<leader>g',':Neogit<CR>', {noremap = true})
 
-vim.cmd [[autocmd BufWritePre * Neoformat]]
+-- vim.cmd [[autocmd BufWritePre * Neoformat]]
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -64,13 +63,9 @@ local on_attach = function(client,bufnr)
 	buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 	buf_set_keymap("n", "<leader>ca", "<cmd>Telescope lsp_code_actions<CR>", opts)
 	buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    buf_set_keymap("x","<A-j>", ":move '>+1<CR>gv-gv", opts)
-    buf_set_keymap("x","<A-k>", ":move '<-2<CR>gv-gv", opts)
-
-
 
     vim.keymap.set("n","K",vim.lsp.buf.hover,{buffer=0})  
-    vim.keymap.set("n","gd",vim.lsp.buf.definition,{buffer=0})
+    -- vim.keymap.set("n","gd",vim.lsp.buf.definition,{buffer=0})
     vim.keymap.set("n","<leader>r",vim.lsp.buf.rename,{buffer=0})
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {buffer=0})
 
@@ -91,51 +86,21 @@ local on_attach = function(client,bufnr)
 end
 
 
-require'lspconfig'.gopls.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
 
 
-require 'lspconfig'.clangd.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
+local servers = {'pyright', 'clangd', 'bashls', 'gopls','tsserver'}
 
-require'lspconfig'.bashls.setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
+for _, lsp in pairs(servers) do
+    require('lspconfig')[lsp].setup {
+        on_attach = on_attach,
+        flags = {
+            debounce_text_changes = 150,
+        }
+    }
+end
 
 
 
-
-require'lspconfig'.pyright.setup{
-    capabilities = capabilities,
-}
-
-
-require('lspconfig')['tsserver'].setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
-
-local null_ls = require("null-ls")
-
-null_ls.setup({
-  on_attach = function(client, bufnr)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")
-
-      -- format on save
-      vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
-    end
-
-    if client.server_capabilities.documentRangeFormattingProvider then
-      vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
-    end
-  end,
-})
 
 require("prettier").setup({
   bin = 'prettier', -- or `'prettierd'` (v0.22+)
@@ -152,6 +117,7 @@ require("prettier").setup({
     "typescript",
     "typescriptreact",
     "yaml",
+    "cpp",
   },
 })
 
@@ -159,6 +125,12 @@ require("prettier").setup({
 
 
 
+ -- Using Lua functions
+vim.cmd [[ nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<CR> ]]
+vim.cmd [[ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr> ]]
+vim.cmd [[ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr> ]]
+vim.cmd [[ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr> ]]
+vim.cmd [[ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr> ]]
 
 
 

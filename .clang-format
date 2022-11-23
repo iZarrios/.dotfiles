@@ -1,0 +1,12 @@
+---
+BasedOnStyle: Microsoft
+
+# test comment
+
+#BreakBeforeBraces: Custom
+#BraceWrapping:
+#  AfterEnum: true
+#  AfterStruct: false
+#  SplitEmptyFunction: false
+#  AfterFunction: true
+---
