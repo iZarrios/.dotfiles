@@ -121,7 +121,7 @@ alias lg="lazygit"
 # source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 # Adding GO to the PATH
-export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/zarrios/go/bin:/home/zarrios/anaconda3/bin
+export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/zarrios/go/bin:/home/zarrios/anaconda3/bin:/home/zarrios/Downloads/lua-language-server-3.6.3-linux-x64/bin
 
 
 # # >>> conda initialize >>>
