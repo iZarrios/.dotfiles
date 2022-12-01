@@ -50,9 +50,7 @@ call plug#end()
 
 
 hi Normal guibg=NONE ctermbg=NONE
-" My Own Mappings
 
-" Harpoon mappings
 " nnoremap <leader>a <cmd>lua require('harpoon.mark').add_file()<cr>
 " nnoremap <leader>e <cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>
 

@@ -20,5 +20,5 @@ set mouse=a
 set autoread
 au CursorHold * checktime
 
-" set exrc
-" set guicursor=
+set exrc
+set guicursor=
