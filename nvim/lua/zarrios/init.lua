@@ -1,6 +1,15 @@
-require('zarrios.options')
+require("zarrios.remap")
+require("zarrios.packer")
+require("zarrios.set")
 
-require('zarrios.plugins')
-require('zarrios.keymap')
-require('zarrios.colors')
-require('zarrios.commands')
+
+
+
+
+
+
+
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
