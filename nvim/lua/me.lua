@@ -183,7 +183,7 @@ local opts = { noremap = true, silent = true }
 -- switching to normal mode
 vim.keymap.set("i", "jj", "<ESC>", opts)
 vim.keymap.set("i", "kj", "<ESC>", opts)
-
+vim.keymap.set("n", "gV", "`[v`]")
 -- not sure
 -- vim.keymap.set("n", "n", "nzz")
 -- vim.keymap.set("n", "<C-d>", "<C-d>zz")
