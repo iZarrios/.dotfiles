@@ -21,4 +21,4 @@ set autoread
 au CursorHold * checktime
 
 set exrc
-set guicursor=
+" set guicursor=

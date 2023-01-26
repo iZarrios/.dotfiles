@@ -24,7 +24,8 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 " Commenting
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 
 " Status line
 Plug 'nvim-lualine/lualine.nvim'

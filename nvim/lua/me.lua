@@ -1,6 +1,8 @@
 -- Colorscheme
 vim.cmd [[ colorscheme gruvbox ]]
 
+require('Comment').setup()
+
 local cfg = {
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     handler_opts = {
@@ -8,6 +10,7 @@ local cfg = {
         border = "rounded"
     }
 }
+
 require "lsp_signature".setup(cfg)
 
 local hide_in_width = function()
@@ -18,7 +21,7 @@ local diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
     sections = { "error", "warn" },
-    symbols = { error = " ", warn = " " },
+    symbols = { error = "✖ ", warn = "⚠ " },
     colored = false,
     update_in_insert = false,
     always_visible = true,
@@ -66,27 +69,30 @@ local progress = function()
     return chars[index]
 end
 
--- local spaces = function()
--- 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
--- end
+
+local custom_gruvbox = require'lualine.themes.gruvbox'
+
+-- Change the background of lualine_c section for normal mode
+custom_gruvbox.normal.c.bg = '#112233'
 
 require('lualine').setup({
     options = {
+        theme=custom_gruvbox,
         icons_enabled = true,
         theme = "auto",
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
+        component_separators = { left = "|", right = "|" },
+        section_separators = { left = "|", right = "|" },
         disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
         always_divide_middle = true,
     },
     sections = {
         lualine_a = { branch, diagnostics },
         lualine_b = { mode },
-        lualine_c = {},
+    lualine_c = {'filename'},
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, filetype },
         lualine_y = { location },
-        lualine_z = {},
+    lualine_z = {'location'}
         -- lualine_z = { progress },
     },
     inactive_sections = {
@@ -117,7 +123,7 @@ local on_attach = function(client, bufnr)
     -- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, opts)
+    vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 end
 
@@ -179,9 +185,9 @@ vim.keymap.set("i", "jj", "<ESC>", opts)
 vim.keymap.set("i", "kj", "<ESC>", opts)
 
 -- not sure
-vim.keymap.set("n", "n", "nzz")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "n", "nzz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)

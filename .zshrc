@@ -89,11 +89,12 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
@@ -115,14 +116,20 @@ alias pclip="xclip -selection clipboard"
 alias fd="fdfind"
 alias gst="git status"
 alias lg="lazygit"
+alias tmux="tmux -2"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 # Adding GO to the PATH
-export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/usr/bin/nodejs/bin:/usr/bin/Postman:/home/zarrios/go/bin:/home/zarrios/anaconda3/bin:/home/zarrios/Downloads/lua-language-server-3.6.3-linux-x64/bin
+export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin:/home/zarrios/custom_build/go/bin:/home/zarrios/go/bin
+# adding conda to path
+export PATH="/home/zarrios/anaconda3/bin:$PATH"
 
+# sourcing ROS
+echo "ROS Sourced"
+source /opt/ros/noetic/setup.zsh
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
@@ -138,4 +145,3 @@ export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/usr/bin/nodejs/bin
 # fi
 # unset __conda_setup
 # # <<< conda initialize <<<
-
