@@ -99,9 +99,11 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 
+
+bindkey -s ^f "tmux-sessionizer\n"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -123,9 +125,9 @@ alias tmux="tmux -2"
 # source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 # Adding GO to the PATH
-export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin:/home/zarrios/custom_build/go/bin:/home/zarrios/go/bin
+export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/go/bin
 # adding conda to path
-export PATH="/home/zarrios/anaconda3/bin:$PATH"
+export PATH=/home/zarrios/anaconda3/bin:/home/zarrios/.local/scripts/:$PATH
 export PATH="/usr/local/bin/:$PATH"
 
 # sourcing ROS
