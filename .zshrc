@@ -115,7 +115,7 @@ alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
-alias fd="fdfind"
+# alias fd="fdfind"
 alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
@@ -128,6 +128,8 @@ alias tmux="tmux -2"
 export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/go/bin
 # adding conda to path
 export PATH=/home/zarrios/anaconda3/bin:/home/zarrios/.local/scripts/:$PATH
+export PATH=/home/zarrios/custom_build/go/bin:$PATH
+export PATH=/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin/:$PATH
 export PATH="/usr/local/bin/:$PATH"
 
 # sourcing ROS
