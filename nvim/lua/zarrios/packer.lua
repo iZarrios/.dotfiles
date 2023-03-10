@@ -11,13 +11,16 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
+    -- use({
+    --     'rose-pine/neovim',
+    --     as = 'rose-pine',
+    --     config = function()
+    --         vim.cmd('colorscheme rose-pine')
+    --     end
+    -- })
+    --
+    use({ 'folke/tokyonight.nvim', as = 'tokyonight', })
+
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('mbbill/undotree')
@@ -45,16 +48,13 @@ return require('packer').startup(function(use)
         }
     }
     use {
-        'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim'
+        'TimUntersberger/neogit',
+        requires = 'nvim-lua/plenary.nvim',
     }
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
+    use { 'numToStr/Comment.nvim' }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    use("github/copilot.vim")
 end)

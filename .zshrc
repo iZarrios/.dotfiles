@@ -11,6 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Set list of themes to pick from when loading at random
 ZSH_THEME="eastwood"
+# ZSH_THEME="robbyrussell"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
@@ -133,8 +134,8 @@ export PATH=/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin/:$PATH
 export PATH="/usr/local/bin/:$PATH"
 
 # sourcing ROS
-echo "ROS Sourced"
-source /opt/ros/noetic/setup.zsh
+# echo "ROS Sourced"
+# source /opt/ros/noetic/setup.zsh
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!

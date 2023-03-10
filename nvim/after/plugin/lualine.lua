@@ -56,9 +56,9 @@ end
 
 require('lualine').setup({
     options = {
-        -- theme=custom_gruvbox,
-        icons_enabled = true,
         theme = "onedark",
+        -- theme='tokyonight',
+        icons_enabled = true,
         component_separators = { left = "|", right = "|" },
         section_separators = { left = "|", right = "|" },
         disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
