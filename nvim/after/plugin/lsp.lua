@@ -4,23 +4,37 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     'tsserver',
+    'pyright',
     -- 'sumneko_lua',
     'clangd',
     'gopls',
 })
 
+-- Use autopep8 as a formatter
+lsp.configure('pyright', {
+    settings = {
+        python = {
+            formatting = {
+                provider = 'black',
+                args = {'--line-length', '88'},
+            },
+        },
+    },
+})
 
 -- TODO: install sumenko_lua
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
+-- lsp.configure('sumneko_lua', {
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { 'vim' }
+--             }
+--         }
+--     }
+-- })
+
+
 -- src: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 require 'lspconfig'.lua_ls.setup {
     settings = {

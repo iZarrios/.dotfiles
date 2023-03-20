@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PYRIGHT_PYTHON_FORCE_VERSION=latest
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -112,7 +113,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 #
 # Example aliases
 alias ping-="ping 4.2.2.1"
-alias python="python3"
+# alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
@@ -120,6 +121,7 @@ alias pclip="xclip -selection clipboard"
 alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
+alias v="nvim"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -131,7 +133,8 @@ export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/go/bi
 export PATH=/home/zarrios/anaconda3/bin:/home/zarrios/.local/scripts/:$PATH
 export PATH=/home/zarrios/custom_build/go/bin:$PATH
 export PATH=/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin/:$PATH
-export PATH="/usr/local/bin/:$PATH"
+export PATH=/usr/local/bin/:$PATH
+export PATH=/home/zarrios/custom_build/pycharm/bin:$PATH
 
 # sourcing ROS
 # echo "ROS Sourced"
