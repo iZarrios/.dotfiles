@@ -113,15 +113,15 @@ bindkey -s ^f "tmux-sessionizer\n"
 #
 # Example aliases
 alias ping-="ping 4.2.2.1"
-# alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
-# alias fd="fdfind"
+alias fd="fdfind"
 alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
+alias cat="batcat --color=always"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
