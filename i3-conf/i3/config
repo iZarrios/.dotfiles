@@ -181,5 +181,5 @@ bar {
 # exec_always xrandr --output $laptop --primary --mode 1920x1080 --rate 60 --output $sam --rate 144 --mode 1920x1080 --left-of $laptop
 
 # moniter = $laptop only
-exec_always xrandr --ouput $laptop --off --output $sam --mode 1920x1080 --rate 144 --primary
+exec_always xrandr --output $laptop --off --output $sam --mode 1920x1080 --rate 144 --primary
 exec_always nitrogen --restore
