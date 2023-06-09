@@ -1,5 +1,6 @@
 ---
-BasedOnStyle: Microsoft
+# BasedOnStyle: Microsoft
+BasedOnStyle: Google
 
 # test comment
 

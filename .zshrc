@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PYRIGHT_PYTHON_FORCE_VERSION=latest
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -11,6 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Set list of themes to pick from when loading at random
 ZSH_THEME="eastwood"
+# ZSH_THEME="robbyrussell"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
@@ -99,9 +101,11 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 
+
+bindkey -s ^f "tmux-sessionizer\n"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -109,7 +113,6 @@ export FZF_DEFAULT_OPS="--extended"
 #
 # Example aliases
 alias ping-="ping 4.2.2.1"
-alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
@@ -117,19 +120,25 @@ alias fd="fdfind"
 alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
+alias v="nvim"
+alias cat="batcat --color=always"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 # Adding GO to the PATH
-export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin:/home/zarrios/custom_build/go/bin:/home/zarrios/go/bin
+export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/go/bin
 # adding conda to path
-export PATH="/home/zarrios/anaconda3/bin:$PATH"
+export PATH=/home/zarrios/anaconda3/bin:/home/zarrios/.local/scripts/:$PATH
+export PATH=/home/zarrios/custom_build/go/bin:$PATH
+export PATH=/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin/:$PATH
+export PATH=/usr/local/bin/:$PATH
+export PATH=/home/zarrios/custom_build/pycharm/bin:$PATH
 
 # sourcing ROS
-echo "ROS Sourced"
-source /opt/ros/noetic/setup.zsh
+# echo "ROS Sourced"
+# source /opt/ros/noetic/setup.zsh
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
