@@ -122,6 +122,7 @@ alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
 alias cat="batcat --color=always"
+# alias grep="rg"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -135,6 +136,9 @@ export PATH=/home/zarrios/custom_build/go/bin:$PATH
 export PATH=/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin/:$PATH
 export PATH=/usr/local/bin/:$PATH
 export PATH=/home/zarrios/custom_build/pycharm/bin:$PATH
+
+# making batcat the default pager
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # sourcing ROS
 # echo "ROS Sourced"
