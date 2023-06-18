@@ -122,6 +122,7 @@ alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
 alias cat="batcat --color=always"
+alias tree="tree -I 'node_modules|target'"
 # alias grep="rg"
 
 # alias zshconfig="mate ~/.zshrc"
