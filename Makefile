@@ -5,7 +5,6 @@ path ?= $(CURDIR)
 
 
 # /home/zarrios/.local/scripts//tmux-sessionizer
-ln -s $(path)/.tmux-sessionizer ~/.tmux-sessionizer
 
 
 all:
@@ -25,5 +24,7 @@ all:
 	ln -s $(path)/i3-config/.i3status.conf ~/.i3status.conf
 	# alacritty config
 	ln -s $(path)/alacritty ~/.config/alacritty/alacritty.yml
+	# tmux sessionizer
+	ln -s $(path)/scripts/tmux-sessionizer ~/.local/scripts/tmux-sessionizer
 
 
