@@ -22,6 +22,17 @@ lsp.configure('pyright', {
     },
 })
 
+-- enable foramting in bas
+lsp.configure('bashls', {
+    settings = {
+        bash = {
+            format = {
+                enable = true,
+            },
+        },
+    },
+})
+
 -- TODO: install sumenko_lua
 -- Fix Undefined global 'vim'
 -- lsp.configure('sumneko_lua', {
@@ -60,10 +71,10 @@ require 'lspconfig'.lua_ls.setup {
 }
 
 local cmp = require('cmp')
--- local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    -- ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    -- ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
 })
