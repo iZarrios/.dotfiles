@@ -5,7 +5,6 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     'pyright',
-    -- 'sumneko_lua',
     'clangd',
     'gopls',
 })
@@ -16,38 +15,28 @@ lsp.configure('pyright', {
         python = {
             formatting = {
                 provider = 'black',
-                args = {'--line-length', '88'},
+                args = { '--line-length', '88' },
             },
         },
     },
 })
 
--- enable foramting in bas
+-- enable foramting in bash
 lsp.configure('bashls', {
     settings = {
         bash = {
             format = {
                 enable = true,
             },
+            -- fix "vim" not being recognized as a builtin
+            diagnostics = {
+                globals = { 'vim' },
+            }
         },
     },
 })
 
--- TODO: install sumenko_lua
--- Fix Undefined global 'vim'
--- lsp.configure('sumneko_lua', {
---     settings = {
---         Lua = {
---             diagnostics = {
---                 globals = { 'vim' }
---             }
---         }
---     }
--- })
-
-
--- src: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-require 'lspconfig'.lua_ls.setup {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             runtime = {
@@ -55,20 +44,44 @@ require 'lspconfig'.lua_ls.setup {
                 version = 'LuaJIT',
             },
             diagnostics = {
-                -- Get the language server to recognize the `vim` global
                 globals = { 'vim' },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
                 enable = false,
             },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
         },
     },
-}
+})
+
+---- using lspconfig instead of lsp-zero
+-- require 'lspconfig'.lua_ls.setup {
+--     settings = {
+--         Lua = {
+--             runtime = {
+--                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+--                 version = 'LuaJIT',
+--             },
+--             diagnostics = {
+--                 -- Get the language server to recognize the `vim` global
+--                 globals = { 'vim' },
+--             },
+--             workspace = {
+--                 -- Make the server aware of Neovim runtime files
+--                 library = vim.api.nvim_get_runtime_file("", true),
+--             },
+--             -- Do not send telemetry data containing a randomized but unique identifier
+--             telemetry = {
+--                 enable = false,
+--             },
+--         },
+--     },
+-- }
+--
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -120,6 +133,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
 
 vim.diagnostic.config({
     virtual_text = true,
