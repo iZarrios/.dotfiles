@@ -31,4 +31,9 @@ vim.opt.colorcolumn = "100"
 vim.opt.clipboard="unnamedplus"
 
 
-vim.opt.cursorline = true
+-- Enable cursor only in normal mode
+vim.opt.cursorline = true 
+vim.cmd [[ au InsertEnter * set nocursorline ]]
+vim.cmd [[ au InsertLeave * set cursorline ]]
+
+
