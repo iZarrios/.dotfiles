@@ -124,6 +124,8 @@ alias v="nvim"
 alias cat="batcat --color=always"
 alias tree="tree -I 'node_modules|target'"
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
+alias mv='mv -i'
+alias dl='cd ~/Downloads'
 # alias grep="rg"
 
 # alias zshconfig="mate ~/.zshrc"
