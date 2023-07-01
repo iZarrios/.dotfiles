@@ -2,58 +2,164 @@ window:
   opacity: 1.0
 
 font:
-  size: 8
-  scaled_with_dpi: true
+  size: 10
+  # scaled_with_dpi: true
 
-colors:
-  primary:
-    background: '#1c1f26'
-    foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
-    cursor:
-      text: '#2e3440'
-      cursor: '#d8dee9'
-    vi_mode_cursor:
-      text: '#2e3440'
-      cursor: '#d8dee9'
-    selection:
-      text: CellForeground
-      background: '#4c566a'
-    search:
-      matches:
-        foreground: CellBackground
-        background: '#88c0d0'
-      bar:
-        background: '#434c5e'
-        foreground: '#d8dee9'
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night
+    # Default colors
+    primary:
+      background: '#1a1b26'
+      foreground: '#a9b1d6'
+
+    # Normal colors
     normal:
-      black: '#3b4252'
-      red: '#bf616a'
-      green: '#a3be8c'
-      yellow: '#ebcb8b'
-      blue: '#81a1c1'
-      magenta: '#b48ead'
-      cyan: '#88c0d0'
-      white: '#e5e9f0'
-    bright:
-      black: '#4c566a'
-      red: '#bf616a'
-      green: '#a3be8c'
-      yellow: '#ebcb8b'
-      blue: '#81a1c1'
-      magenta: '#b48ead'
-      cyan: '#8fbcbb'
-      white: '#eceff4'
-    dim:
-      black: '#373e4d'
-      red: '#94545d'
-      green: '#809575'
-      yellow: '#b29e75'
-      blue: '#68809a'
-      magenta: '#8c738c'
-      cyan: '#6d96a5'
-      white: '#aeb3bb'
-    cursor:
-        text: '0x000000'
-        cursor: '0xffffff'
+      black:   '#32344a'
+      red:     '#f7768e'
+      green:   '#9ece6a'
+      yellow:  '#e0af68'
+      blue:    '#7aa2f7'
+      magenta: '#ad8ee6'
+      cyan:    '#449dab'
+      white:   '#787c99'
 
+    # Bright colors
+    bright:
+      black:   '#444b6a'
+      red:     '#ff7a93'
+      green:   '#b9f27c'
+      yellow:  '#ff9e64'
+      blue:    '#7da6ff'
+      magenta: '#bb9af7'
+      cyan:    '#0db9d7'
+      white:   '#acb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm
+    # Default colors
+    primary:
+      background: '#24283b'
+      foreground: '#a9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '#32344a'
+      red:     '#f7768e'
+      green:   '#9ece6a'
+      yellow:  '#e0af68'
+      blue:    '#7aa2f7'
+      magenta: '#ad8ee6'
+      cyan:    '#449dab'
+      white:   '#9699a8'
+
+    # Bright colors
+    bright:
+      black:   '#444b6a'
+      red:     '#ff7a93'
+      green:   '#b9f27c'
+      yellow:  '#ff9e64'
+      blue:    '#7da6ff'
+      magenta: '#bb9af7'
+      cyan:    '#0db9d7'
+      white:   '#acb0d0'
+
+  github-dark-default: &github-dark-default
+    # github Alacritty Colors
+    colors:
+      # Default colors
+      primary:
+        background: '0x0d1117'
+    foreground: '0xb3b1ad'
+
+      # Normal colors
+    normal:
+      black:   '0x484f58'
+    red:     '0xff7b72'
+    green:   '0x3fb950'
+    yellow:  '0xd29922'
+    blue:    '0x58a6ff'
+    magenta: '0xbc8cff'
+    cyan:    '0x39c5cf'
+    white:   '0xb1bac4'
+
+      # Bright colors
+    bright:
+      black:   '0x6e7681'
+      red:     '0xffa198'
+      green:   '0x56d364'
+      yellow:  '0xe3b341'
+      blue:    '0x79c0ff'
+      magenta: '0xd2a8ff'
+      cyan:    '0x56d4dd'
+      white:   '0xf0f6fc'
+
+    indexed_colors:
+      - { index: 16, color: '0xd18616' }
+      - { index: 17, color: '0xffa198' }
+
+    carbox-fox: &carbox-fox
+    # Nightfox Alacritty Colors
+    # Style: carbonfox
+    # Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/nightfox_alacritty.yml
+      colors:
+        # Default colors
+        primary:
+          background: '0x161616'
+          foreground: '0xf2f4f8'
+        # Normal colors
+        normal:
+          black:   '0x282828'
+          red:     '0xee5396'
+          green:   '0x25be6a'
+          yellow:  '0x08bdba'
+          blue:    '0x78a9ff'
+          magenta: '0xbe95ff'
+          cyan:    '0x33b1ff'
+          white:   '0xdfdfe0'
+        # Bright colors
+        bright:
+          black:   '0x484848'
+          red:     '0xf16da6'
+          green:   '0x46c880'
+          yellow:  '0x2dc7c4'
+          blue:    '0x8cb6ff'
+          magenta: '0xc8a5ff'
+          cyan:    '0x52bdff'
+          white:   '0xe4e4e5'
+        indexed_colors:
+          - { index: 16, color: '0x3ddbd9' }
+          - { index: 17, color: '0xff7eb6' }
+
+# Nightfox Alacritty Colors
+# Style: carbonfox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/nightfox_alacritty.yml
+colors:
+  # Default colors
+  primary:
+    background: '0x161616'
+    foreground: '0xf2f4f8'
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xee5396'
+    green:   '0x25be6a'
+    yellow:  '0x08bdba'
+    blue:    '0x78a9ff'
+    magenta: '0xbe95ff'
+    cyan:    '0x33b1ff'
+    white:   '0xdfdfe0'
+  # Bright colors
+  bright:
+    black:   '0x484848'
+    red:     '0xf16da6'
+    green:   '0x46c880'
+    yellow:  '0x2dc7c4'
+    blue:    '0x8cb6ff'
+    magenta: '0xc8a5ff'
+    cyan:    '0x52bdff'
+    white:   '0xe4e4e5'
+  indexed_colors:
+    - { index: 16, color: '0x3ddbd9' }
+    - { index: 17, color: '0xff7eb6' }
