@@ -19,7 +19,7 @@ schemes:
     normal:
       black:   '#32344a'
       red:     '#f7768e'
-      green:   '#9ece6a'
+      green:   '#2f3d1d'
       yellow:  '#e0af68'
       blue:    '#7aa2f7'
       magenta: '#ad8ee6'
@@ -47,7 +47,7 @@ schemes:
     normal:
       black:   '#32344a'
       red:     '#f7768e'
-      green:   '#9ece6a'
+      green:   '#2f3d1d'
       yellow:  '#e0af68'
       blue:    '#7aa2f7'
       magenta: '#ad8ee6'
