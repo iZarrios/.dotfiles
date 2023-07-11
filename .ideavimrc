@@ -1,0 +1,50 @@
+set relativenumber
+set number
+set nu
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set noswapfile
+set nohlsearch "or :noh
+set hidden
+set nowrap
+set smartcase
+set smartindent
+set noerrorbells
+set nobackup
+set incsearch
+set scrolloff=8
+set mouse=a
+set autoread
+set clipboard=unnamed
+set showcmd
+" set exrc
+" set guicursor=
+set clipboard+=ideaput
+
+
+inoremap jj <ESC>
+inoremap kj <ESC>
+
+" set leder key
+let mapleader = "\<Space>"
+
+
+" make ]d and [d for next and previous error in jetbrains
+nnoremap <leader>d <Action>(NextError)
+nnoremap <leader>D <Action>(PrevError)
+
+" make ctrl+e for show error list
+nnoremap <C-e> <Action>ShowErrorDescription<CR>
+" make gcc to comment line
+nnoremap gcc :action CommentByLineComment<CR>
+" vnoremap gcc :action CommentByLineComment<CR>
+
+" nnoremap<leader>f <Action>ReformatCode<CR>
+
+nnoremap <leader>f :action ReformatCode<CR>
+
+" ctlr+h to show signature help
+" :map <C-h> <Action>(ParameterInfo)
+inoremap <C-h> :action ParameterInfo<CR>
