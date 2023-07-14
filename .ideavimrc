@@ -39,9 +39,8 @@ nnoremap [d :action GotoPreviousError<CR>
 nnoremap <C-e> <Action>ShowErrorDescription<CR>
 " make gcc to comment line
 nnoremap gcc :action CommentByLineComment<CR>
-" vnoremap gcc :action CommentByLineComment<CR>
+vnoremap gcc :action CommentByLineComment<CR>
 
-" nnoremap<leader>f <Action>ReformatCode<CR>
 
 nnoremap <leader>f :action ReformatCode<CR>
 
