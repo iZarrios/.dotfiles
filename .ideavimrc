@@ -32,8 +32,8 @@ let mapleader = "\<Space>"
 
 
 " make ]d and [d for next and previous error in jetbrains
-nnoremap <leader>d <Action>(NextError)
-nnoremap <leader>D <Action>(PrevError)
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
 
 " make ctrl+e for show error list
 nnoremap <C-e> <Action>ShowErrorDescription<CR>
