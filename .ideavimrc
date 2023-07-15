@@ -47,3 +47,17 @@ nnoremap <leader>f :action ReformatCode<CR>
 " ctlr+h to show signature help
 " :map <C-h> <Action>(ParameterInfo)
 inoremap <C-h> :action ParameterInfo<CR>
+
+
+" Ctrl+\ to split right
+nnoremap <C-\> :vsplit<CR>
+
+
+" alt+h to move left
+" alt+l to move right
+" alt+j to move down
+" alt+k to move up
+nnoremap <M-h> <C-w>h
+nnoremap <M-l> <C-w>l
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
