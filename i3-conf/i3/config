@@ -14,7 +14,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:UbuntuMono Nerd 8 
+font pango:UbuntuMono Nerd 7 
 # font pango:monospace 9 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -176,14 +176,16 @@ bar {
     status_command i3status #--config ~/.i3status.conf
 }
 
-# to restore desktop wallpaper
-# bindsym $mod+Shift+q exec nitrogen --restore  
-
 ## Left monitor = $sam, Right monitor = $laptop
 # exec_always xrandr --output $laptop --primary --mode 1920x1080 --rate 60 --output $sam --rate 144 --mode 1920x1080 --left-of $laptop
 exec "setxkbmap -layout us,ar"
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # moniter = $laptop only
-exec_always xrandr --output $laptop --off --output $sam --mode 1920x1080 --rate 144 --primary
+#exec_always xrandr --output $laptop --off --output $sam --mode 1920x1080 --rate 144 --primary
+
+# exec_always xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync 
+# exec_always xrandr --addmode eDP-1 "1920x1080_60.00"
+# exec_always xrandr --output eDP-1 --mode 1920x1080_60.00 --output HDMI-0 --mode 1920x1080 --rate 60
 exec_always nitrogen --restore
+exec_always flameshot

@@ -3,85 +3,38 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
-    'pyright',
+    -- 'tsserver',
+    -- 'pyright',
     'clangd',
-    'gopls',
+    -- 'gopls',
 })
 
--- Use autopep8 as a formatter
-lsp.configure('pyright', {
-    settings = {
-        python = {
-            formatting = {
-                provider = 'black',
-                args = { '--line-length', '88' },
-            },
-        },
-    },
-})
-
--- enable foramting in bash
-lsp.configure('bashls', {
-    settings = {
-        bash = {
-            format = {
-                enable = true,
-            },
-            -- fix "vim" not being recognized as a builtin
-            diagnostics = {
-                globals = { 'vim' },
-            }
-        },
-    },
-})
-
-lsp.configure('lua_ls', {
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-            },
-            diagnostics = {
-                globals = { 'vim' },
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-        },
-    },
-})
-
----- using lspconfig instead of lsp-zero
--- require 'lspconfig'.lua_ls.setup {
+-- -- Use autopep8 as a formatter
+-- lsp.configure('pyright', {
 --     settings = {
---         Lua = {
---             runtime = {
---                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
---                 version = 'LuaJIT',
---             },
---             diagnostics = {
---                 -- Get the language server to recognize the `vim` global
---                 globals = { 'vim' },
---             },
---             workspace = {
---                 -- Make the server aware of Neovim runtime files
---                 library = vim.api.nvim_get_runtime_file("", true),
---             },
---             -- Do not send telemetry data containing a randomized but unique identifier
---             telemetry = {
---                 enable = false,
+--         python = {
+--             formatting = {
+--                 provider = 'black',
+--                 args = { '--line-length', '88' },
 --             },
 --         },
 --     },
--- }
---
+-- })
+
+-- enable foramting in bash
+-- lsp.configure('bashls', {
+--     settings = {
+--         bash = {
+--             format = {
+--                 enable = true,
+--             },
+--             -- fix "vim" not being recognized as a builtin
+--             diagnostics = {
+--                 globals = { 'vim' },
+--             }
+--         },
+--     },
+-- })
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -136,5 +89,6 @@ lsp.setup()
 
 
 vim.diagnostic.config({
-    virtual_text = true,
+    -- FIXME: this is not working
+    -- virtual_text = true,
 })
