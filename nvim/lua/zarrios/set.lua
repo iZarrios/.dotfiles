@@ -35,3 +35,14 @@ vim.opt.clipboard="unnamedplus"
 vim.opt.cursorline = true
 vim.cmd [[ au InsertEnter * set nocursorline ]]
 vim.cmd [[ au InsertLeave * set cursorline ]]
+
+-- VisualSelect Highlight color change
+vim.cmd([[
+  augroup HighlightVisualSelection
+    autocmd!
+    autocmd ColorScheme * highlight Visual guibg=white guifg=black
+  augroup END
+]])
+
+
+vim.g.copilot_enabled = false
