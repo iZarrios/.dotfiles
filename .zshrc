@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
+export OPENCV_DIR=/.bs/libs/opencv/4.2.0/lib/cmake/opencv4/OpenCVConfig.cmake
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -126,7 +127,7 @@ alias tree="tree -I 'node_modules|target'"
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
-# alias grep="rg"
+alias grep="rg"
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -169,3 +170,13 @@ source /etc/profile.d/modules.sh
 module use "/.bs/libs/modules"
 alias bs-ide-clion='/.bs/editors/clion/clion/bin/clion.sh'
 alias bs-ide-pycharm='/.bs/editors/pycharm/pycharm/bin/pycharm.sh'
+
+
+# automatically loading modules
+module load opencv/4.2.0
+module load boost/1.80.0
+module load catch2/3.3.2
+# module load nvhpc/22.7
+module load nlohmann/3.9.1
+module load cmake/v3.24.0-rc5
+module list
