@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -144,11 +139,6 @@ _G.packer_plugins = {
     path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  neogit = {
-    loaded = true,
-    path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/neogit",
-    url = "https://github.com/TimUntersberger/neogit"
-  },
   nightfox = {
     loaded = true,
     path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/nightfox",
@@ -194,11 +184,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  tokyonight = {
-    loaded = true,
-    path = "/home/eiyad/.local/share/nvim/site/pack/packer/start/tokyonight",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   undotree = {
     loaded = true,

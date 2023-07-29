@@ -12,11 +12,8 @@ return require('packer').startup(function(use)
 
     use({ "EdenEast/nightfox.nvim", as = 'nightfox', })
 
-    use({ 'folke/tokyonight.nvim', as = 'tokyonight', })
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
-    use { "catppuccin/nvim", as = "catppuccin" }
-
-    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
@@ -41,10 +38,6 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         }
-    }
-    use {
-        'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim',
     }
     use { 'numToStr/Comment.nvim' }
     use {
