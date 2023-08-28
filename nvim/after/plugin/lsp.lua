@@ -84,6 +84,9 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, opts)
+
+    -- <leader>o to go to header file
+    vim.keymap.set("n", "<A-o>", function() vim.lsp.buf.declaration() end, opts)
 end)
 
 lsp.setup()
