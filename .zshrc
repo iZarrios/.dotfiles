@@ -179,4 +179,7 @@ module load catch2/3.3.2
 # module load nvhpc/22.7
 module load nlohmann/3.9.1
 module load cmake/v3.24.0-rc5
+module load cuda/11.7.0
+module load python/3.8.0
+module load su/44R26
 module list
