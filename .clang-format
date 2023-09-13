@@ -1,5 +1,4 @@
 ---
-#BasedOnStyle: Microsoft
 BasedOnStyle: Google
 TabWidth: 4
 IndentWidth: 4
@@ -11,10 +10,10 @@ AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: Empty
 AllowShortBlocksOnASingleLine: Empty
 AllowShortLoopsOnASingleLine: false
-#BreakBeforeBraces: Custom
-#BraceWrapping:
-#  AfterEnum: true
-#  AfterStruct: false
-#  SplitEmptyFunction: false
-#  AfterFunction: false
+BreakBeforeBraces: Custom
+BraceWrapping:
+ AfterEnum: true
+ AfterStruct: false
+ SplitEmptyFunction: false
+ AfterFunction: false
 ---
