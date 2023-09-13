@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
+export ZSH_DISABLE_COMPFIX="true"
+ZSH_DISABLE_COMPFIX="true"
 export OPENCV_DIR=/.bs/libs/opencv/4.2.0/lib/cmake/opencv4/OpenCVConfig.cmake
 
 # Path to your oh-my-zsh installation.
@@ -182,4 +184,66 @@ module load cmake/v3.24.0-rc5
 module load cuda/11.7.0
 module load python/3.8.0
 module load su/44R26
+module load oneapi/2022.2.0 
 module list
+
+
+# Place this code in your ~/.zshrc or a separate completion script loaded by ~/.zshrc
+
+_mycli_completion() {
+  local cur prev
+  local -a subcommands options
+
+  cur="${words[COMP_CWORD]}"
+  prev="${words[COMP_CWORD-1]}"
+  subcommands=("convert" "countkey" "range" "window" "tracecount" "read" "write" "strip" "split")
+
+  case "$prev" in
+    convert)
+      options=("--help" "--input-file" "--output-path" "--format")
+      ;;
+    countkey)
+      options=("--help" "--input-files" "--keys")
+      ;;
+    range)
+      options=("--help" "--input-file" "--keys")
+      ;;
+    window)
+      options=("--help" "--input-files" "--key-range" "--output-file")
+      ;;
+    tracecount)
+      options=("--help" "--input-files")
+      ;;
+    read)
+      options=("--help" "--input-files" "--batch-size" "--gds")
+      ;;
+    write)
+      options=("--help" "--input-files" "--output-file" "--batch-size" "--gds")
+      ;;
+    strip)
+      options=("--help" "--input-file" "--output-path")
+      ;;
+    split)
+      options=("--help" "--input-file" "--key" "--output-path")
+      ;;
+    *)
+      case "$cur" in
+        --*)
+          options=("convert" "countkey" "range" "window" "tracecount" "read" "write" "strip" "split")
+          ;;
+        *)
+          subcommands=("convert" "countkey" "range" "window" "tracecount" "read" "write" "strip" "split")
+          ;;
+      esac
+      ;;
+  esac
+
+  if [[ "$subcommands" == *"$prev"* ]]; then
+    compadd -a options
+  else
+    compadd -a subcommands
+  fi
+}
+
+compdef _mycli_completion bsio
+source /home/eiyad/Development/BSIO/tools/scripts/cli_auto_complete.sh
