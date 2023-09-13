@@ -180,10 +180,11 @@ bar {
 # exec_always xrandr --output $laptop --primary --mode 1920x1080 --rate 60 --output $sam --rate 144 --mode 1920x1080 --left-of $laptop
 exec "setxkbmap -layout us,ar"
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
+exec "xinput set-prop 12 libinput Tapping Enabled 1"
+exec "setxkbmap -option caps:escape"
 
 # moniter = $laptop only
 #exec_always xrandr --output $laptop --off --output $sam --mode 1920x1080 --rate 144 --primary
-
 # exec_always xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync 
 # exec_always xrandr --addmode eDP-1 "1920x1080_60.00"
 # exec_always xrandr --output eDP-1 --mode 1920x1080_60.00 --output HDMI-0 --mode 1920x1080 --rate 60
