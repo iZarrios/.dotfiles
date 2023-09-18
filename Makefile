@@ -6,25 +6,23 @@ path ?= $(CURDIR)
 
 # /home/zarrios/.local/scripts//tmux-sessionizer
 
-
-all:
-	# git config
+git:
 	ln -s $(path)/.gitconfig ~/.gitconfig
+tmux:
+	
+	ln -s $(path)/.tmux.conf ~/.tmux.conf
+i3:
+	ln -s $(path)/i3-conf/i3 ~/.config/i3
+	ln -s $(path)/i3-config/.i3status.conf ~/.i3status.conf
+
+clangfmt:
+	ln -s $(path)/.clang-format ~/.clang-format
+zsh:
 	# zsh config
 	ln -s $(path)/.zshrc ~/.zshrc
-	# nvim config
-	ln -s $(path)/nvim  ~/.config/nvim
-	# tmux config
-	ln -s $(path)/.tmux.conf ~/.tmux.conf
 	# clang format
 	ln -s $(path)/.clang-format ~/.clang-format
-	# i3 config
-	ln -s $(path)/i3-conf/i3 ~/.i3/config
-	# i3 stauts
-	ln -s $(path)/i3-config/.i3status.conf ~/.i3status.conf
-	# alacritty config
-	ln -s $(path)/alacritty ~/.config/alacritty/alacritty.yml
 	# tmux sessionizer
-	ln -s $(path)/scripts/tmux-sessionizer ~/.local/scripts/tmux-sessionizer
+	#ln -s $(path)/scripts/tmux-sessionizer ~/.local/scripts/tmux-sessionizer
 
 

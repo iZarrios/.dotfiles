@@ -140,6 +140,8 @@ export PATH=/home/zarrios/custom_build/go/bin:$PATH
 export PATH=/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin/:$PATH
 export PATH=/usr/local/bin/:$PATH
 export PATH=/home/zarrios/custom_build/pycharm/bin:$PATH
+export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:~/Downloads/clion-2023.1.4/bin
 
 # making batcat the default pager
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
@@ -162,3 +164,8 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 # fi
 # unset __conda_setup
 # # <<< conda initialize <<<
+#
+source /etc/profile.d/modules.sh
+module use "/.bs/libs/modules"
+alias bs-ide-clion='/.bs/editors/clion/clion/bin/clion.sh'
+alias bs-ide-pycharm='/.bs/editors/pycharm/pycharm/bin/pycharm.sh'

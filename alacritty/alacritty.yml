@@ -2,7 +2,7 @@ window:
   opacity: 1.0
 
 font:
-  size: 10
+  size: 9
   # scaled_with_dpi: true
 
 schemes:
