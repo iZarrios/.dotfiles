@@ -165,7 +165,7 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 # unset __conda_setup
 # # <<< conda initialize <<<
 #
-source /etc/profile.d/modules.sh
-module use "/.bs/libs/modules"
-alias bs-ide-clion='/.bs/editors/clion/clion/bin/clion.sh'
-alias bs-ide-pycharm='/.bs/editors/pycharm/pycharm/bin/pycharm.sh'
+# source /etc/profile.d/modules.sh
+# module use "/.bs/libs/modules"
+# alias bs-ide-clion='/.bs/editors/clion/clion/bin/clion.sh'
+# alias bs-ide-pycharm='/.bs/editors/pycharm/pycharm/bin/pycharm.sh'
