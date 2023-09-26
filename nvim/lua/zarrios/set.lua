@@ -35,3 +35,5 @@ vim.opt.clipboard="unnamedplus"
 vim.opt.cursorline = true
 vim.cmd [[ au InsertEnter * set nocursorline ]]
 vim.cmd [[ au InsertLeave * set cursorline ]]
+
+vim.g.copilot_enabled = false
