@@ -26,14 +26,14 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "120"
 
 vim.opt.clipboard="unnamedplus"
-
 
 -- Enable cursor only in normal mode
 vim.opt.cursorline = true
 vim.cmd [[ au InsertEnter * set nocursorline ]]
 vim.cmd [[ au InsertLeave * set cursorline ]]
 
+-- Make copilot disabled on default
 vim.g.copilot_enabled = false
