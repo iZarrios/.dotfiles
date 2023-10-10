@@ -32,8 +32,6 @@ vim.opt.clipboard="unnamedplus"
 
 -- Enable cursor only in normal mode
 vim.opt.cursorline = true
-vim.cmd [[ au InsertEnter * set nocursorline ]]
 vim.cmd [[ au InsertLeave * set cursorline ]]
+vim.cmd [[ au InsertEnter * set nocursorline ]]
 
--- Make copilot disabled on default
-vim.g.copilot_enabled = false
