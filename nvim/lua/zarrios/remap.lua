@@ -12,8 +12,6 @@ vim.keymap.set("n", "gV", "`[v`]")
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
 
-vim.keymap.set("n", "<leader>g", "<cmd>Neogit<CR>", opts)
-
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
