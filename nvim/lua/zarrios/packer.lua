@@ -9,6 +9,10 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use {
+        'ThePrimeagen/harpoon',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
     use({ "EdenEast/nightfox.nvim", as = 'nightfox', })
 
