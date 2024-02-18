@@ -1,59 +1,68 @@
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
 
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-    use {
+vim.opt.rtp:prepend(lazypath)
+
+local plugins = {
+    {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+                              -- or, branch = '0.1.x',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
         'ThePrimeagen/harpoon',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-
-    use({ "EdenEast/nightfox.nvim", as = 'nightfox', })
-
-    use({ 'folke/tokyonight.nvim', as = 'tokyonight', })
-
-    use { "catppuccin/nvim", as = "catppuccin" }
-
-    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-    use('nvim-treesitter/playground')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
-
-    use {
+        dependencies = { { 'nvim-lua/plenary.nvim' } }
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        name = 'nightfox',
+    },
+    {
+        'folke/tokyonight.nvim',
+        name = 'tokyonight',
+    },
+    'nvim-treesitter/nvim-treesitter',
+    -- 'nvim-treesitter/playground',
+    'mbbill/undotree',
+    'tpope/vim-fugitive',
+    {
         'VonHeikemen/lsp-zero.nvim',
-        requires = {
+        dependencies = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
+             'neovim/nvim-lspconfig' ,
+             'williamboman/mason.nvim' ,
+             'williamboman/mason-lspconfig.nvim' ,
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
+             'hrsh7th/nvim-cmp' ,
+             'hrsh7th/cmp-buffer' ,
+             'hrsh7th/cmp-path' ,
+             'saadparwaiz1/cmp_luasnip' ,
+             'hrsh7th/cmp-nvim-lsp' ,
+             'hrsh7th/cmp-nvim-lua' ,
 
             -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
+             'L3MON4D3/LuaSnip' ,
+             'rafamadriz/friendly-snippets' ,
         }
-    }
-    use {
+    },
+    {
         'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim',
-    }
-    use { 'numToStr/Comment.nvim' }
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    use("github/copilot.vim")
-end)
+        dependencies = 'nvim-lua/plenary.nvim',
+    },
+    'nvim-lualine/lualine.nvim',
+    'numToStr/Comment.nvim',
+    -- "github/copilot.vim",
+}
+local opts = {}
+
+require("lazy").setup(plugins, opts)
