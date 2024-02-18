@@ -137,15 +137,12 @@ alias grep="rg"
 # Adding GO to the PATH
 export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/go/bin
 # adding conda to path
-# export PATH=/home/zarrios/anaconda3/bin:$PATH
 export PATH=/home/zarrios/.local/scripts/:$PATH
 export PATH=/home/zarrios/custom_build/go/bin:$PATH
-# export PATH=/home/zarrios/custom_build/node-v18.12.1-linux-x64/bin/:$PATH
 export PATH=/home/zarrios/.n/bin/node:$PATH
 export PATH=/usr/local/bin/:$PATH
 export PATH=/home/zarrios/custom_build/pycharm/bin:$PATH
 export PATH=$PATH:~/.cargo/bin
-export PATH=$PATH:~/Downloads/clion-2023.1.4/bin
 
 # making batcat the default pager
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
