@@ -33,7 +33,6 @@ local plugins = {
     'nvim-treesitter/nvim-treesitter',
     -- 'nvim-treesitter/playground',
     'mbbill/undotree',
-    'tpope/vim-fugitive',
     {
         'VonHeikemen/lsp-zero.nvim',
         dependencies = {
@@ -55,13 +54,8 @@ local plugins = {
              'rafamadriz/friendly-snippets' ,
         }
     },
-    {
-        'TimUntersberger/neogit',
-        dependencies = 'nvim-lua/plenary.nvim',
-    },
     'nvim-lualine/lualine.nvim',
     'numToStr/Comment.nvim',
-    -- "github/copilot.vim",
 }
 local opts = {}
 
