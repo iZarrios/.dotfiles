@@ -1,5 +1,5 @@
 require("zarrios.remap")
-require("zarrios.packer")
+require("zarrios.lazy")
 require("zarrios.set")
 
 vim.g.netrw_browse_split = 0
