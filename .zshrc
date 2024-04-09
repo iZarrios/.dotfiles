@@ -129,6 +129,7 @@ alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
 alias grep="rg"
+alias mktmux="tmux new -s "`rp . | xargs basename | tr . _ `""
 
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
