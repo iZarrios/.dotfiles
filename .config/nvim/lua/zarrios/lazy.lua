@@ -58,6 +58,7 @@ local plugins = {
     'nvim-lualine/lualine.nvim',
     'numToStr/Comment.nvim',
 }
+
 local opts = {}
 
 require("lazy").setup(plugins, opts)
