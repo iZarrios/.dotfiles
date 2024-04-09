@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -28,4 +26,3 @@ vim.keymap.set("n", "<leader>x", "<cmd>:!chmod +x %<CR>")
 
 -- go / golang err handling
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
-
