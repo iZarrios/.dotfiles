@@ -122,17 +122,20 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # setting moniters variables
 set $laptop "eDP-1-1"
-# SAMSUNG is HDMI
-set $sam "HDMI-0"
+# external monitor 1
+set $ext_1 "HDMI-0"
 
-# #assign workspace to moniters
-# workspace 1 output $sam
-# workspace 2 output $laptop
-# workspace 3 output $laptop
-# workspace 4 output $sam
-# workspace 5 output $laptop
-# # reload the configuration file
+#assign workspace to moniters
+workspace 1 output $ext_1
+workspace 8 output $ext_1
+workspace 9 output $ext_1
 
+workspace 2 output $laptop
+workspace 3 output $laptop
+workspace 4 output $laptop
+workspace 5 output $laptop
+
+# reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -179,11 +182,11 @@ bar {
 # to restore desktop wallpaper
 # bindsym $mod+Shift+q exec nitrogen --restore  
 
-## Left monitor = $sam, Right monitor = $laptop
-# exec_always xrandr --output $laptop --primary --mode 1920x1080 --rate 60 --output $sam --rate 144 --mode 1920x1080 --left-of $laptop
 exec "setxkbmap -layout us,ar"
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
-# moniter = $laptop only
-exec_always xrandr --output $laptop --off --output $sam --mode 1920x1080 --rate 144 --primary
+# # moniter = $laptop only
+# exec_always xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
+# Left monitor = $ext_1, Right monitor = $laptop
+exec_always xrandr --output $laptop --primary --mode 1920x1080 --rate 60 --output $ext_1 --rate 144 --mode 1920x1080 --left-of $laptop
 exec_always nitrogen --restore
