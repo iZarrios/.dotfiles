@@ -78,7 +78,6 @@ plugins=(
 	git
 	zsh-autosuggestions
 	sudo
-	web-search
 	zsh-syntax-highlighting
 	
 )
