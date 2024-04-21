@@ -1,7 +1,7 @@
 ---
 BasedOnStyle: Google
-TabWidth: 4
-IndentWidth: 4
+TabWidth: 2
+IndentWidth: 2
 UseTab: Always
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortEnumsOnASingleLine: false
@@ -16,4 +16,10 @@ BraceWrapping:
  AfterStruct: false
  SplitEmptyFunction: false
  AfterFunction: false
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: false
+AlignTrailingComments:
+  Kind: Always
 ---
