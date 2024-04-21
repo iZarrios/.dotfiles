@@ -93,7 +93,6 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
@@ -104,7 +103,9 @@ fi
 export FZF_DEFAULT_OPS="--extended"
 
 
+# Bindings
 bindkey -s ^f "tmux-sessionizer\n"
+
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -131,43 +132,27 @@ alias dl='cd ~/Downloads'
 alias grep="rg"
 alias mktmux="tmux new -s "`rp . | xargs basename | tr . _ `""
 
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#
-# Adding GO to the PATH
-export PATH=$PATH:/usr/local/go/bin:/home/zarrios/.cargo/bin:/home/zarrios/go/bin
-# adding conda to path
-export PATH=/home/zarrios/.local/scripts/:$PATH
-export PATH=/home/zarrios/custom_build/go/bin:$PATH
-export PATH=/home/zarrios/.n/bin/node:$PATH
-export PATH=/usr/local/bin/:$PATH
-export PATH=/home/zarrios/custom_build/pycharm/bin:$PATH
-export PATH=$PATH:~/.cargo/bin
+
+
+# Adding go binaries
+export PATH=$PATH:/home/zarrios/bin/go
+export PATH=$PATH:/home/zarrios/.cargo/bin
+
+# Adding local scripts
+export PATH=$PATH:/home/zarrios/.local/scripts/
+# Adding `go` and `gofmt`
+export PATH=$PATH:/home/zarrios/custom_build/go/bin
+# Adding node
+export PATH=$PATH:/home/zarrios/.n/bin/node
+
+export PATH=$PATH:/usr/local/bin/
 
 # making batcat the default pager
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
-# sourcing ROS
-# echo "ROS Sourced"
-# source /opt/ros/noetic/setup.zsh
+# Go cache module location overwrite
+export GOMODCACHE=/home/zarrios/caches/
+export GOBIN=~/bin/go
 
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/zarrios/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/zarrios/anaconda3/etc/profile.d/conda.sh" ]; then
-#         # . "/home/zarrios/anaconda3/etc/profile.d/conda.sh" 
-#     else
-#         export PATH="/home/zarrios/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
-#
-# source /etc/profile.d/modules.sh
-# module use "/.bs/libs/modules"
-# alias bs-ide-clion='/.bs/editors/clion/clion/bin/clion.sh'
-# alias bs-ide-pycharm='/.bs/editors/pycharm/pycharm/bin/pycharm.sh'
