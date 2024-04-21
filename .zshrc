@@ -79,6 +79,7 @@ plugins=(
 	zsh-autosuggestions
 	sudo
 	zsh-syntax-highlighting
+    zsh-vi-mode
 	
 )
 
