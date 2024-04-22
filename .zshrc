@@ -154,6 +154,9 @@ export PATH=$PATH:/home/zarrios/.n/bin/node
 
 export PATH=$PATH:/usr/local/bin/
 
+# Adding GCC-GNU-ARM toolchain
+export PATH=$PATH:/home/zarrios/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/
+
 # making batcat the default pager
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
