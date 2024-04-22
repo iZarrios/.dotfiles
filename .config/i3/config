@@ -185,8 +185,9 @@ bar {
 exec "setxkbmap -layout us,ar"
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
-# # moniter = $laptop only
-# exec_always xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
-# Left monitor = $ext_1, Right monitor = $laptop
-exec_always xrandr --output $laptop --primary --mode 1920x1080 --rate 60 --output $ext_1 --rate 144 --mode 1920x1080 --left-of $laptop
+# moniter = $laptop only
+exec_always xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
+# # Left monitor = $ext_1, Right monitor = $laptop
+# exec_always xrandr --output $laptop --primary --mode 1920x1080 --rate 60 --output $ext_1 --rate 144 --mode 1920x1080 --left-of $laptop
+
 exec_always nitrogen --restore
