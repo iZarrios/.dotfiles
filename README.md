@@ -1,5 +1,5 @@
 # This is the dotfiles for my linux enviroment
-This directory utilized the GNU `stow` binary
+This directory utilizes the GNU `stow` binary
 
 ## Installing GNU stow
 
