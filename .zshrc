@@ -104,12 +104,13 @@ else
   export EDITOR='nvim'
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+
 export FZF_DEFAULT_OPS="--extended"
 
 
 # Bindings
-bindkey -s ^f "tmux-sessionizer\n"
+zvm_after_init_commands+=('bindkey -s ^f "tmux-sessionizer\n"')
 
 
 # Compilation flags
