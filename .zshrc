@@ -139,29 +139,29 @@ alias grep="rg"
 alias mktmux="tmux new -s "`rp . | xargs basename | tr . _ `""
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# source /home/zarrios/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # Adding go binaries
-export PATH=$PATH:/home/zarrios/bin/go
-export PATH=$PATH:/home/zarrios/.cargo/bin
+export PATH=$PATH:~/bin/go
+export PATH=$PATH:~/.cargo/bin
 
 # Adding local scripts
-export PATH=$PATH:/home/zarrios/.local/scripts/
+export PATH=$PATH:~/.local/scripts/
 # Adding `go` and `gofmt`
-export PATH=$PATH:/home/zarrios/custom_build/go/bin
+export PATH=$PATH:~/custom_build/go/bin
 # Adding node
-export PATH=$PATH:/home/zarrios/.n/bin/node
+export PATH=$PATH:~/.n/bin/node
 
 export PATH=$PATH:/usr/local/bin/
 
 # Adding GCC-GNU-ARM toolchain
-export PATH=$PATH:/home/zarrios/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/
+export PATH=$PATH:~/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/
 
 # making batcat the default pager
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # Go cache module location overwrite
-export GOMODCACHE=/home/zarrios/caches/
+export GOMODCACHE=~/caches/
 export GOBIN=~/bin/go
 
