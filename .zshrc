@@ -154,6 +154,7 @@ export PATH=$PATH:~/custom_build/go/bin
 export PATH=$PATH:~/.n/bin/node
 
 export PATH=$PATH:/usr/local/bin/
+export PATH=$PATH:~/bin
 
 # Adding GCC-GNU-ARM toolchain
 export PATH=$PATH:~/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/
