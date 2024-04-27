@@ -4,22 +4,19 @@ args = ["-l"]
 
 [env]
 TERM="xterm-256color"
-WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
-decorations_theme_variant="Light"
-opacity=1
+decorations_theme_variant="Dark"
+opacity=0
 
 [font]
 size=9
 
-# Default colors
+# Carbonfox
 [colors.primary]
 background = '#161616'
 foreground = '#f2f4f8'
 
-
-# Carbonfox
 [colors.normal]
 black   = '#282828'
 red     = '#ee5396'
