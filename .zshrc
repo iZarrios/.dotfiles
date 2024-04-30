@@ -136,7 +136,7 @@ alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
 alias grep="rg"
-alias mktmux="tmux new -s "`rp . | xargs basename | tr . _ `""
+alias mktmux='tmux new -s "$(rp . | xargs basename | tr . _)"'
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -154,6 +154,7 @@ export PATH=$PATH:~/custom_build/go/bin
 export PATH=$PATH:~/.n/bin/node
 
 export PATH=$PATH:/usr/local/bin/
+export PATH=$PATH:~/bin
 
 # Adding GCC-GNU-ARM toolchain
 export PATH=$PATH:~/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/
