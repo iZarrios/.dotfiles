@@ -32,7 +32,7 @@ local plugins = {
         'folke/tokyonight.nvim',
         name = 'tokyonight',
     },
-    'nvim-treesitter/nvim-treesitter',
+    {'nvim-treesitter/nvim-treesitter', tag = 'v0.9.2'},
     -- 'nvim-treesitter/playground',
     'mbbill/undotree',
     {
