@@ -158,6 +158,7 @@ export PATH=$PATH:~/bin
 
 # Adding GCC-GNU-ARM toolchain
 export PATH=$PATH:~/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/
+export PATH=$PATH:~/work/ittia/apache-maven-3.9.6/bin
 
 # making batcat the default pager
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
