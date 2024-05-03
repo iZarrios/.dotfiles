@@ -78,10 +78,11 @@ plugins=(
 	git
 	zsh-autosuggestions
 	sudo
-	fast-syntax-highlighting
+	fast-syntax-highlighting # cfg: fast-theme zdharma
     zsh-vi-mode
 	
 )
+
 
 # # Only changing the escape key to `jk` in insert mode, we still
 # # keep using the default keybindings `^[` in other modes
