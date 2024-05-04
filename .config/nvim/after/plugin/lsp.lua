@@ -33,8 +33,14 @@ require('mason-lspconfig').setup({
             local lua_opts = lsp.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
         end,
-    }
+        clangd = function()
+            require('lspconfig').clangd.setup({
+                filetypes = {'c', 'cpp', 'objc', 'cuda'}
+            })
+        end,
+    },
 })
+
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -73,12 +79,12 @@ lsp.configure('lua_ls', {
 -- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
 -- For the default config, along with instructions on how to customize the settings
 require('lspconfig').ruff_lsp.setup {
-  init_options = {
-    settings = {
-      -- Any extra CLI arguments for `ruff` go here.
-      args = {},
+    init_options = {
+        settings = {
+            -- Any extra CLI arguments for `ruff` go here.
+            args = {},
+        }
     }
-  }
 }
 
 cmp.setup({
