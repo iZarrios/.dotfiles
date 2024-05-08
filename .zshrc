@@ -137,7 +137,7 @@ alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
 alias grep="rg"
-alias mktmux='tmux new -s "$(rp . | xargs basename | tr . _)"'
+alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
