@@ -14,7 +14,7 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undodir = "/mnt/vsh/.vim/undodir"
+vim.opt.undodir = "/mnt/yes/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.ignorecase = true

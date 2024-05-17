@@ -78,10 +78,11 @@ plugins=(
 	git
 	zsh-autosuggestions
 	sudo
-	fast-syntax-highlighting
+	fast-syntax-highlighting # cfg: fast-theme zdharma
     zsh-vi-mode
 	
 )
+
 
 # # Only changing the escape key to `jk` in insert mode, we still
 # # keep using the default keybindings `^[` in other modes
@@ -136,7 +137,7 @@ alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
 alias grep="rg"
-alias mktmux='tmux new -s "$(rp . | xargs basename | tr . _)"'
+alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
