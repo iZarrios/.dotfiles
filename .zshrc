@@ -78,7 +78,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	sudo
-	zsh-syntax-highlighting
+	fast-syntax-highlighting
     zsh-vi-mode
 	
 )
