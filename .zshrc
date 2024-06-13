@@ -79,7 +79,7 @@ plugins=(
 	zsh-autosuggestions
 	sudo
 	fast-syntax-highlighting # cfg: fast-theme zdharma
-    zsh-vi-mode
+    # zsh-vi-mode
 	
 )
 
@@ -87,7 +87,7 @@ plugins=(
 # # Only changing the escape key to `jk` in insert mode, we still
 # # keep using the default keybindings `^[` in other modes
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
-ZVM_VI_ESCAPE_BINDKEY=kj
+# ZVM_VI_ESCAPE_BINDKEY=kj
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,13 +105,15 @@ else
   export EDITOR='nvim'
 fi
 
-zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+# zvm_after_init_commands+=('')
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_OPS="--extended"
 
 
 # Bindings
-zvm_after_init_commands+=('bindkey -s ^f "tmux-sessionizer\n"')
+# zvm_after_init_commands+=('')
+bindkey -s ^f "tmux-sessionizer\n"
 
 
 # Compilation flags
@@ -144,22 +146,25 @@ alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
 
 
 # Adding go binaries
-export PATH=$PATH:~/bin/go
-export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:"$HOME/bin/go"
+export PATH=$PATH:"$HOME/.cargo/bin"
 
 # Adding local scripts
-export PATH=$PATH:~/.local/scripts/
+export PATH=$PATH:"$HOME/.local/scripts/"
 # Adding `go` and `gofmt`
-export PATH=$PATH:~/custom_build/go/bin
+export PATH=$PATH:"$HOME/custom_build/go/bin"
 # Adding node
-export PATH=$PATH:~/.n/bin/node
+export PATH=$PATH:"$HOME/.n/bin/node"
 
-export PATH=$PATH:/usr/local/bin/
-export PATH=$PATH:~/bin
+export PATH=$PATH:"/usr/local/bin/"
+export PATH=$PATH:"$HOME/bin"
 
 # Adding GCC-GNU-ARM toolchain
-export PATH=$PATH:~/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/
-export PATH=$PATH:~/work/ittia/apache-maven-3.9.6/bin
+export PATH=$PATH:"$HOME/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/"
+export PATH=$PATH:"$HOME/work/ittia/apache-maven-3.9.6/bin"
+
+# Adding cross-gcc-compiler
+export PATH=$PATH:"$HOME/opt/cross/bin"
 
 # making batcat the default pager
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
