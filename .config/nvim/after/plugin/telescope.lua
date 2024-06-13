@@ -10,7 +10,7 @@ local opts = {
 
 vim.keymap.set('n', '<C-p>', builtin.git_files, opts)
 vim.keymap.set('n', '<leader>ff', function()
-    builtin.find_files({ no_ignore = false, hidden = true })
+    builtin.find_files({ hidden = true })
 end)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
