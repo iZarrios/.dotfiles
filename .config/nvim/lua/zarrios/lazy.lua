@@ -17,7 +17,6 @@ local plugins = {
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.5',
-        -- or, branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
@@ -27,14 +26,29 @@ local plugins = {
     {
         "EdenEast/nightfox.nvim",
         name = 'nightfox',
+        priority = 1000,
     },
     {
         'folke/tokyonight.nvim',
         name = 'tokyonight',
+        priority = 1000,
     },
-    {'nvim-treesitter/nvim-treesitter', tag = 'v0.9.2'},
+    {
+        'ellisonleao/gruvbox.nvim',
+        name = 'gruvbox',
+        priority = 1000,
+        config = true,
+        opts = ...
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        tag = 'v0.9.2'
+    },
     -- 'nvim-treesitter/playground',
-    'mbbill/undotree',
+    {
+        'mbbill/undotree',
+        priority = 1000
+    },
     {
         'VonHeikemen/lsp-zero.nvim',
         dependencies = {
@@ -56,8 +70,11 @@ local plugins = {
             'rafamadriz/friendly-snippets',
         }
     },
-    'nvim-lualine/lualine.nvim',
-    'numToStr/Comment.nvim',
+    { 'nvim-lualine/lualine.nvim', },
+    {
+        'numToStr/Comment.nvim',
+        priority = 1000,
+    },
 }
 
 local opts = {}
