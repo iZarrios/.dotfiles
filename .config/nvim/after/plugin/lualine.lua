@@ -56,7 +56,8 @@ end
 
 require('lualine').setup({
     options = {
-        theme = "onedark",
+        -- theme = "onedark",
+        theme = "gruvbox",
         -- theme='tokyonight',
         icons_enabled = true,
         component_separators = { left = "|", right = "|" },
