@@ -37,7 +37,9 @@ vim.keymap.set("n", "<leader>b", function()
   local output = vim.fn.systemlist(command_str)
 
   -- Create a new scratch buffer
-  local bufnr = vim.api.nvim_create_buf(false, true) -- Create a scratch buffer
+  local bufnr = vim.api.nvim_create_buf(false, true)
+
+  vim.api.nvim_buf_set_option(bufnr, 'filetype', 'sh')
 
   -- Set the buffer content to the command output
   vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, output)
