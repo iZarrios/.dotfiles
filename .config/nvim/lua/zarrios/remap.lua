@@ -10,19 +10,23 @@ vim.keymap.set("n", "gV", "`[v`]")
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
 
+-- Swap lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Redraw, line [count] at center of window (default cursor line).  Put cursor at first non-blank in the line.
+-- to know more ":h zz"
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
 vim.keymap.set("n", "gd", "gdzz")
 
+-- run tmux-sessionizer in nvim
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
+-- make current opened buffer (file) executable
 vim.keymap.set("n", "<leader>x", "<cmd>:!chmod +x %<CR>")
 
--- go / golang err handling
+-- go err handling snippet
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
 -- Build utils
@@ -50,7 +54,6 @@ vim.keymap.set("n", "<leader>b", function()
   -- Resize the split window
   vim.cmd("resize 20")
 end)
-
 
 vim.keymap.set("n", "<leader>bs", function()
   -- Open a new vertical split window and edit the command file
