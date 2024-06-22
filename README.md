@@ -1,7 +1,7 @@
 # This is the dotfiles for my linux enviroment
 This directory utilizes the GNU `stow` binary
 
-## Installing GNU stow
+## Installing GNU stow (debian based)
 
 ```bash
 sudo apt install stow
