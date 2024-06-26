@@ -160,6 +160,7 @@ alias mv='mv -i'
 alias dl='cd ~/Downloads'
 alias grep="rg"
 alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
+alias v.="v ."
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
