@@ -24,7 +24,7 @@ vim.keymap.set("n", "gd", "gdzz")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- make current opened buffer (file) executable
-vim.keymap.set("n", "<leader>x", "<cmd>:!chmod +x %<CR>")
+vim.keymap.set("n", "<leader>x", "<cmd>:!chmod u+x %<CR>")
 
 -- go err handling snippet
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
