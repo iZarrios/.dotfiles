@@ -87,6 +87,8 @@ require('lspconfig').ruff_lsp.setup {
     }
 }
 
+require('lspconfig').clangd.setup {}
+
 cmp.setup({
     sources = {
         { name = 'path' },
