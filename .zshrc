@@ -10,7 +10,7 @@ case "$current_user_v42069" in
     export EXTERNAL_DRIVE_v42069="/mnt/yes" 
     ;;
   phormico)
-    export EXTERNAL_DRIVE_v42069="/mnt/zsh" 
+    export EXTERNAL_DRIVE_v42069="/mnt/vsh" 
     # Perform actions specific
     ;;
   *)
