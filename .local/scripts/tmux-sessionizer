@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=`find /mnt/yes/Development/  /mnt/yes/projects/ /mnt/yes/work/ittia/projects -mindepth 1 -maxdepth 1 -type d`
+  selected=`find $(realpath ~/Development  ~/projects)  -mindepth 1 -maxdepth 1 -type d`
     selected+="\n`realpath ~/.dotfiles/`"
     selected=$(echo -e "$selected" | fzf)
 fi
