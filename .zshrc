@@ -1,3 +1,23 @@
+# Get the current user
+
+# NOTE: I will be appending a suffix of _v42069 to every custom variable
+current_user_v42069=$(whoami)
+
+# Use a case statement to act based on the current user
+case "$current_user_v42069" in
+  zarrios)
+    # Perform actions specific
+    export EXTERNAL_DRIVE_v42069="/mnt/yes" 
+    ;;
+  phormico)
+    export EXTERNAL_DRIVE_v42069="/mnt/zsh" 
+    # Perform actions specific
+    ;;
+  *)
+    echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc"
+    ;;
+esac
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
@@ -172,4 +192,3 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 # Go cache module location overwrite
 export GOMODCACHE=~/caches/
 export GOBIN=~/bin/go
-
