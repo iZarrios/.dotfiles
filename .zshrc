@@ -153,6 +153,7 @@ alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
+alias bat="batcat --color=always"
 alias tree="tree -I 'node_modules|target'"
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
