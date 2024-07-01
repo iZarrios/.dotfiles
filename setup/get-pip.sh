@@ -3,7 +3,7 @@
 
 python_cmd=""
 
-ifcommand -v python3 &> /dev/null; then
+if command -v python3 &> /dev/null; then
   python_cmd="python3"
 elif command -v python &> /dev/null; then
   python_cmd="python"
