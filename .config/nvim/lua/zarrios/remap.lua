@@ -35,7 +35,7 @@ local build_file_path = "/tmp/build_cmd"
 vim.keymap.set("n", "<leader>b", function()
   -- Read the content of the build file into a variable
   local command = vim.fn.readfile(build_file_path)
-  local command_str = table.concat(command, " ")
+  local command_str = table.concat(command, " && ")
 
   -- Execute the command and capture the output
   local output = vim.fn.systemlist(command_str)
