@@ -1,6 +1,7 @@
 # Get the current user
 
 # NOTE: I will be appending a suffix of _v42069 to every custom variable
+
 current_user_v42069=$(whoami)
 
 # Use a case statement to act based on the current user
@@ -15,11 +16,6 @@ case "$current_user_v42069" in
     ;;
   sherdle)
     export EXTERNAL_DRIVE_v42069="/home/sherdle"
-
-
-
-
-
     # Perform actions specific
     ;;
   *)
