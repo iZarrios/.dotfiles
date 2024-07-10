@@ -13,6 +13,15 @@ case "$current_user_v42069" in
     export EXTERNAL_DRIVE_v42069="/mnt/vsh" 
     # Perform actions specific
     ;;
+  sherdle)
+    export EXTERNAL_DRIVE_v42069="/home/sherdle"
+
+
+
+
+
+    # Perform actions specific
+    ;;
   *)
     echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc"
     ;;
