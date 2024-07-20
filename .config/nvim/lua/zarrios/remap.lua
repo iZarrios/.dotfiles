@@ -20,6 +20,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "gd", "gdzz")
 
+-- disables hlsearch
+vim.keymap.set("n", "<C-n>", "<cmd>nohl<CR>")
+
 -- run tmux-sessionizer in nvim
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
