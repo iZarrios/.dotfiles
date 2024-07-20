@@ -53,7 +53,7 @@ require('nightfox').setup({
             },
         },
         styles = {       -- Style to be applied to different syntax groups
-            comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
+            comments = "italic", -- Value is any valid attr-list value `:help attr-list`
             conditionals = "NONE",
             constants = "NONE",
             functions = "NONE",
@@ -77,6 +77,7 @@ require('nightfox').setup({
     specs = {},
     groups = {},
 })
+
 
 require("gruvbox").setup({
     terminal_colors = true, -- add neovim terminal colors
@@ -112,6 +113,4 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-ColorMyPencils('gruvbox')
--- ColorMyPencils('carbonfox')
--- ColorMyPencils('tokyonight')
+ColorMyPencils('carbonfox')
