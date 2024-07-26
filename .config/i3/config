@@ -121,9 +121,9 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # setting moniters variables
-set $laptop "eDP-1-1"
+set $laptop "eDP-1"
 # external monitor 1
-set $ext_1 "HDMI-0"
+set $ext_1 "HDMI-1"
 
 #assign workspace to moniters
 workspace 1 output $ext_1
