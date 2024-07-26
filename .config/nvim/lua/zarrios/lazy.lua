@@ -76,6 +76,23 @@ local plugins = {
         'numToStr/Comment.nvim',
         priority = 1000,
     },
+    {
+        "nvim-neorg/neorg",
+        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        version = "*", -- Pin Neorg to the latest stable release
+        -- build = ":Neorg sync-parsers",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {
+            load = {
+                ["core.defaults"] = {},
+                ["core.concealer"] = {
+                    config = {                  -- We added a `config` table!
+                        icon_preset = "varied", -- And we set our option here.
+                    },
+                },
+            },
+        },
+    },
 }
 
 local opts = {}
