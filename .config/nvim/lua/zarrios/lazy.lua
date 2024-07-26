@@ -17,11 +17,16 @@ local plugins = {
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.5',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+        },
     },
     {
         'ThePrimeagen/harpoon',
-        dependencies = { { 'nvim-lua/plenary.nvim' } }
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+        },
+        lazy = false,
     },
     {
         "EdenEast/nightfox.nvim",
@@ -44,8 +49,6 @@ local plugins = {
         'nvim-treesitter/nvim-treesitter',
         tag = 'v0.9.2'
     },
-    { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.2' },
-    -- 'nvim-treesitter/playground',
     {
         'mbbill/undotree',
         priority = 1000
@@ -71,7 +74,9 @@ local plugins = {
             'rafamadriz/friendly-snippets',
         }
     },
-    { 'nvim-lualine/lualine.nvim', },
+    {
+        'nvim-lualine/lualine.nvim',
+    },
     {
         'numToStr/Comment.nvim',
         priority = 1000,
