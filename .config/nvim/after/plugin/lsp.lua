@@ -36,7 +36,7 @@ require('mason-lspconfig').setup({
         end,
         clangd = function()
             require('lspconfig').clangd.setup({
-                filetypes = {'c', 'cpp', 'objc', 'cuda'}
+                filetypes = { 'c', 'cpp', 'objc', 'cuda' }
             })
         end,
     },
