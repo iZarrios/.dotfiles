@@ -87,6 +87,7 @@ lsp.configure('lua_ls', {
 
 require('lspconfig').clangd.setup {}
 require('lspconfig').pyright.setup {}
+require('lspconfig').ruff.setup {}
 
 cmp.setup({
     sources = {
