@@ -83,19 +83,37 @@ local plugins = {
     },
     {
         "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
         lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
         version = "*", -- Pin Neorg to the latest stable release
         -- build = ":Neorg sync-parsers",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
         opts = {
             load = {
                 ["core.defaults"] = {},
                 ["core.concealer"] = {
-                    config = {                  -- We added a `config` table!
-                        icon_preset = "varied", -- And we set our option here.
+                    config = {
+                        icon_preset = "varied",
                     },
                 },
+                ["core.dirman"] = {
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+                ["core.completion"] = {
+                    config = {
+                        engine = "nvim-cmp"
+                    }
+                },
             },
+        },
+        dependencies = {
+            {
+                "nvim-lua/plenary.nvim",
+                "nvim-treesitter/nvim-treesitter",
+            }
         },
     },
 }
