@@ -81,41 +81,6 @@ local plugins = {
         'numToStr/Comment.nvim',
         priority = 1000,
     },
-    {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-        version = "*", -- Pin Neorg to the latest stable release
-        -- build = ":Neorg sync-parsers",
-        opts = {
-            load = {
-                ["core.defaults"] = {},
-                ["core.concealer"] = {
-                    config = {
-                        icon_preset = "varied",
-                    },
-                },
-                ["core.dirman"] = {
-                    config = {
-                        workspaces = {
-                            notes = "~/notes",
-                        },
-                    },
-                },
-                ["core.completion"] = {
-                    config = {
-                        engine = "nvim-cmp"
-                    }
-                },
-            },
-        },
-        dependencies = {
-            {
-                "nvim-lua/plenary.nvim",
-                "nvim-treesitter/nvim-treesitter",
-            }
-        },
-    },
 }
 
 local opts = {}
