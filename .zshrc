@@ -158,7 +158,6 @@ alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
-alias bat="batcat --color=always"
 alias tree="tree -I 'node_modules|target'"
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
@@ -192,9 +191,6 @@ export PATH=$PATH:"$HOME/work/ittia/apache-maven-3.9.6/bin"
 
 # Adding cross-gcc-compiler
 export PATH=$PATH:"$HOME/opt/cross/bin"
-
-# making batcat the default pager
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # Go cache module location overwrite
 export GOMODCACHE=~/caches/
