@@ -8,10 +8,10 @@ current_user_v42069=$(whoami)
 case "$current_user_v42069" in
   zarrios)
     # Perform actions specific
-    export EXTERNAL_DRIVE_v42069="/mnt/yes" 
+    export EXTERNAL_DRIVE_v42069="/mnt/yes"
     ;;
   phormico)
-    export EXTERNAL_DRIVE_v42069="/mnt/vsh" 
+    export EXTERNAL_DRIVE_v42069="/mnt/vsh"
     # Perform actions specific
     ;;
   sherdle)
@@ -105,7 +105,7 @@ plugins=(
 	sudo
 	fast-syntax-highlighting # cfg: fast-theme zdharma
     # zsh-vi-mode
-	
+
 )
 
 
