@@ -197,6 +197,6 @@ export GOMODCACHE=~/caches/
 export GOBIN=~/bin/go
 
 # Sourcing some scret keys
-source secret.zsh
+source "$HOME/secret.zsh"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
