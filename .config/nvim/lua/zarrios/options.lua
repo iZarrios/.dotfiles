@@ -58,6 +58,6 @@ vim.cmd [[ au InsertEnter * set nocursorline ]]
 vim.api.nvim_exec([[
   augroup TrimWhitespace
     autocmd!
-    autocmd BufWritePre * :%s/\s\+$//e
+    autocmd BufWritePre * :%s/\s\+$//e | :%s/\r//e
   augroup END
 ]], false)
