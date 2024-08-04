@@ -183,6 +183,7 @@ export PATH=$PATH:"$HOME/custom_build/go/bin"
 export PATH=$PATH:"$HOME/.n/bin/node"
 
 export PATH=$PATH:"/usr/local/bin/"
+export PATH=$PATH:"$HOME/.local/bin/"
 export PATH=$PATH:"$HOME/bin"
 
 # Adding GCC-GNU-ARM toolchain
