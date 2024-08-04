@@ -19,7 +19,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.hlsearch = true 
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Don't show the mode, since it's already in the status line
