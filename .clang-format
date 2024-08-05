@@ -2,6 +2,7 @@
 BasedOnStyle: Google
 TabWidth: 2
 IndentWidth: 2
+ColumnLimit: 80
 UseTab: Always
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortEnumsOnASingleLine: false
@@ -20,6 +21,7 @@ AlignConsecutiveMacros:
   Enabled: true
   AcrossEmptyLines: true
   AcrossComments: false
-AlignTrailingComments:
-  Kind: Always
+AlignTrailingComments: true
+AlignConsecutiveMacros: true
+AlignConsecutiveAssignments: true
 ---
