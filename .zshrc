@@ -150,6 +150,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 #
 # Example aliases
 alias ping-="ping 4.2.2.1"
+alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
@@ -191,6 +192,9 @@ export PATH=$PATH:"$HOME/work/ittia/apache-maven-3.9.6/bin"
 
 # Adding cross-gcc-compiler
 export PATH=$PATH:"$HOME/opt/cross/bin"
+
+# Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
+export PATH=$PATH:"/usr/lib/llvm-18/bin/"
 
 # Go cache module location overwrite
 export GOMODCACHE=~/caches/
