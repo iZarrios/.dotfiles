@@ -36,7 +36,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "100"
 
 vim.opt.clipboard = "unnamedplus"
 
@@ -44,7 +44,8 @@ vim.opt.clipboard = "unnamedplus"
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol= '↲' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↲' }
+
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
