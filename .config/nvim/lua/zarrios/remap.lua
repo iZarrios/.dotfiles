@@ -15,11 +15,14 @@ vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Redraw, line [count] at center of window (default cursor line).  Put cursor at first non-blank in the line.
+-- Redraw, line [count] at center of window (default cursor line).
+-- Put cursor at first non-blank in the line.
 -- to know more ":h zz"
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "gd", "gdzz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
 
 -- disables hlsearch
 vim.keymap.set("n", "<C-n>", "<cmd>nohl<CR>")
