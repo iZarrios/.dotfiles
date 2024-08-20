@@ -85,7 +85,14 @@ lsp.configure('lua_ls', {
 --     }
 -- }
 
-lspcfg.clangd.setup {}
+lspcfg.clangd.setup {
+    on_attach = function(_, bufnr)
+        local opts = { noremap = true, silent = true, buffer = bufnr }
+        -- c/cpp go to .h/.cpp
+        vim.keymap.set("n", "<A-o>", "<cmd>ClangdSwitchSourceHeader<CR>", opts)
+    end
+}
+
 lspcfg.pyright.setup {}
 lspcfg.ruff.setup {}
 lspcfg.rust_analyzer.setup {}
