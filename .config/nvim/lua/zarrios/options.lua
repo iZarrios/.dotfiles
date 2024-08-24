@@ -1,6 +1,5 @@
-vim.opt.number = true
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.number = true         -- can be replaced with nu
+vim.opt.relativenumber = true -- can be replaced with rnu
 
 vim.opt.spell = true
 
