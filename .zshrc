@@ -166,6 +166,7 @@ alias dl='cd ~/Downloads'
 alias grep="rg"
 alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
 alias v.="v ."
+alias fman="compgen -c | fzf | xargs man"
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
