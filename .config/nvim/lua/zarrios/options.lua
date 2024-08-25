@@ -49,7 +49,13 @@ vim.opt.clipboard = "unnamedplus"
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol = '↲' }
+vim.opt.listchars = {
+    tab = '» ',
+    -- space = '·',
+    trail = '~',
+    nbsp = '␣',
+    eol = '↲'
+}
 
 
 -- Preview substitutions live, as you type!
