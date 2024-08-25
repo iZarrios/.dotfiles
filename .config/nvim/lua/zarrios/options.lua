@@ -1,6 +1,5 @@
-vim.opt.number = true
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.number = true         -- can be replaced with nu
+vim.opt.relativenumber = true -- can be replaced with rnu
 
 vim.opt.spell = true
 
@@ -24,6 +23,10 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
+-- Better spliting
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
@@ -32,8 +35,8 @@ vim.opt.mouse = 'a'
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.scrolloff = 10
+vim.opt.signcolumn = "no"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -54,8 +57,8 @@ vim.opt.inccommand = 'split'
 
 -- Enable cursor only in normal mode
 vim.opt.cursorline = true
-vim.cmd [[ au InsertLeave * set cursorline ]]
-vim.cmd [[ au InsertEnter * set nocursorline ]]
+-- vim.cmd [[ au InsertLeave * set cursorline ]]
+-- vim.cmd [[ au InsertEnter * set nocursorline ]]
 
 -- Remove trailing whitespaces on write
 vim.api.nvim_exec([[

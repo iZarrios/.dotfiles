@@ -20,6 +20,7 @@ local plugins = {
         dependencies = {
             'nvim-lua/plenary.nvim',
         },
+        lazy = false,
     },
     {
         'ThePrimeagen/harpoon',
@@ -29,21 +30,36 @@ local plugins = {
         lazy = false,
     },
     {
+        "j-hui/fidget.nvim",
+        opts = {
+            -- options
+        },
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        lazy = true,
+    },
+    {
         "EdenEast/nightfox.nvim",
         name = 'nightfox',
         priority = 1000,
+        lazy = true,
     },
     {
         'folke/tokyonight.nvim',
         name = 'tokyonight',
         priority = 1000,
+        lazy = true,
     },
     {
         'ellisonleao/gruvbox.nvim',
         name = 'gruvbox',
         priority = 1000,
         config = true,
-        opts = ...
+        opts = ...,
+        lazy = true,
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -51,7 +67,8 @@ local plugins = {
     },
     {
         'mbbill/undotree',
-        priority = 1000
+        priority = 1000,
+        lazy = true,
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -79,6 +96,7 @@ local plugins = {
     },
     {
         'numToStr/Comment.nvim',
+        lazy = true,
         priority = 1000,
     },
 }
