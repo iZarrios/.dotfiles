@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>fg', function()
   })
 end)
 
+vim.keymap.set('n', '<leader>fs', builtin.current_buffer_fuzzy_find, opts)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
 vim.keymap.set('n', '<leader>ps', function()
   builtin.grep_string({ search = vim.fn.input("Grep > ") });
