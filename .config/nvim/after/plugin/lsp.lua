@@ -1,21 +1,26 @@
 local lsp = require("lsp-zero")
+local lspcfg = require("lspconfig")
+local cmp = require('cmp')
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false, silent = true }
+
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementations() end, opts)
     vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
 
+    vim.keymap.set('n', '<C-k>', function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     -- I am probably not gonna use this like ever
     -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
 
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("i", "<C-S-h>", function()
+        vim.lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+    end, opts)
 
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.rename() end, opts)
@@ -26,23 +31,17 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver' },
+    -- ensure_installed = { 'tsserver' },
     handlers = {
         lsp.default_setup,
         lua_ls = function()
             local lua_opts = lsp.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
         end,
-        clangd = function()
-            require('lspconfig').clangd.setup({
-                filetypes = {'c', 'cpp', 'objc', 'cuda'}
-            })
-        end,
     },
 })
 
 
-local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 
@@ -75,17 +74,18 @@ lsp.configure('lua_ls', {
     },
 })
 
--- Configure `ruff-lsp`.
--- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
--- For the default config, along with instructions on how to customize the settings
-require('lspconfig').ruff_lsp.setup {
-    init_options = {
-        settings = {
-            -- Any extra CLI arguments for `ruff` go here.
-            args = {},
-        }
-    }
+
+lspcfg.clangd.setup {
+    on_attach = function(_, bufnr)
+        local opts = { noremap = true, silent = true, buffer = bufnr }
+        -- c/cpp go to .h/.cpp
+        vim.keymap.set("n", "<A-o>", "<cmd>ClangdSwitchSourceHeader<CR>", opts)
+    end
 }
+
+lspcfg.pyright.setup {}
+lspcfg.ruff.setup {}
+lspcfg.rust_analyzer.setup {}
 
 cmp.setup({
     sources = {

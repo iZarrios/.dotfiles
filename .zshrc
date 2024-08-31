@@ -1,3 +1,28 @@
+# Get the current user
+
+# NOTE: I will be appending a suffix of _v42069 to every custom variable
+
+current_user_v42069=$(whoami)
+
+# Use a case statement to act based on the current user
+case "$current_user_v42069" in
+  zarrios)
+    # Perform actions specific
+    export EXTERNAL_DRIVE_v42069="/mnt/yes"
+    ;;
+  phormico)
+    export EXTERNAL_DRIVE_v42069="/mnt/vsh"
+    # Perform actions specific
+    ;;
+  sherdle)
+    export EXTERNAL_DRIVE_v42069="/home/sherdle"
+    # Perform actions specific
+    ;;
+  *)
+    echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc"
+    ;;
+esac
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
@@ -81,7 +106,7 @@ plugins=(
 	sudo
 	fast-syntax-highlighting # cfg: fast-theme zdharma
     # zsh-vi-mode
-	
+
 )
 
 
@@ -126,6 +151,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 #
 # Example aliases
 alias ping-="ping 4.2.2.1"
+alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
@@ -134,13 +160,14 @@ alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
-alias cat="batcat --color=always"
 alias tree="tree -I 'node_modules|target'"
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
 alias grep="rg"
 alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
+alias v.="v ."
+alias fman="compgen -c | fzf | xargs man"
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -159,6 +186,7 @@ export PATH=$PATH:"$HOME/custom_build/go/bin"
 export PATH=$PATH:"$HOME/.n/bin/node"
 
 export PATH=$PATH:"/usr/local/bin/"
+export PATH=$PATH:"$HOME/.local/bin/"
 export PATH=$PATH:"$HOME/bin"
 
 # Adding GCC-GNU-ARM toolchain
@@ -168,9 +196,13 @@ export PATH=$PATH:"$HOME/work/ittia/apache-maven-3.9.6/bin"
 # Adding cross-gcc-compiler
 export PATH=$PATH:"$HOME/opt/cross/bin"
 
-# making batcat the default pager
-# export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+# Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
+export PATH=$PATH:"/usr/lib/llvm-18/bin/"
 
 # Go cache module location overwrite
 export GOMODCACHE=~/caches/
 export GOBIN=~/bin/go
+# Sourcing some scret keys
+source "$HOME/secret.zsh"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -4,7 +4,7 @@
 if command -v cargo &> /dev/null; then
     # if cargo is found then we can install alacritty
     if command -v rg &> /dev/null; then
-        # if alacritty is found then we need to update it
+        # if ripgrep is found then we need to update it
         rm -f ~/bin/rg # using -f flag to not produce an error if the file does not exist
         cd ~/custom_build/ripgrep
         cargo build --release

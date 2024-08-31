@@ -1,10 +1,11 @@
-vim.opt.number = true
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.number = true         -- can be replaced with nu
+vim.opt.relativenumber = true -- can be replaced with rnu
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.spell = true
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -13,15 +14,18 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undodir = "/mnt/yes/.vim/undodir"
+vim.opt.undodir = os.getenv("EXTERNAL_DRIVE_v42069") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
+
+-- Better spliting
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -31,13 +35,13 @@ vim.opt.mouse = 'a'
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.scrolloff = 10
+vim.opt.signcolumn = "no"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "100"
 
 vim.opt.clipboard = "unnamedplus"
 
@@ -45,13 +49,27 @@ vim.opt.clipboard = "unnamedplus"
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', eol= '↲' }
+vim.opt.listchars = {
+    tab = '» ',
+    -- space = '·',
+    trail = '~',
+    nbsp = '␣',
+    eol = '↲'
+}
+
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
 -- Enable cursor only in normal mode
 vim.opt.cursorline = true
-vim.cmd [[ au InsertLeave * set cursorline ]]
-vim.cmd [[ au InsertEnter * set nocursorline ]]
+-- vim.cmd [[ au InsertLeave * set cursorline ]]
+-- vim.cmd [[ au InsertEnter * set nocursorline ]]
 
+-- Remove trailing whitespaces on write
+vim.api.nvim_exec([[
+  augroup TrimWhitespace
+    autocmd!
+    autocmd BufWritePre * :%s/\s\+$//e | :%s/\r//e
+  augroup END
+]], false)

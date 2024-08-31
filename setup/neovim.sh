@@ -32,7 +32,7 @@ else
     git clone https://github.com/neovim/neovim.git
     # installing dependencies
     sudo apt update
-    sudo apt-get install ninja-build gettext cmake unzip curl
+    sudo apt-get install ninja-build gettext cmake unzip curl -y
     # building neovim
     cd neovim && make $serial CMAKE_BUILD_TYPE=Release
     # default install location is '/usr/local/bin'
