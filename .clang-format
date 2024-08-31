@@ -22,5 +22,4 @@ AlignConsecutiveMacros:
   AcrossEmptyLines: true
   AcrossComments: false
 AlignTrailingComments: true
-AlignConsecutiveAssignments: true
 ---
