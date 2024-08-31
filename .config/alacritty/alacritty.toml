@@ -10,31 +10,81 @@ decorations_theme_variant="Dark"
 opacity=0.9
 
 [font]
-size=9
+size=11
 
-# Carbonfox
+# SRC: https://github.com/catppuccin/alacritty/blob/main/catppuccin-macchiato.toml
 [colors.primary]
-background = '#161616'
-dim_foreground = '#f2f4f8'
-foreground = '#f2f4f8'
+background = "#24273a"
+foreground = "#cad3f5"
+dim_foreground = "#8087a2"
+bright_foreground = "#cad3f5"
+
+[colors.cursor]
+text = "#24273a"
+cursor = "#f4dbd6"
+
+[colors.vi_mode_cursor]
+text = "#24273a"
+cursor = "#b7bdf8"
+
+[colors.search.matches]
+foreground = "#24273a"
+background = "#a5adcb"
+
+[colors.search.focused_match]
+foreground = "#24273a"
+background = "#a6da95"
+
+[colors.footer_bar]
+foreground = "#24273a"
+background = "#a5adcb"
+
+[colors.hints.start]
+foreground = "#24273a"
+background = "#eed49f"
+
+[colors.hints.end]
+foreground = "#24273a"
+background = "#a5adcb"
+
+[colors.selection]
+text = "#24273a"
+background = "#f4dbd6"
 
 [colors.normal]
-black   = '#282828'
-red     = '#ee5396'
-green   = '#25be6a'
-yellow  = '#08bdba'
-blue    = '#78a9ff'
-magenta = '#be95ff'
-cyan    = '#33b1ff'
-white   = '#dfdfe0'
+black = "#494d64"
+red = "#ed8796"
+green = "#a6da95"
+yellow = "#eed49f"
+blue = "#8aadf4"
+magenta = "#f5bde6"
+cyan = "#8bd5ca"
+white = "#b8c0e0"
 
-# Bright colors
 [colors.bright]
-black   = '#484848'
-red     = '#f16da6'
-green   = '#46c880'
-yellow  = '#2dc7c4'
-blue    = '#8cb6ff'
-magenta = '#c8a5ff'
-cyan    = '#52bdff'
-white   = '#e4e4e5'
+black = "#5b6078"
+red = "#ed8796"
+green = "#a6da95"
+yellow = "#eed49f"
+blue = "#8aadf4"
+magenta = "#f5bde6"
+cyan = "#8bd5ca"
+white = "#a5adcb"
+
+[colors.dim]
+black = "#494d64"
+red = "#ed8796"
+green = "#a6da95"
+yellow = "#eed49f"
+blue = "#8aadf4"
+magenta = "#f5bde6"
+cyan = "#8bd5ca"
+white = "#b8c0e0"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#f5a97f"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#f4dbd6"
