@@ -3,6 +3,7 @@
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
+export DOTFILES_USER="`whoami`"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -151,6 +152,7 @@ export PATH=$PATH:"$HOME/.cargo/bin"
 
 # Adding local scripts
 export PATH=$PATH:"$HOME/.local/scripts/"
+export PATH=$PATH:"$HOME/.local/bin/"
 # Adding `go` and `gofmt`
 export PATH=$PATH:"$HOME/custom_build/go/bin"
 # Adding node
@@ -167,9 +169,8 @@ export PATH=$PATH:"$HOME/work/ittia/apache-maven-3.9.6/bin"
 export PATH=$PATH:"$HOME/opt/cross/bin"
 
 # making batcat the default pager
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # Go cache module location overwrite
 export GOMODCACHE=~/caches/
 export GOBIN=~/bin/go
-
