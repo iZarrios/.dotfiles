@@ -8,18 +8,19 @@ current_user_v42069=$(whoami)
 case "$current_user_v42069" in
   zarrios)
     # Perform actions specific
-    export EXTERNAL_DRIVE_v42069="/mnt/yes"
+    export EXTERNAL_DRIVE_v42069="$HOME"
     ;;
   phormico)
     export EXTERNAL_DRIVE_v42069="/mnt/vsh"
     # Perform actions specific
     ;;
   sherdle)
-    export EXTERNAL_DRIVE_v42069="/home/sherdle"
+    export EXTERNAL_DRIVE_v42069="$HOME"
     # Perform actions specific
     ;;
   *)
-    echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc"
+    echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc, will default to $HOME"
+    export EXTERNAL_DRIVE_v42069="$HOME"
     ;;
 esac
 
@@ -164,7 +165,7 @@ alias tree="tree -I 'node_modules|target'"
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
-alias grep="rg"
+# alias grep="rg"
 alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
 alias v.="v ."
 alias fman="compgen -c | fzf | xargs man"
@@ -198,6 +199,8 @@ export PATH=$PATH:"$HOME/opt/cross/bin"
 
 # Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
 export PATH=$PATH:"/usr/lib/llvm-18/bin/"
+export PATH=$PATH:"$HOME/.local/bin"
+
 
 # Go cache module location overwrite
 export GOMODCACHE=~/caches/
