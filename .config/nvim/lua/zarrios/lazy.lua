@@ -99,6 +99,11 @@ local plugins = {
         lazy = true,
         priority = 1000,
     },
+    {
+        "github/copilot.vim",
+        lazy = true,
+        priority = 1000,
+    },
 }
 
 local opts = {}
