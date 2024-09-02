@@ -67,8 +67,8 @@ local plugins = {
     },
     {
         'mbbill/undotree',
-        priority = 1000,
-        lazy = true,
+        -- priority = 1000,
+        -- lazy = true,
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -101,8 +101,8 @@ local plugins = {
     },
     {
         "github/copilot.vim",
-        lazy = true,
-        priority = 1000,
+        -- lazy = true,
+        -- priority = 1000,
     },
 }
 
