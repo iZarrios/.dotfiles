@@ -18,7 +18,7 @@ if command -v cargo &> /dev/null; then
         # https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu
         sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
         cargo build --release
-        ln -s `realpath ./target/release`/alacritty ~/bin/alacritty
+        ln -s `realpath ./target/release`/alacritty ~/.local/bin/alacritty
     fi
 else
     echo "'cargo' has to be installed"
