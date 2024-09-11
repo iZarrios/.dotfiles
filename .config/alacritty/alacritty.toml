@@ -10,7 +10,7 @@ decorations_theme_variant="Dark"
 opacity=1
 
 [font]
-size=11
+size=7
 
 # SRC: https://github.com/catppuccin/alacritty/blob/main/catppuccin-macchiato.toml
 [colors.primary]
