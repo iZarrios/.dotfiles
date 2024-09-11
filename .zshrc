@@ -18,6 +18,10 @@ case "$current_user_v42069" in
     export EXTERNAL_DRIVE_v42069="$HOME"
     # Perform actions specific
     ;;
+  hpv)
+    export EXTERNAL_DRIVE_v42069="$HOME"
+    # Perform actions specific
+    ;;
   *)
     echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc, will default to $HOME"
     export EXTERNAL_DRIVE_v42069="$HOME"
