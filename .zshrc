@@ -27,8 +27,11 @@ esac
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
+
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
+export PIP_REQUIRE_VIRTUALENV=true
+
 export DOTFILES_USER="`whoami`"
 
 # Path to your oh-my-zsh installation.
@@ -169,10 +172,10 @@ alias dl='cd ~/Downloads'
 alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
 alias v.="v ."
 alias fman="compgen -c | fzf | xargs man"
+alias venv="source .venv/bin/activate"
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
 # Adding go binaries
 export PATH=$PATH:"$HOME/bin/go"
