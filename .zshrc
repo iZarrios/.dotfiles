@@ -7,20 +7,16 @@ current_user_v42069=$(whoami)
 # Use a case statement to act based on the current user
 case "$current_user_v42069" in
   zarrios)
-    # Perform actions specific
     export EXTERNAL_DRIVE_v42069="$HOME"
     ;;
   phormico)
     export EXTERNAL_DRIVE_v42069="/mnt/vsh"
-    # Perform actions specific
     ;;
   sherdle)
     export EXTERNAL_DRIVE_v42069="$HOME"
-    # Perform actions specific
     ;;
   hpv)
     export EXTERNAL_DRIVE_v42069="$HOME"
-    # Perform actions specific
     ;;
   *)
     echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc, will default to $HOME"
