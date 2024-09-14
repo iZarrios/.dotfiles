@@ -160,9 +160,6 @@ alias v.="v ."
 alias fman="compgen -c | fzf | xargs man"
 alias venv="source .venv/bin/activate"
 
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 ## cfg: PATH
 # Adding go binaries
 export PATH=$PATH:"$HOME/bin/go"
@@ -180,12 +177,6 @@ export PATH=$PATH:"/usr/local/bin/"
 export PATH=$PATH:"$HOME/.local/bin/"
 export PATH=$PATH:"$HOME/bin"
 
-# Adding GCC-GNU-ARM toolchain
-export PATH=$PATH:"$HOME/bin/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin/"
-export PATH=$PATH:"$HOME/work/ittia/apache-maven-3.9.6/bin"
-
-# Adding cross-gcc-compiler
-export PATH=$PATH:"$HOME/opt/cross/bin"
 
 export PATH=$PATH:"/usr/lib/llvm-18/bin/"
 # Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
@@ -193,9 +184,9 @@ export PATH=$PATH:"/usr/lib/llvm-18/bin/"
 export PATH=$PATH:"$HOME/custom_build/clang_llvm_18.1.8/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 
-
 # Go cache module location overwrite
-export GOMODCACHE=~/caches/
-export GOBIN=~/bin/go
+export GOMODCACHE="$HOME/caches"
+export GOBIN="$HOME/.local/bin/go"
+
 # Sourcing some scret keys
 source "$HOME/secret.zsh"
