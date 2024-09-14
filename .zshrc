@@ -170,19 +170,18 @@ export PATH=$PATH:"$HOME/.local/scripts/"
 export PATH=$PATH:"$HOME/.local/bin/"
 # Adding `go` and `gofmt`
 export PATH=$PATH:"$HOME/custom_build/go/bin"
+# NOTE: check `GOBIN`
+export PATH=$PATH:"$HOME/.local/bin/go"
 # Adding node
 export PATH=$PATH:"$HOME/.n/bin/node"
 
 export PATH=$PATH:"/usr/local/bin/"
 export PATH=$PATH:"$HOME/.local/bin/"
-export PATH=$PATH:"$HOME/bin"
-
 
 export PATH=$PATH:"/usr/lib/llvm-18/bin/"
 # Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
 
 export PATH=$PATH:"$HOME/custom_build/clang_llvm_18.1.8/bin"
-export PATH=$PATH:"$HOME/.local/bin"
 
 # Go cache module location overwrite
 export GOMODCACHE="$HOME/caches"
