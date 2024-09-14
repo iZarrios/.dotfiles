@@ -124,6 +124,7 @@ else
   export EDITOR='nvim'
 fi
 
+## cfg: FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 
@@ -137,6 +138,8 @@ bindkey -s ^f "tmux-sessionizer\n"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+
+## cfg: ALISES
 alias ping-="ping 4.2.2.1"
 alias python="python3"
 alias rp="realpath"
@@ -160,6 +163,7 @@ alias venv="source .venv/bin/activate"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+## cfg: PATH
 # Adding go binaries
 export PATH=$PATH:"$HOME/bin/go"
 export PATH=$PATH:"$HOME/.cargo/bin"
