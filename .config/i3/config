@@ -28,7 +28,6 @@ floating_modifier $mod
 
 # start a terminal
 
-
 # bindsym $mod+Return exec x-terminal-emulator
 bindsym $mod+Return exec alacritty
 # bindsym $mod+Return exec xfce4-terminal
@@ -178,12 +177,9 @@ bar {
     status_command i3status #--config ~/.i3status.conf
 }
 
-# to restore desktop wallpaper
-# bindsym $mod+Shift+q exec nitrogen --restore
-
 exec_always "setxkbmap -layout us,ara"
 exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
 
-exec_always xrandr --output $laptop --mode 1920x1080 --rate 60 \
-                   --output $ext_1  --mode 1920x1080 --rate 144 --primary --above $laptop
+exec_always xrandr --output $laptop --mode 1920x1080 --rate 60 --output $ext_1 --mode 1920x1080 --rate 144 --primary --above $laptop
+exec_always xrdb -merge ~/.Xresources
 exec_always nitrogen --restore
