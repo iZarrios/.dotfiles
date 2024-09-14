@@ -18,23 +18,18 @@ fi
 
 if command -v nvim &> /dev/null; then
     # if it is found, then we probably want to update it
-    cd ~/custom_build/neovim/neovim
-    git pull
-    # building neovim
-    make $serial CMAKE_BUILD_TYPE=Release
-    # default install location is '/usr/local/bin'
-    sudo make install
-else 
-    # the `custom_build` directory is a custom directory that I build things from sources in.
-    mkdir -p ~/custom_build/neovim
     cd ~/custom_build/neovim
-    # cloning neovim repo
+    git pull
+else
+    mkdir -p ~/custom_build
+    cd ~/custom_build
     git clone https://github.com/neovim/neovim.git
+    cd neovim
     # installing dependencies
     sudo apt update
     sudo apt-get install ninja-build gettext cmake unzip curl -y
-    # building neovim
-    cd neovim && make $serial CMAKE_BUILD_TYPE=Release
-    # default install location is '/usr/local/bin'
-    sudo make install
 fi
+
+# building neovim
+make $serial CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=~/.local
+sudo make install
