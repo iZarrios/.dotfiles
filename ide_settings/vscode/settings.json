@@ -80,7 +80,7 @@
         "d"
       ],
       "commands": [
-        "editor.action.marker.nextInFiles"
+        "editor.action.marker.next"
       ]
     },
     {
@@ -89,7 +89,7 @@
         "d"
       ],
       "commands": [
-        "editor.action.marker.prevInFiles"
+        "editor.action.marker.prev"
       ]
     },
     {
