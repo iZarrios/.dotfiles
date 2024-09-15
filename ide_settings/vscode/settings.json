@@ -1,0 +1,185 @@
+{
+  "editor.renderLineHighlight": "line",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#ffffff20",
+    "editor.lineHighlightBorder": "default"
+  },
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "k",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "editor.action.triggerParameterHints"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "v"
+      ],
+      "commands": [
+        "workbench.explorer.fileView.focus"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.nextInFiles"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prevInFiles"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": true,
+    "<C-f>": false,
+    "<C-p>": false
+  },
+  "vim.digraphs": {},
+  "vim.scrolloff": 10,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "window.zoomLevel": 0,
+  "editor.minimap.sectionHeaderFontSize": 10,
+  "scm.inputFontSize": 14,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "redhat.telemetry.enabled": false,
+  "workbench.editorAssociations": {
+    "*.xlsx": "default"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "hint",
+    "warning",
+    "info"
+  ],
+  "[tool.pyright]": {},
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "error",
+    "reportMissingModuleSource": "error",
+    "reportOptionalSubscript": "warning",
+    "reportOptionalMemberAccess": "warning",
+    "reportOptionalCall": "warning",
+    "reportOptionalIterable": "warning",
+    "reportOptionalContextManager": "warning",
+    "reportOptionalOperand": "warning",
+    "reportGeneralTypeIssues": "warning",
+    "reportUnboundVariable": "error",
+    "reportUndefinedVariable": "error",
+    "reportInvalidStringEscapeSequence": "error",
+    "reportUnknownParameterType": "warning",
+    "reportCallInDefaultInitializer": "warning",
+    "reportPrivateUsage": "warning",
+    "reportUnusedImport": "warning",
+    "reportUnusedClass": "warning",
+    "reportUnusedFunction": "warning",
+    "reportUnusedVariable": "warning",
+    "reportDuplicateImport": "warning",
+    "reportUnusedCallResult": "warning"
+  },
+  "remote.SSH.remotePlatform": {
+    "20.93.113.77": "linux",
+    "20.93.67.117": "linux",
+    "li4": "linux"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "editor.fontSize": 16,
+  "editor.cursorSurroundingLines": 10
+}
