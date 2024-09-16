@@ -1,5 +1,3 @@
-# Get the current user
-
 # NOTE: I will be appending a suffix of _v42069 to every custom variable
 
 current_user_v42069=$(whoami)
@@ -109,16 +107,7 @@ plugins=(
 	zsh-autosuggestions
 	sudo
 	fast-syntax-highlighting # cfg: fast-theme zdharma
-    # zsh-vi-mode
-
 )
-
-
-# # Only changing the escape key to `jk` in insert mode, we still
-# # keep using the default keybindings `^[` in other modes
-# ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
-# ZVM_VI_ESCAPE_BINDKEY=kj
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -135,16 +124,11 @@ else
   export EDITOR='nvim'
 fi
 
-# zvm_after_init_commands+=('')
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export FZF_DEFAULT_OPS="--extended"
 
-
 # Bindings
-# zvm_after_init_commands+=('')
 bindkey -s ^f "tmux-sessionizer\n"
-
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -153,7 +137,6 @@ bindkey -s ^f "tmux-sessionizer\n"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
 alias ping-="ping 4.2.2.1"
 alias python="python3"
 alias rp="realpath"
@@ -200,8 +183,10 @@ export PATH=$PATH:"$HOME/work/ittia/apache-maven-3.9.6/bin"
 # Adding cross-gcc-compiler
 export PATH=$PATH:"$HOME/opt/cross/bin"
 
-# Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
 export PATH=$PATH:"/usr/lib/llvm-18/bin/"
+# Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
+
+export PATH=$PATH:"$HOME/custom_build/clang_llvm_18.1.8/bin"
 export PATH=$PATH:"$HOME/.local/bin"
 
 
@@ -210,5 +195,3 @@ export GOMODCACHE=~/caches/
 export GOBIN=~/bin/go
 # Sourcing some scret keys
 source "$HOME/secret.zsh"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
