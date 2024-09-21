@@ -26,7 +26,6 @@ esac
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
 
-export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 export PIP_REQUIRE_VIRTUALENV=true
 
@@ -189,3 +188,5 @@ export GOBIN="$HOME/.local/bin/go"
 
 # Sourcing some scret keys
 source "$HOME/secret.zsh"
+
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
