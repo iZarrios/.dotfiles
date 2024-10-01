@@ -47,7 +47,7 @@ end)
 
 vim.keymap.set("n", "<leader>bs", function()
     -- prompt the user for compile command
-    local cmd = vim.fn.input("compile command: ", vim.g.custom_build_command)
+    local cmd = vim.fn.input("compile command: ", vim.g.custom_build_command or "")
 
     ---@diagnostic disable-next-line: inject-field
     vim.g.custom_build_command = cmd
