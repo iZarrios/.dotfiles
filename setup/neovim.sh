@@ -20,6 +20,7 @@ if command -v nvim &> /dev/null; then
     # if it is found, then we probably want to update it
     cd ~/custom_build/neovim
     git pull
+    make clean
 else
     mkdir -p ~/custom_build
     cd ~/custom_build
