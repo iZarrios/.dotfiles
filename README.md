@@ -1,4 +1,4 @@
-# This is the dotfiles for my linux enviroment
+# This is the dotfiles for my linux environment
 This directory utilizes the GNU `stow` binary
 
 ## Installing GNU stow (debian based)
