@@ -181,7 +181,10 @@ bar {
 
 exec_always --no-startup-id "setxkbmap -layout us,ara"
 exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
+# # 2 display setup
+# exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --output $ext_1 --mode 1920x1080 --rate 144 --primary --above $laptop
+# external monitor only
+exec_always --no-startup-id xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
 
-exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --output $ext_1 --mode 1920x1080 --rate 144 --primary --above $laptop
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id nitrogen --restore
