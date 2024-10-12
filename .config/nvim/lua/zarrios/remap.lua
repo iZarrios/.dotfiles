@@ -11,6 +11,9 @@ vim.keymap.set("n", "gV", "`[v`]")
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
 
+vim.keymap.set("n", "<C-h>", "<cmd>tabprev<CR>", opts)
+vim.keymap.set("n", "<C-l>", "<cmd>tabnext<CR>", opts)
+
 -- Swap lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
