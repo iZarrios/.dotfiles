@@ -103,6 +103,11 @@ local plugins = {
         -- lazy = true,
         -- priority = 1000,
     },
+    {
+        'nvim-tree/nvim-web-devicons',
+        lazy = true,
+        priorty = 1000,
+    },
 }
 
 local opts = {}

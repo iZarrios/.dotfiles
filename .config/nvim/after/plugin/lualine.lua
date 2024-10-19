@@ -30,14 +30,14 @@ local mode = {
 
 local filetype = {
   "filetype",
-  icons_enabled = false,
+  icons_enabled = true,
   icon = nil,
   padding = 1,
 }
 
 local branch = {
   "branch",
-  icons_enabled = false,
+  icons_enabled = true,
   icon = nil,
   padding = 1,
 }
