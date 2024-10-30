@@ -90,6 +90,7 @@ lspcfg.clangd.setup {
 lspcfg.pyright.setup {}
 lspcfg.ruff.setup {}
 lspcfg.rust_analyzer.setup {}
+lspcfg.gopls.setup {}
 
 cmp.setup({
     sources = {
