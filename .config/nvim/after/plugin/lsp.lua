@@ -79,6 +79,7 @@ lsp.configure('lua_ls', {
 
 
 lspcfg.clangd.setup {
+    -- custom on attach function for clangd
     on_attach = function(_, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
         -- c/cpp go to .h/.cpp
