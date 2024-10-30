@@ -10,17 +10,20 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementations() end, opts)
     vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
 
-    vim.keymap.set('n', '<C-k>', function() vim.lsp.buf.signature_help() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-    -- I am probably not gonna use this like ever
+    -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+
+    vim.keymap.set("n", "K", function()
+        -- NOTE: While ideally you would want to each have their own keybinding
+        -- but most of the time when I use hover I either mean to see the
+        -- documentation or the diagnostics so I am combining them here
+        vim.lsp.buf.hover()
+        vim.diagnostic.open_float()
+    end, opts)
+
+    -- -- I am probably not gonna use this like ever
     -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
 
-    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-    vim.keymap.set("i", "<C-S-h>", function()
-        vim.lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled({ 0 }), { 0 })
-    end, opts)
 
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.rename() end, opts)
