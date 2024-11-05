@@ -140,7 +140,6 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 ## cfg: ALISES
 alias ping-="ping 4.2.2.1"
-alias python="python3"
 alias rp="realpath"
 alias cclip="xclip -selection clipboard"
 alias pclip="xclip -selection clipboard"
@@ -158,6 +157,8 @@ alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
 alias v.="v ."
 alias fman="compgen -c | fzf | xargs man"
 alias venv="source .venv/bin/activate"
+alias python="python3"
+alias py="python"
 
 ## cfg: PATH
 # Adding go binaries
