@@ -1,9 +1,5 @@
 {
-  "editor.renderLineHighlight": "line",
-  "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#ffffff20",
-    "editor.lineHighlightBorder": "default"
-  },
+  // s:VIM STUFF
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.hlsearch": true,
@@ -49,9 +45,7 @@
     },
     {
       "before": [
-        "<leader>",
-        "p",
-        "v"
+        "-"
       ],
       "commands": [
         "workbench.explorer.fileView.focus"
@@ -126,17 +120,27 @@
     "<C-p>": false
   },
   "vim.digraphs": {},
-  "vim.scrolloff": 10,
+  "vim.scroll": 15, // how many lines to scroll the editor
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
+  },
+  // e:VIM STUFF
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "editor.renderLineHighlight": "all",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#ffffff25",
+    "editor.lineHighlightBorder": "default"
   },
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
   "window.zoomLevel": 0,
   "editor.minimap.sectionHeaderFontSize": 10,
   "scm.inputFontSize": 14,
-  "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
   "redhat.telemetry.enabled": false,
+  "gitlens.telemetry.enabled": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
   "workbench.editorAssociations": {
     "*.xlsx": "default"
   },
@@ -181,5 +185,18 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "workbench.colorTheme": "Catppuccin Macchiato",
   "editor.fontSize": 16,
-  "editor.cursorSurroundingLines": 10
+  "editor.cursorSurroundingLines": 10,
+  "terminal.integrated.fontFamily": "Consolas, monospace",
+  "workbench.iconTheme": "material-icon-theme",
+  "telemetry.telemetryLevel": "off",
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "clangd.arguments": [
+    "--pretty",
+    "--log=verbose",
+  ],
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "editor.minimap.enabled": false,
+  "editor.inlayHints.enabled": "off"
 }
