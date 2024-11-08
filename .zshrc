@@ -183,9 +183,13 @@ export PATH=$PATH:"/usr/lib/llvm-18/bin/"
 
 export PATH=$PATH:"$HOME/custom_build/clang_llvm_18.1.8/bin"
 
+# Adding nvidia toolkit to PATH
+export PATH=$PATH:"/usr/local/cuda/bin/"
+
 # Go cache module location overwrite
 export GOMODCACHE="$HOME/caches"
 export GOBIN="$HOME/.local/bin/go"
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # Sourcing some scret keys
 source "$HOME/secret.zsh"
