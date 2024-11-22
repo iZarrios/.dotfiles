@@ -128,6 +128,7 @@
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
+  "editor.linkedEditing": true,
   "editor.renderLineHighlight": "all",
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#ffffff25",
@@ -197,6 +198,10 @@
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
   "editor.inlayHints.enabled": "off"
 }
