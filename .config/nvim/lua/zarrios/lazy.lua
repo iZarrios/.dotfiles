@@ -54,14 +54,6 @@ local plugins = {
         lazy = true,
     },
     {
-        'ellisonleao/gruvbox.nvim',
-        name = 'gruvbox',
-        priority = 1000,
-        config = true,
-        opts = ...,
-        lazy = true,
-    },
-    {
         'nvim-treesitter/nvim-treesitter',
     },
     {
