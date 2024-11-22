@@ -34,7 +34,6 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    -- ensure_installed = { 'tsserver' },
     handlers = {
         lsp.default_setup,
         lua_ls = function()
@@ -91,6 +90,7 @@ lspcfg.pyright.setup {}
 lspcfg.ruff.setup {}
 lspcfg.rust_analyzer.setup {}
 lspcfg.gopls.setup {}
+lspcfg.ts_ls.setup {}
 
 cmp.setup({
     sources = {
