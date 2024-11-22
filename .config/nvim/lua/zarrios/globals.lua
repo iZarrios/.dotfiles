@@ -21,3 +21,5 @@ if vim.g.neovide then
   vim.g.neovide_confirm_quit = true
   vim.g.neovide_cursor_antialiasing = true
 end
+
+vim.g.copilot_enabled = false
