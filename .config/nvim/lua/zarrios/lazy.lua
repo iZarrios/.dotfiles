@@ -42,9 +42,10 @@ local plugins = {
         lazy = true,
     },
     {
-        "EdenEast/nightfox.nvim",
-        name = 'nightfox',
+        "ellisonleao/gruvbox.nvim",
+        name = "gruvbox",
         priority = 1000,
+        config = true,
         lazy = true,
     },
     {
@@ -58,8 +59,6 @@ local plugins = {
     },
     {
         'mbbill/undotree',
-        -- priority = 1000,
-        -- lazy = true,
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -92,8 +91,6 @@ local plugins = {
     },
     {
         "github/copilot.vim",
-        -- lazy = true,
-        -- priority = 1000,
     },
     {
         'nvim-tree/nvim-web-devicons',
