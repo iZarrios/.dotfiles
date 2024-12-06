@@ -13,10 +13,11 @@ lsp.on_attach(function(_, bufnr)
     -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 
     vim.keymap.set("n", "K", function()
-        -- NOTE: While ideally you would want to each have their own keybinding
-        -- but most of the time when I use hover I either mean to see the
-        -- documentation or the diagnostics so I am combining them here
         vim.lsp.buf.hover()
+    end, opts)
+
+    vim.keymap.set("n", "H", function()
+        -- open diagnostics floating window
         vim.diagnostic.open_float()
     end, opts)
 
