@@ -59,6 +59,11 @@ local plugins = {
         build = ":TSUpdate",
     },
     {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
         'mbbill/undotree',
     },
     {
