@@ -1,0 +1,100 @@
+{
+  "move-window-to": [
+    {
+      "Shortcut": "win+shift+d0",
+      "Desktop": 10,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d1",
+      "Desktop": 1,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d2",
+      "Desktop": 2,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d3",
+      "Desktop": 3,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d4",
+      "Desktop": 4,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d5",
+      "Desktop": 5,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d6",
+      "Desktop": 6,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d7",
+      "Desktop": 7,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d8",
+      "Desktop": 8,
+      "Follow": false
+    },
+    {
+      "Shortcut": "win+shift+d9",
+      "Desktop": 9,
+      "Follow": false
+    }
+  ],
+  "toggle-groups": [],
+  "jump-to": [
+    {
+      "shortcut": "win+d0",
+      "desktop": 10
+    },
+    {
+      "shortcut": "win+d1",
+      "desktop": 1
+    },
+    {
+      "shortcut": "win+d2",
+      "desktop": 2
+    },
+    {
+      "shortcut": "win+d3",
+      "desktop": 3
+    },
+    {
+      "shortcut": "win+d4",
+      "desktop": 4
+    },
+    {
+      "shortcut": "win+d5",
+      "desktop": 5
+    },
+    {
+      "shortcut": "win+d6",
+      "desktop": 6
+    },
+    {
+      "shortcut": "win+d7",
+      "desktop": 7
+    },
+    {
+      "shortcut": "win+d8",
+      "desktop": 8
+    },
+    {
+      "shortcut": "win+d9",
+      "desktop": 9
+    }
+  ],
+  "sticky-desktops": 8,
+  "jump-current-goes-to-last": false,
+  "change-desktops-with-scroll": false
+}
