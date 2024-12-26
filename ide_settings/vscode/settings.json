@@ -128,7 +128,6 @@
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
-  "editor.linkedEditing": true,
   "editor.renderLineHighlight": "all",
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#ffffff25",
@@ -138,7 +137,7 @@
   "window.zoomLevel": 0,
   "editor.minimap.sectionHeaderFontSize": 10,
   "scm.inputFontSize": 14,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "redhat.telemetry.enabled": false,
   "gitlens.telemetry.enabled": false,
   "dotnetAcquisitionExtension.enableTelemetry": false,
@@ -178,17 +177,12 @@
     "reportDuplicateImport": "warning",
     "reportUnusedCallResult": "warning"
   },
-  "remote.SSH.remotePlatform": {
-    "20.93.113.77": "linux",
-    "20.93.67.117": "linux",
-    "li4": "linux"
-  },
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.fontSize": 16,
   "editor.cursorSurroundingLines": 10,
   "terminal.integrated.fontFamily": "Consolas, monospace",
-  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.fontSize": 18,
   "telemetry.telemetryLevel": "off",
   "C_Cpp.intelliSenseEngine": "disabled",
   "clangd.arguments": [
@@ -198,10 +192,16 @@
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
-  "editor.inlayHints.enabled": "off"
+  "editor.inlayHints.enabled": "on",
+  "editor.cursorBlinking": "solid",
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "debug.onTaskErrors": "debugAnyway",
+  "editor.stickyScroll.enabled": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "files.trimTrailingWhitespace": true
 }
