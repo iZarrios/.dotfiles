@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 # set -eux
 
-if command -v curl &> /dev/null; then
+if command -v zsh &> /dev/null; then
     # installing zsh
     sudo apt install zsh
     # making zsh default shell
