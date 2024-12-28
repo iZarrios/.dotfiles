@@ -1,0 +1,20 @@
+theme = GruvboxDarkHard
+font-family = JetBrainsMonoNerdFont
+font-size = 10
+gtk-titlebar = false
+
+shell-integration = zsh
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+title = " "
+
+background-opacity = 1
+# don't make a confirmation pop-up when I try close the terminal
+confirm-close-surface = false
+
+# trying this out
+bold-is-bright = true
+
+# Even though it is said that it is not supported on Linux but I still want to explicitly disable it
+auto-update = off
