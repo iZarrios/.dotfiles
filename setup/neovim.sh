@@ -21,6 +21,14 @@ if command -v nvim &> /dev/null; then
     cd ~/custom_build/neovim
     git pull
     make clean
+    # during configure step for 'treesitter' there was an error: CMake Error:
+    # The source "neovim/.deps/build/src/treesitter/lib/CMakeLists.txt" does
+    # not match the source.
+    # This error is prob because we cache treesitter?,so maybe treesitter
+    # changed how they build treesitter so we have to get the files again In
+    # this script, I use make clean to verify that these things but I guess
+    # `make clean` doesn't remove the .deps directory
+    rm -rf .deps
 else
     mkdir -p ~/custom_build
     cd ~/custom_build
