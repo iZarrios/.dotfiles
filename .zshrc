@@ -180,8 +180,9 @@ export PATH=$PATH:"$HOME/.local/bin/"
 
 export PATH=$PATH:"/usr/lib/llvm-18/bin/"
 # Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
-
 export PATH=$PATH:"$HOME/custom_build/clang_llvm_18.1.8/bin"
+
+export PATH=$PATH:"$HOME/custom_build/ghostty/zig-out/bin"
 
 # Adding nvidia toolkit to PATH
 export PATH=$PATH:"/usr/local/cuda/bin/"
