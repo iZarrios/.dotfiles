@@ -16,5 +16,11 @@ confirm-close-surface = false
 # trying this out
 bold-is-bright = true
 
-# Even though it is said that it is not supported on Linux but I still want to explicitly disable it
+# even though it is said that it is not supported on Linux but I still want to explicitly disable it
 auto-update = off
+
+clipboard-overlay = false
+
+# don't show resize overlays pop-ups
+resize-overlay = never
+
