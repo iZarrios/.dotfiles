@@ -13,9 +13,10 @@ if command -v zig &> /dev/null; then
         cd ghostty
 
         # src: https://ghostty.org/docs/install/build
-        sudo apt install libgtk-4-dev libadwaita-1-dev git
+        sudo apt install libgtk-4-dev libadwaita-1-dev git blueprint-compiler gettext libxml2-utils
     fi
-    zig build -Doptimize=ReleaseFast
+    git pull
+    zig build -Doptimize=ReleaseFast -Dapp-runtime=glfw
     echo -e "Artifacts will be in zig-out btw"
 else
     echo "zig has to be installed"
