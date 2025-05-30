@@ -50,8 +50,7 @@ vim.opt.clipboard = "unnamedplus"
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = {
-    tab = '» ',
-    -- space = '·',
+    tab = "  ",
     trail = '~',
     nbsp = '␣',
     eol = '↲'
