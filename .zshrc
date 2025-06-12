@@ -128,7 +128,9 @@ fi
 
 ## cfg: FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPS="--extended"
+# src: https://github.com/MariaSolOs/dotfiles/blob/887b21756c27c112e38818caf590647601617e31/.zshenv#L33
+export FZF_DEFAULT_OPTS="--extended --color=fg:#f8f8f2,bg:#0e1419,hl:#e11299,fg+:#f8f8f2,bg+:#44475a,hl+:#e11299,info:#f1fa8c,prompt:#50fa7b,pointer:#ff79c6,marker:#ff79c6,spinner:#a4ffff,header:#6272a4 \
+--cycle --pointer=▎ --marker=▎"
 
 # Bindings
 bindkey -s ^f "tmux-sessionizer\n"
