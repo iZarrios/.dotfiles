@@ -117,10 +117,13 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
+# The $VISUAL is an environment shell variable. It defines the user's preferred utility (or command) to edit text files.
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
+  export VISUAL=$EDITOR
 else
   export EDITOR='nvim'
+  export VISUAL=$EDITOR
 fi
 
 ## cfg: FZF
