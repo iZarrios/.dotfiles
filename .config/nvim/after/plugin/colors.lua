@@ -109,8 +109,15 @@ require("gruvbox").setup({
     transparent_mode = true,
 })
 
+
+
 function ColorMyPencils(color)
-    vim.cmd.colorscheme(color)
+    if color == 'dracula' then
+        local drac = require("zarrios.dracula")
+        drac.Dracula()
+    else
+        vim.cmd.colorscheme(color)
+    end
 
     -- -- transparent background
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -118,4 +125,4 @@ function ColorMyPencils(color)
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-ColorMyPencils('gruvbox')
+ColorMyPencils('dracula')
