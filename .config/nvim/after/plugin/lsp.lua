@@ -37,45 +37,11 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     handlers = {
         lsp.default_setup,
-        lua_ls = function()
-            local lua_opts = lsp.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
-        end,
     },
 })
 
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-
-lsp.configure('lua_ls', {
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-            },
-            diagnostics = {
-                globals = { 'vim' },
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-            workspace = {
-                checkThirdParty = false,
-                library = {
-                    -- Make the server aware of Neovim runtime files
-                    unpack(vim.api.nvim_get_runtime_file('', true)),
-                    '{3rd}/luv/library',
-                },
-            },
-            completion = {
-                callSnipper = 'Replace',
-            },
-        },
-    },
-})
 
 
 lspcfg.clangd.setup {
@@ -93,6 +59,36 @@ lspcfg.ruff.setup {}
 lspcfg.rust_analyzer.setup {}
 lspcfg.gopls.setup {}
 lspcfg.ts_ls.setup {}
+-- SRC: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
+lspcfg.lua_ls.setup {
+  on_init = function(client)
+    local path = client.workspace_folders[1].name
+    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      return
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        version = 'LuaJIT',
+        path = {
+          'lua/?.lua',
+          'lua/?/init.lua',
+        },
+      },
+      diagnostics = { globals = { 'vim', 'require' } },
+      telemetry = { enable = false },
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+        }
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
+}
 
 cmp.setup({
     sources = {
