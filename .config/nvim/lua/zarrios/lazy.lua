@@ -103,6 +103,10 @@ local plugins = {
         lazy = true,
         priorty = 1000,
     },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
 }
 
 local opts = {}
