@@ -83,7 +83,7 @@ function M.Dracula()
         statusline_groups['StatuslineModeSeparator' .. mode] = { fg = colors[color], bg = colors.transparent_black }
     end
     statusline_groups = vim.tbl_extend('error', statusline_groups, {
-        StatuslineItalic = { fg = colors.grey, bg = colors.transparent_black, italic = true },
+        StatuslineItalic = { fg = colors.grey, bg = colors.transparent_black, italic = false },
         StatuslineSpinner = { fg = colors.bright_green, bg = colors.transparent_black, bold = true },
         StatuslineTitle = { fg = colors.bright_white, bg = colors.transparent_black, bold = true },
     })
@@ -94,7 +94,7 @@ function M.Dracula()
         Boolean = { fg = colors.cyan },
         Character = { fg = colors.green },
         ColorColumn = { bg = colors.selection },
-        Comment = { fg = colors.comment, italic = true },
+        Comment = { fg = colors.comment, italic = false },
         Conceal = { fg = colors.comment },
         Conditional = { fg = colors.pink },
         Constant = { fg = colors.yellow },
@@ -133,8 +133,8 @@ function M.Dracula()
         Repeat = { fg = colors.pink },
         Search = { fg = colors.bg, bg = colors.orange },
         SignColumn = { bg = colors.bg },
-        Special = { fg = colors.green, italic = true },
-        SpecialComment = { fg = colors.comment, italic = true },
+        Special = { fg = colors.green, italic = false },
+        SpecialComment = { fg = colors.comment, italic = false },
         SpecialKey = { fg = colors.nontext },
         SpellBad = { sp = colors.bright_red, underline = true },
         SpellCap = { sp = colors.yellow, underline = true },
@@ -146,7 +146,7 @@ function M.Dracula()
         Structure = { fg = colors.yellow },
         Substitute = { fg = colors.fuchsia, bg = colors.orange, bold = true },
         Title = { fg = colors.cyan },
-        Todo = { fg = colors.purple, bold = true, italic = true },
+        Todo = { fg = colors.purple, bold = true, italic = false },
         Type = { fg = colors.cyan },
         TypeDef = { fg = colors.yellow },
         Underlined = { fg = colors.cyan, underline = true },
@@ -180,10 +180,10 @@ function M.Dracula()
         ['@keyword.repeat'] = { fg = colors.pink },
         ['@label'] = { fg = colors.cyan },
         ['@markup'] = { fg = colors.orange },
-        ['@markup.emphasis'] = { fg = colors.yellow, italic = true },
+        ['@markup.emphasis'] = { fg = colors.yellow, italic = false },
         ['@markup.heading'] = { fg = colors.pink, bold = true },
         ['@markup.link'] = { fg = colors.orange, bold = true },
-        ['@markup.link.uri'] = { fg = colors.yellow, italic = true },
+        ['@markup.link.uri'] = { fg = colors.yellow, italic = false },
         ['@markup.list'] = { fg = colors.cyan },
         ['@markup.raw'] = { fg = colors.yellow },
         ['@markup.strong'] = { fg = colors.orange, bold = true },
@@ -205,7 +205,7 @@ function M.Dracula()
         ['@tag.attribute'] = { fg = colors.green },
         ['@tag.delimiter'] = { fg = colors.cyan },
         ['@type'] = { fg = colors.bright_cyan },
-        ['@type.builtin'] = { fg = colors.cyan, italic = true },
+        ['@type.builtin'] = { fg = colors.cyan, italic = false },
         ['@type.qualifier'] = { fg = colors.pink },
         ['@variable'] = { fg = colors.fg },
         ['@variable.builtin'] = { fg = colors.purple },
@@ -254,7 +254,7 @@ function M.Dracula()
         DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan },
         DiagnosticUnderlineInfo = { undercurl = true, sp = colors.cyan },
         DiagnosticUnderlineWarn = { undercurl = true, sp = colors.yellow },
-        DiagnosticUnnecessary = { fg = colors.grey, italic = true },
+        DiagnosticUnnecessary = { fg = colors.grey, italic = false },
         DiagnosticVirtualTextError = { fg = colors.red, bg = colors.transparent_red },
         DiagnosticVirtualTextHint = { fg = colors.cyan, bg = colors.transparent_blue },
         DiagnosticVirtualTextInfo = { fg = colors.cyan, bg = colors.transparent_blue },
@@ -262,7 +262,7 @@ function M.Dracula()
         DiagnosticWarn = { fg = colors.yellow },
         LspCodeLens = { fg = colors.cyan },
         LspFloatWinBorder = { fg = colors.comment },
-        LspInlayHint = { fg = colors.lavender, italic = true },
+        LspInlayHint = { fg = colors.lavender, italic = false },
         LspReferenceRead = { bg = colors.transparent_blue },
         LspReferenceText = {},
         LspReferenceWrite = { bg = colors.transparent_red },
@@ -295,7 +295,7 @@ function M.Dracula()
         BlinkCmpKindValue = { link = '@variable.member' },
         BlinkCmpKindVariable = { link = '@variable' },
         BlinkCmpLabelDeprecated = { link = 'DiagnosticDeprecated' },
-        BlinkCmpLabelDescription = { fg = colors.grey, italic = true },
+        BlinkCmpLabelDescription = { fg = colors.grey, italic = false },
         BlinkCmpLabelDetail = { fg = colors.grey, bg = colors.bg },
         BlinkCmpMenu = { bg = colors.bg },
         BlinkCmpMenuBorder = { bg = colors.bg },
@@ -323,11 +323,11 @@ function M.Dracula()
         -- Winbar styling.
         WinBar = { fg = colors.fg, bg = colors.transparent_black },
         WinBarNC = { bg = colors.transparent_black },
-        WinBarDir = { fg = colors.bright_magenta, bg = colors.transparent_black, italic = true },
+        WinBarDir = { fg = colors.bright_magenta, bg = colors.transparent_black, italic = false },
         WinBarSeparator = { fg = colors.green, bg = colors.transparent_black },
 
         -- Quickfix window.
-        QuickFixLine = { italic = true, bg = colors.transparent_red },
+        QuickFixLine = { italic = false, bg = colors.transparent_red },
 
         -- Gitsigns.
         GitSignsAdd = { fg = colors.bright_green },
@@ -345,7 +345,7 @@ function M.Dracula()
         TabLineSel = { bg = colors.purple },
 
         -- When triggering flash, use a white font and make everything in the backdrop italic.
-        FlashBackdrop = { italic = true },
+        FlashBackdrop = { italic = false },
         FlashPrompt = { link = 'Normal' },
 
         -- Make these titles more visible.
@@ -383,6 +383,20 @@ function M.Dracula()
     for group, opts in pairs(groups) do
         vim.api.nvim_set_hl(0, group, opts)
     end
+
+    -- local apply_minimal_syntax = function()
+    --     -- Tell Vim to match this keyword *only inside comments*
+    --     vim.cmd([[ syntax match MyCommentKeywords /\<NOTE\>\|\<FIXME\>\|\<KAPPA1\>/ containedin=ALL contained ]])
+    --
+    --     -- Link the highlight group to something visible like 'Todo'
+    --     vim.api.nvim_set_hl(0, "MyCommentKeywords", { link = "Todo" })
+    -- end
+    --
+    -- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "FileType" }, {
+    --     callback = apply_minimal_syntax,
+    --     -- apply to all filetypes
+    --     pattern = { "*" },
+    -- })
 end
 
 return M
