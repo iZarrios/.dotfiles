@@ -5,7 +5,6 @@
 --  [q, ]q, [Q, ]Q, [CTRL-Q, ]CTRL-Q navigate through the quickfix list
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<leader>pv", "<cmd>Oil<cr>", opts)
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", opts)
 
 vim.keymap.set("i", "jj", "<Esc>", opts)
