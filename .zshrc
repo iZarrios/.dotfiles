@@ -126,6 +126,21 @@ else
   export VISUAL=$EDITOR
 fi
 
+## cfg: custom scripts
+function yt-dlp-best() {
+    # Check if yt-dlp is installed
+    if ! command -v yt-dlp &> /dev/null; then
+        echo "yt-dlp is not in your PATH. Please add it or add `yt-dlp` to your PATH."
+        return 1
+    fi
+
+    if [[ -z $1 ]]; then
+        echo "Usage: ytdlp <URL>"
+        return 1
+    fi
+    yt-dlp "$1" -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
+}
+
 ## cfg: FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # src: https://github.com/MariaSolOs/dotfiles/blob/887b21756c27c112e38818caf590647601617e31/.zshenv#L33
