@@ -3,8 +3,6 @@ return {
     dependencies = {
         -- LSP Support
         'neovim/nvim-lspconfig',
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
 
         -- Autocompletion
         'hrsh7th/nvim-cmp',
@@ -50,16 +48,6 @@ return {
             vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, opts)
         end)
-
-        -- to learn how to use mason.nvim with lsp-zero
-        -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-        require('mason').setup({})
-        require('mason-lspconfig').setup({
-            handlers = {
-                lsp.default_setup,
-            },
-        })
-
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
