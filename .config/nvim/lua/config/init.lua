@@ -3,7 +3,7 @@
 require("config.lsp")
 require("config.options")
 require("config.globals")
-require("config.remap")
+require("config.keymaps")
 
 require("config.lazy")
 require("config.colors")
