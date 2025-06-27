@@ -1,4 +1,5 @@
 return {
+    filetypes = { "py" },
     capabilities = vim.tbl_deep_extend(
         'force',
         vim.lsp.protocol.make_client_capabilities(),
