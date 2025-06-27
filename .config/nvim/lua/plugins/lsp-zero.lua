@@ -20,7 +20,6 @@ return {
     },
     opts = function()
         local lsp = require("lsp-zero")
-        local lspcfg = require("lspconfig")
         local cmp = require('cmp')
 
         lsp.on_attach(function(_, bufnr)
@@ -64,53 +63,6 @@ return {
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-
-        lspcfg.clangd.setup {
-            cmd = { 'clangd', '--background-index', '--clang-tidy' },
-            -- custom on attach function for clangd
-            on_attach = function(_, bufnr)
-                local opts = { noremap = true, silent = true, buffer = bufnr }
-                -- c/cpp go to .h/.cpp
-                vim.keymap.set("n", "<A-o>", "<cmd>ClangdSwitchSourceHeader<CR>", opts)
-            end
-        }
-
-        lspcfg.pyright.setup {}
-        lspcfg.ruff.setup {}
-        lspcfg.rust_analyzer.setup {}
-        lspcfg.gopls.setup {}
-        lspcfg.ts_ls.setup {}
-        -- SRC: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
-        lspcfg.lua_ls.setup {
-            on_init = function(client)
-                local path = client.workspace_folders[1].name
-                if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                    return
-                end
-
-                client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-                    runtime = {
-                        version = 'LuaJIT',
-                        path = {
-                            'lua/?.lua',
-                            'lua/?/init.lua',
-                        },
-                    },
-                    diagnostics = { globals = { 'vim', 'require' } },
-                    telemetry = { enable = false },
-                    workspace = {
-                        checkThirdParty = false,
-                        library = {
-                            vim.env.VIMRUNTIME
-                        }
-                    }
-                })
-            end,
-            settings = {
-                Lua = {}
-            }
-        }
-
         cmp.setup({
             sources = {
                 { name = 'path' },
@@ -130,15 +82,5 @@ return {
         })
 
 
-        vim.diagnostic.config({
-
-            underline = true,
-            signs = true,
-            -- virtual lines are like virtual_text but more `fancy`
-            -- too much lines jumps when I enable virtual_lines, not worth it
-            virtual_lines = false,
-            virtual_text = true,
-            update_in_insert = false,
-        })
     end
 };
