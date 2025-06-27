@@ -8,8 +8,8 @@ vim.lsp.enable({
     "ts_ls",
 })
 
-vim.diagnostic.config({
 
+vim.diagnostic.config({
     underline = true,
     signs = true,
     -- virtual lines are like virtual_text but more `fancy`
