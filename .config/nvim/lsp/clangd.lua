@@ -40,5 +40,11 @@ return {
 
         local opts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set("n", "<A-o>", "<cmd>LspClangdSwitchSourceHeader<CR>", opts)
-    end
+    end,
+    capabilities = vim.tbl_deep_extend(
+        'force',
+        vim.lsp.protocol.make_client_capabilities(),
+        require('blink.cmp').get_lsp_capabilities({}, false)
+    ),
+
 };
