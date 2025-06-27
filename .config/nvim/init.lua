@@ -1,2 +1,1 @@
-require("zarrios")
-require("config.lazy")
+require("config")

@@ -1,8 +1,8 @@
-require("zarrios.dracula")
+require("config.dracula")
 
 function ColorMyPencils(color)
     if color == 'dracula' then
-        local drac = require("zarrios.dracula")
+        local drac = require("config.dracula")
         drac.Dracula()
     else
         vim.cmd.colorscheme(color)
