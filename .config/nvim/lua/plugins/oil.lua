@@ -64,8 +64,8 @@ return {
             keymaps = {
                 ["g?"] = { "actions.show_help", mode = "n" },
                 ["<CR>"] = "actions.select",
-                ["<C-s>"] = { "actions.select", opts = { vertical = true } },
-                ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+                ["<C-s>"] = false,
+                ["<C-h>"] = false,
                 -- ["<C-t>"] = { "actions.select", opts = { tab = true } },
                 ["<leader>pv"] = "actions.preview",
                 -- ["<C-c>"] = { "actions.close", mode = "n" },
