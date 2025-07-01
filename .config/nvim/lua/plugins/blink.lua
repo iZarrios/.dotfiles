@@ -13,6 +13,24 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+      signature = {
+          enabled = true,
+          auto_hide = false,
+          trigger = {
+              enabled = true,
+          },
+          window = {
+              treesitter_highlighting = true,
+              show_documentation = false,
+              -- Defaults to `vim.o.winborder` on nvim 0.11+ or 'padded' when not defined/<=0.10
+              border = nil,
+              winblend = 0,
+              winhighlight = 'Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder',
+              scrollbar = false, -- Note that the gutter will be disabled when border ~= 'none'
+          },
+      },
+
+
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
     -- 'super-tab' for mappings similar to vscode (tab to accept)
     -- 'enter' for enter to accept
