@@ -15,7 +15,6 @@ return {
   opts = {
       signature = {
           enabled = true,
-          auto_hide = false,
           trigger = {
               enabled = true,
           },
