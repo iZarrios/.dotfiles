@@ -65,10 +65,3 @@ vim.opt.cursorline = true
 -- vim.cmd [[ au InsertLeave * set cursorline ]]
 -- vim.cmd [[ au InsertEnter * set nocursorline ]]
 
--- remove trailing whitespaces on write
-vim.api.nvim_exec2([[
-  augroup TrimWhitespace
-    autocmd!
-    autocmd BufWritePre * :%s/\s\+$//e | :%s/\r//e
-  augroup END
-]], {})

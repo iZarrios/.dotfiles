@@ -11,3 +11,11 @@ vim.o.background = "dark"
 
 vim.g.copilot_enabled = false
 
+
+-- remove trailing whitespaces on write
+vim.api.nvim_exec2([[
+  augroup TrimWhitespace
+    autocmd!
+    autocmd BufWritePre * :%s/\s\+$//e | :%s/\r//e
+  augroup END
+]], {})
