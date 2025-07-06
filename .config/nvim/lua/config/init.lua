@@ -3,7 +3,7 @@
 require("config.lsp")
 require("config.options")
 require("config.globals")
-require("config.autocmds")
+require("config.custom_cmds")
 require("config.keymaps")
 
 require("config.lazy")
