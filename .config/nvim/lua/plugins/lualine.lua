@@ -49,14 +49,14 @@ local mode = {
 
 local filetype = {
     "filetype",
-    icons_enabled = true,
+    icons_enabled = false,
     icon = nil,
     padding = 1,
 }
 
 local branch = {
     "branch",
-    icons_enabled = true,
+    icons_enabled = false,
     icon = nil,
     padding = 1,
 }

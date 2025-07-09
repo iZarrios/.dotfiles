@@ -1,6 +1,5 @@
 return {
     'stevearc/oil.nvim',
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         require("oil").setup({
             -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
@@ -9,7 +8,7 @@ return {
             -- Id is automatically added at the beginning, and name at the end
             -- See :help oil-columns
             columns = {
-                "icon",
+                -- "icon",
                 -- "permissions",
                 -- "size",
                 -- "mtime",
