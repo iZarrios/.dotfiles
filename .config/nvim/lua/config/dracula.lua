@@ -294,11 +294,15 @@ function M.Dracula()
         BlinkCmpKindUnit = { link = '@variable.member' },
         BlinkCmpKindValue = { link = '@variable.member' },
         BlinkCmpKindVariable = { link = '@variable' },
+        BlinkCmpLabel= { fg = colors.grey, italic = false },
         BlinkCmpLabelDeprecated = { link = 'DiagnosticDeprecated' },
         BlinkCmpLabelDescription = { fg = colors.grey, italic = false },
         BlinkCmpLabelDetail = { fg = colors.grey, bg = colors.bg },
-        BlinkCmpMenu = { bg = colors.bg },
-        BlinkCmpMenuBorder = { bg = colors.bg },
+        BlinkCmpMenu = { bg = colors.menu },
+        BlinkCmpMenuBorder = { bg = colors.bright_yellow },
+        BlinkCmpMenuSelection = { bold = true, fg = colors.bright_blue, bg = colors.selection },
+        BlinkCmpSignatureHelp = { bg = colors.menu },
+        BlinkCmpSignatureHelpBorder = { bg = colors.bright_yellow },
 
         -- Dap UI.
         DapStoppedLine = { default = true, link = 'Visual' },
@@ -327,7 +331,7 @@ function M.Dracula()
         WinBarSeparator = { fg = colors.green, bg = colors.transparent_black },
 
         -- Quickfix window.
-        QuickFixLine = { italic = false, bg = colors.transparent_red },
+        QuickFixLine = { italic = false, bg = colors.transparent_blue },
 
         -- Gitsigns.
         GitSignsAdd = { fg = colors.bright_green },
@@ -367,6 +371,11 @@ function M.Dracula()
         FzfLuaLiveSym = { fg = colors.fuchsia },
         FzfLuaPreviewTitle = { fg = colors.fg },
         FzfLuaSearch = { bg = colors.transparent_red },
+
+        -- Telescope overide.
+        TelescopeSelection = { bg = colors.selection },
+        TelescopeBorder = { fg = colors.comment },
+        TelescopeMatching = { fg = colors.green },
 
         -- Nicer sign column highlights for grug-far.
         GrugFarResultsChangeIndicator = { link = 'Changed' },
