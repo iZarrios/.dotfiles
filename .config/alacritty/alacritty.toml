@@ -18,32 +18,65 @@ normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
 # SRC: https://github.com/zatchheems/tokyo-night-alacritty-theme
 # SRC: https://github.com/alacritty/alacritty-theme/blob/master/themes/gruvbox_dark.toml
 
-# Colors (Custom - Based on miss-dracula theme)
+# # Colors (Custom - Based on miss-dracula theme)
+#
+# [colors.primary]
+# background = '#0E1419'     # from colors.bg
+# foreground = '#F6F6F5'     # from colors.fg
+#
+# [colors.cursor]
+# text = '#0E1415'           # reused from original Dracula+
+# cursor = '#F6F6F5'         # from colors.white
+#
+# [colors.normal]
+# black = '#000000'          # from colors.black
+# red = '#E95678'            # from colors.red
+# green = '#87E58E'          # from colors.green
+# yellow = '#E8EDA2'         # from colors.yellow
+# blue = '#D0B5F3'           # from colors.bright_blue (closest bright-ish blue)
+# magenta = '#BAA0E8'        # from colors.purple
+# cyan = '#A7DFEF'           # from colors.cyan
+# white = '#F6F6F5'          # from colors.white
+#
+# [colors.bright]
+# black = '#4B5263'          # from colors.gutter_fg
+# red = '#EC6A88'            # from colors.bright_red
+# green = '#97EDA2'          # from colors.bright_green
+# yellow = '#F6F6B6'         # from colors.bright_yellow
+# blue = '#D0B5F3'           # same as normal blue (bright variant)
+# magenta = '#E7A1D7'        # from colors.bright_magenta
+# cyan = '#BCF4F5'           # from colors.bright_cyan
+# white = '#FFFFFF'          # from colors.bright_white
 
+# Colors (Gruvbox dark)
+
+# Default colors
 [colors.primary]
-background = '#0E1419'     # from colors.bg
-foreground = '#F6F6F5'     # from colors.fg
+# hard contrast
+background = '#1d2021'
+# background = '#282828'
+# soft contrast background = = '#32302f'
 
-[colors.cursor]
-text = '#0E1415'           # reused from original Dracula+
-cursor = '#F6F6F5'         # from colors.white
+foreground = '#ebdbb2'
 
+# Normal colors
 [colors.normal]
-black = '#000000'          # from colors.black
-red = '#E95678'            # from colors.red
-green = '#87E58E'          # from colors.green
-yellow = '#E8EDA2'         # from colors.yellow
-blue = '#D0B5F3'           # from colors.bright_blue (closest bright-ish blue)
-magenta = '#BAA0E8'        # from colors.purple
-cyan = '#A7DFEF'           # from colors.cyan
-white = '#F6F6F5'          # from colors.white
+black   = '#282828'
+red     = '#cc241d'
+green   = '#98971a'
+yellow  = '#d79921'
+blue    = '#458588'
+magenta = '#b16286'
+cyan    = '#689d6a'
+white   = '#a89984'
 
+# Bright colors
 [colors.bright]
-black = '#4B5263'          # from colors.gutter_fg
-red = '#EC6A88'            # from colors.bright_red
-green = '#97EDA2'          # from colors.bright_green
-yellow = '#F6F6B6'         # from colors.bright_yellow
-blue = '#D0B5F3'           # same as normal blue (bright variant)
-magenta = '#E7A1D7'        # from colors.bright_magenta
-cyan = '#BCF4F5'           # from colors.bright_cyan
-white = '#FFFFFF'          # from colors.bright_white
+black   = '#928374'
+red     = '#fb4934'
+green   = '#b8bb26'
+yellow  = '#fabd2f'
+blue    = '#83a598'
+magenta = '#d3869b'
+cyan    = '#8ec07c'
+white   = '#ebdbb2'
