@@ -59,3 +59,7 @@ vim.keymap.set("n", "<leader>bs", function()
     ---@diagnostic disable-next-line: inject-field
     vim.g.custom_build_command = cmd
 end)
+
+vim.keymap.set("n", "<leader>i", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+end, { desc = "Toggle Inlay Hints" })
