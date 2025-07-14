@@ -20,7 +20,7 @@ if command -v zig &> /dev/null; then
     echo -e "Artifacts will be in zig-out btw"
 else
     echo "zig has to be installed"
-    echo "You can install it using from here: "
+    echo "You can install it from here: "
     echo -e "\e[1mhttps://ziglang.org/download/\e[0m"
 fi
 

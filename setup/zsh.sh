@@ -6,7 +6,7 @@ if command -v zsh &> /dev/null; then
     sudo apt install zsh
     # making zsh default shell
     chsh -s `which zsh`
-    # installing zsh
+    # installing oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ### Installing the plugins
 
