@@ -3,7 +3,6 @@ vim.lsp.enable({
     "lua_ls",
     "clangd",
     "pyright",
-    "ruff",
     "rust_analyzer",
     "ts_ls",
 })
