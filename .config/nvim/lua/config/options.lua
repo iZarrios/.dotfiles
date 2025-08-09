@@ -36,7 +36,7 @@ vim.opt.mouse = 'a'
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes:1"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -59,6 +59,7 @@ vim.opt.listchars = {
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
+vim.o.winborder = 'rounded'
 
 -- Enable cursor only in normal mode
 vim.opt.cursorline = true
