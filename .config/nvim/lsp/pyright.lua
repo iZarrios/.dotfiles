@@ -16,4 +16,13 @@ return {
         vim.lsp.protocol.make_client_capabilities(),
         require('blink.cmp').get_lsp_capabilities({}, false)
     ),
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'openFilesOnly',
+            },
+        },
+    },
 };
