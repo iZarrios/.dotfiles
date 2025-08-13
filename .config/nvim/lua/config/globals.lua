@@ -9,9 +9,6 @@ vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 
 vim.o.background = "dark"
 
-vim.g.copilot_enabled = false
-
-
 -- remove trailing whitespaces on write
 vim.api.nvim_exec2([[
   augroup TrimWhitespace
