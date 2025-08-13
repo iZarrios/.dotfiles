@@ -51,7 +51,30 @@ return {
         },
 
         -- (Default) Only show the documentation popup when manually triggered
-        completion = { documentation = { auto_show = false } },
+        completion = {
+            documentation = {
+                auto_show = false
+            },
+            menu = {
+                draw = {
+                    padding = 0,
+                    gap = 1,
+                    columns = {
+                        { 'kind_icon',         gap = 0 },
+                        { "label",             gap = 0 },
+                        { "kind",              "source_name", gap = 0 },
+                        { "label_description", gap = 0 },
+                    },
+                    components = {
+                        source_name = {
+                            width = { max = 10 },
+                            text = function(ctx) return "[" .. ctx.source_name:lower() .. "]" end,
+                            highlight = 'BlinkCmpSource',
+                        },
+                    },
+                },
+            },
+        },
 
         -- Default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
