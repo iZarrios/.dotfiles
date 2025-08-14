@@ -1,8 +1,10 @@
 -- XXX: since 0.11 (https://neovim.io/doc/user/news-0.11.html)
 -- new default bindings has been added to neovim
--- most of them we already had some bindings for them (check telescope.lua if you don't find it in here)
+-- most of them we already had some bindings for them
 -- One of the new which I find very useful is
 --  [q, ]q, [Q, ]Q, [CTRL-Q, ]CTRL-Q navigate through the quickfix list
+
+-- NOTE: (check telescope.lua or cmds.lua if you don't find what you need in here)
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", opts)
@@ -17,6 +19,24 @@ vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
 
 vim.keymap.set("n", "<C-h>", "<cmd>tabprev<CR>", opts)
 vim.keymap.set("n", "<C-l>", "<cmd>tabnext<CR>", opts)
+
+
+vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump({
+        count = 1,
+        on_jump = function()
+            vim.diagnostic.open_float()
+        end
+    })
+end, opts)
+vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump({
+        count = -1,
+        on_jump = function()
+            vim.diagnostic.open_float()
+        end
+    })
+end, opts)
 
 -- Swap lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
