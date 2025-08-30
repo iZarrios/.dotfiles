@@ -19,8 +19,13 @@ bold-is-bright = true
 # even though it is said that it is not supported on Linux but I still want to explicitly disable it
 auto-update = off
 
-clipboard-overlay = false
-
 # don't show resize overlays pop-ups
 resize-overlay = never
 
+window-decoration = server
+window-subtitle = working-directory
+window-theme = dark
+
+app-notifications = no-clipboard-copy
+
+copy-on-select = false
