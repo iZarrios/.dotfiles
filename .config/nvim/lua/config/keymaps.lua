@@ -21,21 +21,22 @@ vim.keymap.set("n", "<C-h>", "<cmd>tabprev<CR>", opts)
 vim.keymap.set("n", "<C-l>", "<cmd>tabnext<CR>", opts)
 
 
-vim.keymap.set("n", "]d", function()
-    vim.diagnostic.jump({
-        count = 1,
-        on_jump = function()
-            vim.diagnostic.open_float()
-        end
-    })
-end, opts)
 vim.keymap.set("n", "[d", function()
-    vim.diagnostic.jump({
-        count = -1,
-        on_jump = function()
-            vim.diagnostic.open_float()
-        end
-    })
+  vim.diagnostic.jump({
+    count = -1,
+    on_jump = function()
+      vim.diagnostic.open_float({ scope = "line" })
+    end,
+  })
+end, opts)
+
+vim.keymap.set("n", "]d", function()
+  vim.diagnostic.jump({
+    count = 1,
+    on_jump = function()
+      vim.diagnostic.open_float({ scope = "line" })
+    end,
+  })
 end, opts)
 
 -- Swap lines
