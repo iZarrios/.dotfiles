@@ -143,7 +143,7 @@ function yt-dlp-best() {
 
 ## cfg: FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--extended"
+export FZF_DEFAULT_OPTS="--extended --ansi --border=none --color=fg:#ebdbb2,bg:#282828,hl:#458588,fg+:#d5c4a1,bg+:#3c3836,hl+:#b8bb26,info:#83a598,prompt:#d79921,pointer:#fe8019,marker:#d3869b,spinner:#fabd2f,header:#98971a"
 
 # # src: https://github.com/MariaSolOs/dotfiles/blob/887b21756c27c112e38818caf590647601617e31/.zshenv#L33
 # export FZF_DEFAULT_OPTS="--extended --color=fg:#f8f8f2,bg:#0e1419,hl:#e11299,fg+:#f8f8f2,bg+:#44475a,hl+:#e11299,info:#f1fa8c,prompt:#50fa7b,pointer:#ff79c6,marker:#ff79c6,spinner:#a4ffff,header:#6272a4 \
