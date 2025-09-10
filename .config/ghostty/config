@@ -7,7 +7,7 @@ shell-integration = zsh
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
-title = " "
+title = "Ghostty"
 
 background-opacity = 1
 # don't make a confirmation pop-up when I try close the terminal
