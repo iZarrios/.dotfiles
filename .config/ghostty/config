@@ -29,3 +29,5 @@ window-theme = dark
 app-notifications = no-clipboard-copy
 
 copy-on-select = false
+
+custom-shader-animation = false
