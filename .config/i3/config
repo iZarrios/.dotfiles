@@ -152,15 +152,15 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym l resize shrink width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
         bindsym j resize shrink height 5 px or 5 ppt
-        bindsym h resize grow width 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Up resize grow height 5 px or 5 ppt
+        bindsym Down resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
@@ -181,12 +181,12 @@ bar {
 }
 
 # exec --no-startup-id /usr/lib/gsd-xsettings
+exec_always --no-startup-id "sleep 1 && setxkbmap -layout us,ara -option grp:alt_shift_toggle"
 
-exec_always --no-startup-id "setxkbmap -layout us,ara"
-exec_always --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
+# exec_always --no-startup-id "xset r rate 300 50"
 # # 2 display setup
-# exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --output $ext_1 --mode 1920x1080 --rate 144 --primary --above $laptop
 
+# exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --output $ext_1 --mode 1920x1080 --rate 144 --primary --above $laptop
 # external monitor only
 exec_always --no-startup-id xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
 
