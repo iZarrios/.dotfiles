@@ -14,7 +14,7 @@ if command -v cargo &> /dev/null; then
         cd ripgrep
     fi
     cargo build --release
-    ln -s `realpath ./target/release`/rg ~/.local/bin/rg
+    ln -s `realpath ./target/release`/rg "$HOME/.local/bin/rg"
 else
     echo "'cargo' has to be installed"
     echo "You can install it using the following command:"
