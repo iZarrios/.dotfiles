@@ -1,4 +1,4 @@
-theme = GruvboxDarkHard
+theme = Gruvbox Dark Hard
 font-family = JetBrainsMonoNerdFont
 font-size = 10
 gtk-titlebar = false
