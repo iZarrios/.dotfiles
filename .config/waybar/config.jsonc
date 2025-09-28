@@ -1,0 +1,58 @@
+// SRC: https://github.com/kamlendras/waybar-macos-sequoia/tree/259ecb4b5a65a52ece0708fb4c65db4f57268329
+{
+    "position": "bottom",
+    "height": 1, // Waybar height (to be removed for auto height)
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "temperature",
+        "custom/separator",
+        "network",
+        "custom/separator",
+        "cpu",
+        "custom/separator",
+        "memory",
+        "battery",
+        "battery#bat2",
+        "custom/separator",
+        "custom/date",
+        "custom/separator",
+        "clock"
+    ],
+    "clock": {
+        "format": "EG: {:%I:%M %p }"
+    },
+    "custom/date": {
+        "format": "{}",
+        "exec": "date '+%d-%m-%Y'",
+        "interval": 86400 // update after 1 day
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "RAM: {}%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "E: {ipaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected "
+    },
+    "custom/separator": {
+        "format": " | "
+    }
+}
