@@ -1,0 +1,34 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+      "key": "ctrl+shift+d",
+      "command": "editor.action.addSelectionToNextFindMatch",
+      "when": "editorFocus"
+    },
+    {
+      "key": "ctrl+y",
+      "command": "acceptSelectedSuggestion",
+      "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+    },
+    {
+      "key": "ctrl+h",
+      "command": "editor.action.triggerParameterHints",
+      "when": "vim. editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+      "key": "alt+h",
+      "command": "workbench.action.navigateLeft"
+    },
+    {
+      "key": "alt+l",
+      "command": "workbench.action.navigateRight"
+    },
+    {
+      "key": "alt+k",
+      "command": "workbench.action.navigateUp"
+    },
+    {
+      "key": "alt+j",
+      "command": "workbench.action.navigateDown"
+    }
+]

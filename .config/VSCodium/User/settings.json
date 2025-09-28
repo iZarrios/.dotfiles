@@ -1,0 +1,210 @@
+{
+  // s:VIM STUFF
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "k",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "editor.action.triggerParameterHints"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+      ],
+    },
+    {
+      "before": [
+        "-"
+      ],
+      "commands": [
+        "workbench.explorer.fileView.focus"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": true,
+    "<C-f>": false,
+    "<C-p>": false
+  },
+  "vim.digraphs": {},
+  "vim.scroll": 15, // how many lines to scroll the editor
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  // e:VIM STUFF
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "editor.renderLineHighlight": "all",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#ffffff25",
+    "editor.lineHighlightBorder": "default"
+  },
+  "window.zoomLevel": 0,
+  "scm.inputFontSize": 12,
+  "redhat.telemetry.enabled": false,
+  "gitlens.telemetry.enabled": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
+  "workbench.editorAssociations": {
+    "*.xlsx": "default"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "hint",
+    "warning",
+    "info"
+  ],
+  "[tool.pyright]": {},
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "error",
+    "reportMissingModuleSource": "error",
+    "reportOptionalSubscript": "warning",
+    "reportOptionalMemberAccess": "warning",
+    "reportOptionalCall": "warning",
+    "reportOptionalIterable": "warning",
+    "reportOptionalContextManager": "warning",
+    "reportOptionalOperand": "warning",
+    "reportGeneralTypeIssues": "warning",
+    "reportUnboundVariable": "error",
+    "reportUndefinedVariable": "error",
+    "reportInvalidStringEscapeSequence": "error",
+    "reportUnknownParameterType": "warning",
+    "reportCallInDefaultInitializer": "warning",
+    "reportPrivateUsage": "warning",
+    "reportUnusedImport": "warning",
+    "reportUnusedClass": "warning",
+    "reportUnusedFunction": "warning",
+    "reportUnusedVariable": "warning",
+    "reportDuplicateImport": "warning",
+    "reportUnusedCallResult": "warning"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "editor.cursorSurroundingLines": 10,
+  "terminal.integrated.fontFamily": "Consolas, monospace",
+  "terminal.integrated.fontSize": 18,
+  "telemetry.telemetryLevel": "off",
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "clangd.arguments": [
+    "--pretty",
+    "--log=verbose",
+  ],
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  // "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Consolas,  JetBrainsMono Nerd Font",
+  "editor.fontSize": 14,
+  "editor.minimap.sectionHeaderFontSize": 10,
+  "editor.lineNumbers": "on",
+  "editor.minimap.enabled": false,
+  "editor.inlayHints.enabled": "on",
+  "editor.cursorBlinking": "solid",
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "debug.onTaskErrors": "debugAnyway",
+  "editor.stickyScroll.enabled": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDelete": false
+}
