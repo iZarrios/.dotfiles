@@ -19,8 +19,13 @@
         "custom/separator",
         "custom/date",
         "custom/separator",
-        "clock"
+        "clock",
+        "tray"
     ],
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
     "clock": {
         "format": "EG: {:%I:%M %p }"
     },
