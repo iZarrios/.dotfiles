@@ -26,6 +26,9 @@ window-decoration = server
 window-subtitle = working-directory
 window-theme = dark
 
+# https://ghostty.org/docs/config/reference#working-directory
+working-directory = home
+
 app-notifications = no-clipboard-copy
 
 copy-on-select = false
