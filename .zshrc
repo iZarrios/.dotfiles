@@ -173,7 +173,6 @@ alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
-alias tree="tree -I 'node_modules|target'"
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
@@ -184,7 +183,6 @@ alias fman="compgen -c | fzf | xargs man"
 alias venv="source .venv/bin/activate"
 alias python="python3"
 alias py="python"
-alias code="codium"
 
 ## cfg: PATH
 # Adding go binaries
