@@ -1,0 +1,24 @@
+Hyprlandd + Arch setup
+
+I did follow these steps and I struggled in getting the 'applications.menu' file, so I would like to share how I did solve the issue from this checkpoint.
+
+First try running this command
+kbuildsycoca6 --noincremental
+
+If it does print this output -> "applications.menu" not found in QList("~/.config/menus", "/etc/xdg/menus"), you will need to get this file.
+To get the applications.menu file, install this package
+sudo pacman -Sy archlinux-xdg-menu
+
+Then run this command to generate the file
+sudo update-desktop-database
+
+As the file name differs you need to change the file name
+cd /etc/xdg/menus
+
+ls
+
+expected output -> "arch-applications.menu"
+sudo mv arch-applications.menu applications.menu
+
+Then run again this command and it should work fine
+kbuildsycoca6 --noincremental
