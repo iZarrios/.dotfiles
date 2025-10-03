@@ -164,10 +164,18 @@ bindkey -s ^f "tmux-sessionizer\n"
 #
 
 ## cfg: ALISES
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    # NOTE: you need to install `wl-clipboard`
+    alias cclip="wl-copy"
+    alias pclip="wl-paste"
+else
+    # NOTE: you need to install `xclip`
+    alias cclip="xclip -selection clipboard"
+    alias pclip="xclip -selection clipboard"
+fi
+
 alias ping-="ping 4.2.2.1"
 alias rp="realpath"
-alias cclip="xclip -selection clipboard"
-alias pclip="xclip -selection clipboard"
 alias fd="fdfind"
 alias gst="git status"
 alias lg="lazygit"
