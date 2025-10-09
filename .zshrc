@@ -191,6 +191,7 @@ alias fman="compgen -c | fzf | xargs man"
 alias venv="source .venv/bin/activate"
 alias python="python3"
 alias py="python"
+alias open="xdg-open"
 
 ## cfg: PATH
 # Adding go binaries
