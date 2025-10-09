@@ -1,0 +1,5 @@
+problem: when I try and open a directory from the browser, it opens codium
+
+Fix:
+1. check in `/usr/share/applications/` or `~/.local/share/applications/` for dolphin (org.kde.dolphin.desktop)
+2. run `xdg-mime default org.kde.dolphin.desktop inode/directory application/x-directory`
