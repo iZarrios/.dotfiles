@@ -26,6 +26,8 @@ window-decoration = server
 window-subtitle = working-directory
 window-theme = dark
 
+# https://ghostty.org/docs/config/reference#window-inherit-working-directory
+window-inherit-working-directory = false
 # https://ghostty.org/docs/config/reference#working-directory
 working-directory = home
 
