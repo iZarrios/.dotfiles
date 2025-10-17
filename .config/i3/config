@@ -183,9 +183,9 @@ bar {
 # exec --no-startup-id /usr/lib/gsd-xsettings
 exec_always --no-startup-id "sleep 1 && setxkbmap -layout us,ara -option grp:alt_shift_toggle"
 
-# exec_always --no-startup-id "xset r rate 300 50"
-# # 2 display setup
+exec_always --no-startup-id "xset r rate 200 25"
 
+# # 2 display setup
 # exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --output $ext_1 --mode 1920x1080 --rate 144 --primary --above $laptop
 # external monitor only
 exec_always --no-startup-id xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
