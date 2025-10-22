@@ -1,30 +1,3 @@
-# NOTE: I will be appending a suffix of _v42069 to every custom variable
-
-current_user_v42069=$(whoami)
-
-# Use a case statement to act based on the current user
-case "$current_user_v42069" in
-  zarrios)
-    export EXTERNAL_DRIVE_v42069="$HOME"
-    ;;
-  phormico)
-    export EXTERNAL_DRIVE_v42069="/mnt/vsh"
-    ;;
-  sherdle)
-    export EXTERNAL_DRIVE_v42069="$HOME"
-    ;;
-  hpv)
-    export EXTERNAL_DRIVE_v42069="$HOME"
-    ;;
-  biluka)
-    export EXTERNAL_DRIVE_v42069="$HOME"
-    ;;
-  *)
-    echo "Hello, $current_user_v42069! You are not currently listed in the .zshrc, will default to $HOME"
-    export EXTERNAL_DRIVE_v42069="$HOME"
-    ;;
-esac
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
