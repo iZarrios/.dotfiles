@@ -2,7 +2,7 @@
 # set -eux
 
 #now we want to install the lua language server
-LUA_LSP_VERSION=$(curl -s "https://api.github.com/repos/LuaLS/lua-language-server/releases/latest" | tee out | grep -Po '"tag_name": "\K[^"]*')
+LUA_LSP_VERSION=$(curl -s "https://api.github.com/repos/LuaLS/lua-language-server/releases/latest" | grep -Po '"tag_name": "\K[^"]*')
 
 mkdir -p "$HOME/custom_build"
 cd "$HOME/custom_build"
