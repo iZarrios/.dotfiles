@@ -28,7 +28,7 @@ if command -v nvim &> /dev/null; then
     # changed how they build treesitter so we have to get the files again In
     # this script, I use make clean to verify that these things but I guess
     # `make clean` doesn't remove the .deps directory
-    rm -rf .deps
+    sudo rm -rf .deps
 else
     mkdir -p ~/custom_build
     cd ~/custom_build
