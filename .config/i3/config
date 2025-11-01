@@ -123,7 +123,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # setting moniters variables
-set $laptop "eDP-1"
+set $laptop "DP-0"
 # external monitor 1
 set $ext_1 "HDMI-1-0"
 
@@ -188,7 +188,9 @@ exec_always --no-startup-id "xset r rate 200 25"
 # # 2 display setup
 # exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --output $ext_1 --mode 1920x1080 --rate 144 --primary --above $laptop
 # external monitor only
-exec_always --no-startup-id xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
+# exec_always --no-startup-id xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
+
+exec_always --no-startup-id xrandr --output $ext_1 --mode 1920x1080 --rate 144 --primary
 
 # # laptop only
 # exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --primary --output $ext_1 --off
