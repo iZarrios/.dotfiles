@@ -73,3 +73,4 @@ vim.opt.cursorline = true
 -- vim.cmd [[ au InsertLeave * set cursorline ]]
 -- vim.cmd [[ au InsertEnter * set nocursorline ]]
 
+vim.opt.autoread = true
