@@ -179,7 +179,7 @@
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.cursorSurroundingLines": 10,
   "terminal.integrated.fontFamily": "Consolas, monospace",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontSize": 16,
   "telemetry.telemetryLevel": "off",
   "C_Cpp.intelliSenseEngine": "disabled",
   "clangd.arguments": [
