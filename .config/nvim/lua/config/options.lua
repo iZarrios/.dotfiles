@@ -39,6 +39,13 @@ vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes:1"
 vim.opt.isfname:append("@-@")
 
+local keywords_table = vim.opt.iskeyword:get()
+local out = {}
+for _, v in ipairs(keywords_table) do
+  if v ~= "_" then table.insert(out, v) end
+end
+vim.opt.iskeyword = out
+
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "100"
