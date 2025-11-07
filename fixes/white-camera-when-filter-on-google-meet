@@ -1,0 +1,9 @@
+
+1. create file `~/.config/brave-flags.conf`
+
+2. write the following into it
+
+```
+--ozone-platform=x11
+--app="https://meet.google.com"
+```
