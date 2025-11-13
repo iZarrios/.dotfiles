@@ -7,9 +7,11 @@
     ],
     "modules-center": [],
     "modules-right": [
-        "temperature",
-        "custom/separator",
+        // "temperature",
+        // "custom/separator",
         "network",
+        "custom/separator",
+        "disk",
         "custom/separator",
         "cpu",
         "custom/separator",
@@ -19,6 +21,8 @@
         "custom/separator",
         "custom/date",
         "custom/separator",
+        "custom/clock",
+        "custom/separator",
         "clock",
         "tray"
     ],
@@ -27,7 +31,15 @@
         "spacing": 10
     },
     "clock": {
-        "format": "EG: {:%I:%M %p }"
+        "format": "EG: {:%I:%M %p }",
+        "timezone": "Africa/Cairo",
+        "interval": 60
+    },
+    // since we can't have two "clock" widgets, I make an equivalent custom one
+    "custom/clock": {
+        "format": "QC: {}",
+        "exec": "TZ='America/Montreal' date '+%I:%M %p'",
+        "interval": 60
     },
     "custom/date": {
         "format": "{}",
@@ -40,6 +52,11 @@
     },
     "memory": {
         "format": "RAM: {}%"
+    },
+    "disk": {
+        "interval": 300, // update after one minute
+        "path": "/",
+        "format": "Disk: {percentage_used}%",
     },
     "temperature": {
         "critical-threshold": 80,
