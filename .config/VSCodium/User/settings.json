@@ -176,7 +176,6 @@
     "reportUnusedCallResult": "warning"
   },
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.cursorSurroundingLines": 10,
   "terminal.integrated.fontFamily": "Consolas, monospace",
   "terminal.integrated.fontSize": 16,
@@ -206,5 +205,6 @@
   "editor.stickyScroll.enabled": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "files.trimTrailingWhitespace": true,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Carbonfox"
 }
