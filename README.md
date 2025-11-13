@@ -6,6 +6,12 @@ This directory utilizes the GNU `stow` binary
 ```bash
 sudo apt install stow
 ```
+
+## Installing GNU stow (arch btw)
+
+```bash
+sudo pacman -S stow
+```
 ## Configuring symlinks using stow
 **Note: you must put this repo in current user's home directory (/home/USER_NAME eg.. `~`)**
 
