@@ -1,6 +1,9 @@
 theme = Carbonfox
 font-family = JetBrainsMonoNerdFont
 font-size = 10
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 gtk-titlebar = false
 
 shell-integration = zsh
