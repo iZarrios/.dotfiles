@@ -2,7 +2,7 @@ vim.lsp.enable({
     "gopls",
     "lua_ls",
     "clangd",
-    "pyright",
+    -- "pyright",
     "ruff",
     "ty",
     "rust_analyzer",
