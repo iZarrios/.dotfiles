@@ -4,6 +4,7 @@ vim.lsp.enable({
     "clangd",
     "pyright",
     "ruff",
+    "ty",
     "rust_analyzer",
     "ts_ls",
 })
