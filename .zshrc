@@ -155,12 +155,12 @@ alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
 alias v="nvim"
+alias v.="v ."
 alias path='echo -e ${PATH//:/\\n}' # print path on multiple lines
 alias mv='mv -i'
 alias dl='cd ~/Downloads'
 # alias grep="rg"
 alias mktmux='tmux new -s "$(realpath .| tr " " _ | xargs basename | tr . _)"'
-alias v.="v ."
 alias fman="compgen -c | fzf | xargs man"
 alias venv="source .venv/bin/activate"
 alias python="python3"
@@ -174,30 +174,19 @@ export PATH=$PATH:"$HOME/.cargo/bin"
 
 # Adding local scripts
 export PATH=$PATH:"$HOME/.local/scripts/"
-export PATH=$PATH:"$HOME/.local/bin/"
-# Adding `go` and `gofmt`
-export PATH=$PATH:"$HOME/custom_build/go/bin"
+
 # NOTE: check `GOBIN`
 export PATH=$PATH:"$HOME/.local/bin/go"
+
 # Adding node
 export PATH=$PATH:"$HOME/.n/bin/node"
 
 export PATH=$PATH:"/usr/local/bin/"
 export PATH=$PATH:"$HOME/.local/bin/"
 
-export PATH=$PATH:"/usr/lib/llvm-18/bin/"
-# Adding llvm to PATH (to avoid having to use the suffix of the llvm version)
-export PATH=$PATH:"$HOME/custom_build/clang_llvm_18.1.8/bin"
-
-export PATH=$PATH:"$HOME/custom_build/ghostty/zig-out/bin"
-
-# Adding nvidia toolkit to PATH
-export PATH=$PATH:"/usr/local/cuda/bin/"
-
 # Go cache module location overwrite
 export GOMODCACHE="$HOME/caches"
 export GOBIN="$HOME/.local/bin/go"
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # Sourcing some scret keys
 source "$HOME/secret.zsh"
