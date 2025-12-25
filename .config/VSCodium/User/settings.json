@@ -206,5 +206,5 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "files.trimTrailingWhitespace": true,
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "Carbonfox"
+  "workbench.colorTheme": "Terafox"
 }
