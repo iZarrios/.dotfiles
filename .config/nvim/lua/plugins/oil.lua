@@ -1,5 +1,10 @@
 return {
     'stevearc/oil.nvim',
+    lazy = false,
+    keys = {
+        { "<leader>pv", "<cmd>Oil<cr>", desc = "Open Oil file browser" },
+        { "-", "<cmd>Oil<cr>", desc = "Open Oil file browser" },
+    },
     config = function()
         require("oil").setup({
             -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
