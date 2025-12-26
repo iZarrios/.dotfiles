@@ -1,6 +1,7 @@
 return {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    lazy = true,
     config = {
         -- show icons in the signs column
         -- I personally disable them check `vim.o.signcolumn`
