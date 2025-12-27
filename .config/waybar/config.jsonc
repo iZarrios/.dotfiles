@@ -24,14 +24,17 @@
         "custom/clock",
         "custom/separator",
         "clock",
-        "tray"
+        "custom/separator",
+        "custom/tailscale",
+        "custom/space",
+        "tray",
     ],
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
-        "format": "EG: {:%I:%M %p }",
+        "format": "EG: {:%I:%M %p}",
         "timezone": "Africa/Cairo",
         "interval": 60
     },
@@ -76,5 +79,21 @@
     },
     "custom/separator": {
         "format": " | "
-    }
+    },
+    "custom/space": {
+        "format": " "
+    },
+    "custom/tailscale" : {
+        "exec": "~/.config/waybar/waybar-tailscale.sh --status",
+        "on-click": "exec ~/.config/waybar/waybar-tailscale.sh --toggle",
+        "exec-on-event": true,
+        "format": "tailscale: {icon}",
+        "format-icons": {
+            "connected": "on",
+            "stopped": "off"
+        },
+        "tooltip": true,
+        "return-type": "json",
+        "interval": 3,
+    },
 }
