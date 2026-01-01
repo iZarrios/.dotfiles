@@ -10,9 +10,5 @@ return {
     "typescript.tsx",
   },
   root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json', '.git' },
-  capabilities = vim.tbl_deep_extend(
-    'force',
-    vim.lsp.protocol.make_client_capabilities(),
-    require('blink.cmp').get_lsp_capabilities({}, false)
-  ),
+  capabilities = require("config.lsp_utils").make_capabilities(),
 };

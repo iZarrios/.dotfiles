@@ -31,8 +31,7 @@ return {
     'compile_commands.json',
     'compile_flags.txt',
   },
-  filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
-  -- custom on attach function for clangd
+  filetypes = { 'c', 'cpp', 'h', 'hpp', 'objc', 'objcpp', 'cuda', 'proto' },
   on_attach = function(_, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'LspClangdSwitchSourceHeader', function()
       switch_source_header(bufnr)
@@ -41,10 +40,5 @@ return {
     local opts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "<A-o>", "<cmd>LspClangdSwitchSourceHeader<CR>", opts)
   end,
-  capabilities = vim.tbl_deep_extend(
-    'force',
-    vim.lsp.protocol.make_client_capabilities(),
-    require('blink.cmp').get_lsp_capabilities({}, false)
-  ),
-
+  capabilities = require("config.lsp_utils").make_capabilities(),
 };

@@ -1,13 +1,3 @@
-local capabilities = vim.tbl_deep_extend(
-  "force",
-  vim.lsp.protocol.make_client_capabilities(),
-  require("blink.cmp").get_lsp_capabilities({}, false)
-)
-
--- remove formatting support from what we tell the server
-capabilities.textDocument.formatting = nil
-capabilities.textDocument.rangeFormatting = nil
-
 ---@type vim.lsp.Config
 return {
   cmd = { 'pyright-langserver', '--stdio' },
@@ -21,7 +11,7 @@ return {
     'pyrightconfig.json',
     '.git',
   },
-  capabilities = capabilities,
+  capabilities = require("config.lsp_utils").make_capabilities_no_formatting(),
   settings = {
     python = {
       analysis = {
