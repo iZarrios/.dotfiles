@@ -79,9 +79,11 @@ ZSH_THEME="eastwood"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+    extract
 	zsh-autosuggestions
 	sudo
 	fast-syntax-highlighting # cfg: fast-theme zdharma
+    fzf
 )
 source $ZSH/oh-my-zsh.sh
 
