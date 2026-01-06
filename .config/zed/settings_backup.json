@@ -7,11 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "icon_theme": {
-    "mode": "dark",
-    "light": "Zed (Default)",
-    "dark": "Zed (Default)"
-  },
   "terminal": {
     "font_size": 16.0,
     "font_family": "Consolas",
@@ -39,18 +34,23 @@
     "JetBrainsMono Nerd Font"
   ],
   "buffer_font_family": "Consolas",
-  "agent": {
+  "assistant": {
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-3.5-turbo"
     },
+    "version": "2"
   },
   "vim_mode": true,
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
 
   "ui_font_size": 15,
   "buffer_font_size": 14.0,
-  "theme": "Terafox",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Macchiato - No Italics"
+  },
   "autosave": "off",
   "format_on_save": "off",
   "cursor_blink": false
