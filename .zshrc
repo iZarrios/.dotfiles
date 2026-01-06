@@ -1,11 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PYRIGHT_PYTHON_FORCE_VERSION=latest
-
-export PATH=$N_PREFIX/bin:$PATH
-export PIP_REQUIRE_VIRTUALENV=true
-
-export DOTFILES_USER="`whoami`"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -94,16 +88,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# The $VISUAL is an environment shell variable. It defines the user's preferred utility (or command) to edit text files.
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-  export VISUAL=$EDITOR
-else
-  export EDITOR='nvim'
-  export VISUAL=$EDITOR
-fi
-
 ## cfg: custom scripts
 function yt-dlp-best() {
     # Check if yt-dlp is installed
@@ -121,8 +105,6 @@ function yt-dlp-best() {
 
 ## cfg: FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export FZF_DEFAULT_OPTS="--extended --ansi --border=none --color=fg:#ebdbb2,bg:#282828,hl:#458588,fg+:#d5c4a1,bg+:#3c3836,hl+:#b8bb26,info:#83a598,prompt:#d79921,pointer:#fe8019,marker:#d3869b,spinner:#fabd2f,header:#98971a"
-export FZF_DEFAULT_OPTS="--extended --ansi --border=none"
 
 # # src: https://github.com/MariaSolOs/dotfiles/blob/887b21756c27c112e38818caf590647601617e31/.zshenv#L33
 # export FZF_DEFAULT_OPTS="--extended --color=fg:#f8f8f2,bg:#0e1419,hl:#e11299,fg+:#f8f8f2,bg+:#44475a,hl+:#e11299,info:#f1fa8c,prompt:#50fa7b,pointer:#ff79c6,marker:#ff79c6,spinner:#a4ffff,header:#6272a4 \
@@ -170,31 +152,6 @@ alias start-tailscale='sudo systemctl start tailscaled && tailscale systray & di
 
 [ "$(uname -s)" = "Linux" ] && alias open='xdg-open'
 
-## cfg: PATH
-# Adding go binaries
-export PATH=$PATH:"$HOME/bin/go"
-export PATH=$PATH:"$HOME/.cargo/bin"
-
-# Adding local scripts
-export PATH=$PATH:"$HOME/.local/scripts/"
-
-# NOTE: check `GOBIN`
-export PATH=$PATH:"$HOME/.local/bin/go"
-
-# Adding node
-export PATH=$PATH:"$HOME/.n/bin/node"
-
-export PATH=$PATH:"/usr/local/bin/"
-export PATH=$PATH:"$HOME/.local/bin/"
-
-# Go cache module location overwrite
-export GOMODCACHE="$HOME/caches"
-export GOBIN="$HOME/.local/bin/go"
-
-# Sourcing some scret keys
+# Sourcing some secret keys
 source "$HOME/secret.zsh"
-
-export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-export MANPAGER='nvim +Man!'
 
