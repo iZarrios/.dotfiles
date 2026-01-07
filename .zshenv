@@ -31,6 +31,10 @@ export N_PREFIX="$HOME/.n"
 export GOMODCACHE="$HOME/caches"
 export GOBIN="$HOME/.local/bin/go"
 
+# apply 12H date format gloablly
+# +%I:%M %p
+export TIME_STYLE=+%D\ %I:%M\ %p
+
 # PATH configuration
 export PATH=$N_PREFIX/bin:$PATH
 export PATH=$PATH:"$HOME/bin/go"
