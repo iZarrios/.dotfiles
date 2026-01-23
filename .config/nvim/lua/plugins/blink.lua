@@ -3,7 +3,6 @@ return {
   -- optional: provides snippets for the snippet source
   dependencies = {
     'rafamadriz/friendly-snippets',
-    "huijiro/blink-cmp-supermaven",
   },
   -- use a release tag to download pre-built binaries
   version = '1.*',
@@ -81,7 +80,7 @@ return {
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       -- add lazydev to your completion providers
-      default = { "lazydev", "supermaven", "lsp", "path", "snippets", "buffer" },
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
       providers = {
         lazydev = {
           name = "LazyDev",
@@ -89,11 +88,6 @@ return {
           -- make lazydev completions top priority (see `:h blink.cmp`)
           score_offset = 100,
         },
-        supermaven = {
-          name = 'supermaven',
-          module = "blink-cmp-supermaven",
-          async = true
-        }
       },
     },
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
