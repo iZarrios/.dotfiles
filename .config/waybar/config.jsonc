@@ -25,8 +25,8 @@
         "custom/separator",
         "clock",
         "custom/separator",
-        "custom/tailscale",
-        "custom/space",
+        // "custom/tailscale",
+        // "custom/space",
         "tray",
     ],
     "tray": {
@@ -34,17 +34,20 @@
         "spacing": 10
     },
     "clock": {
+        "tooltip": false,
         "format": "EG: {:%I:%M %p}",
         "timezone": "Africa/Cairo",
         "interval": 60
     },
     // since we can't have two "clock" widgets, I make an equivalent custom one
     "custom/clock": {
+        "tooltip": false,
         "format": "QC: {}",
         "exec": "TZ='America/Montreal' date '+%I:%M %p'",
         "interval": 60
     },
     "custom/date": {
+        "tooltip": false,
         "format": "{}",
         "exec": "date '+%d-%m-%Y'",
         "interval": 86400 // update after 1 day
@@ -71,6 +74,7 @@
         ]
     },
     "network": {
+        "tooltip": false,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "E: {ipaddr}",
@@ -83,17 +87,17 @@
     "custom/space": {
         "format": " "
     },
-    "custom/tailscale" : {
-        "exec": "~/.config/waybar/waybar-tailscale.sh --status",
-        "on-click": "exec ~/.config/waybar/waybar-tailscale.sh --toggle",
-        "exec-on-event": true,
-        "format": "tailscale: {icon}",
-        "format-icons": {
-            "connected": "on",
-            "stopped": "off"
-        },
-        "tooltip": true,
-        "return-type": "json",
-        "interval": 3,
-    },
+    // "custom/tailscale" : {
+    //     "exec": "~/.config/waybar/waybar-tailscale.sh --status",
+    //     "on-click": "exec ~/.config/waybar/waybar-tailscale.sh --toggle",
+    //     "exec-on-event": true,
+    //     "format": "tailscale: {icon}",
+    //     "format-icons": {
+    //         "connected": "on",
+    //         "stopped": "off"
+    //     },
+    //     "tooltip": true,
+    //     "return-type": "json",
+    //     "interval": 3,
+    // },
 }
