@@ -47,10 +47,12 @@
         "interval": 60
     },
     "custom/date": {
-        "tooltip": false,
+        "tooltip": true,
         "format": "{}",
-        "exec": "date '+%d-%m-%Y'",
-        "interval": 86400 // update after 1 day
+        // because we aren't returning json, waybar follows the i3 standard for status
+        // which means second line will be the tooltip hence why we use '\n'
+        "exec": "date '+%d-%m-%Y\n%A'",
+        "interval": 86400
     },
     "cpu": {
         "format": "CPU: {usage}%",
