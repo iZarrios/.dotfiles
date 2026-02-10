@@ -44,5 +44,7 @@ export PATH=$PATH:"$HOME/.local/bin/go"
 export PATH=$PATH:"$HOME/.n/bin/node"
 export PATH=$PATH:"/usr/local/bin/"
 export PATH=$PATH:"$HOME/.local/bin/"
+export PATH=$PATH:"$HOME/custom_build/llama.cpp/build/bin"
 # opencode
 export PATH=/home/biluka/.opencode/bin:$PATH
+
