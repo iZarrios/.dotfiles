@@ -19,11 +19,11 @@
         "battery",
         "battery#bat2",
         "custom/separator",
-        "custom/date",
-        "custom/separator",
-        "custom/clock",
-        "custom/separator",
         "clock",
+        "custom/separator",
+        "custom/clock1",
+        "custom/separator",
+        "custom/clock2",
         "custom/separator",
         // "custom/tailscale",
         // "custom/space",
@@ -34,26 +34,48 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip": false,
-        "format": "EG: {:%I:%M %p}",
-        "timezone": "Africa/Cairo",
-        "interval": 60
-    },
-    // since we can't have two "clock" widgets, I make an equivalent custom one
-    "custom/clock": {
-        "tooltip": false,
-        "format": "QC: {}",
-        "exec": "TZ='America/Montreal' date '+%I:%M %p'",
-        "interval": 60
-    },
-    "custom/date": {
+        // date module
         "tooltip": true,
-        "format": "{}",
-        // because we aren't returning json, waybar follows the i3 standard for status
-        // which means second line will be the tooltip hence why we use '\n'
-        "exec": "date '+%d-%m-%Y\n%A'",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode"
+        },
+        "format": "{:%d-%m-%Y}",
+        "timezone": "Africa/Cairo",
         "interval": 86400
     },
+    "custom/clock1": {
+        "tooltip": true,
+        "format": "QC: {}",
+        "exec": "TZ='America/Montreal' date '+%I:%M %p\n%A'",
+        "interval": 60
+    },
+    "custom/clock2": {
+        "tooltip": true,
+        "format": "EG: {}",
+        "exec": "TZ='Africa/Cairo' date '+%I:%M %p\n%A'",
+        "interval": 60
+    },
+    // "custom/clock1": {
+    //     "tooltip": true,
+    //     "format": "{}",
+    //     // because we aren't returning json, waybar follows the i3 standard for status
+    //     // which means second line will be the tooltip hence why we use '\n'
+    //     "exec": "date '+%d-%m-%Y\n%A'",
+    //     "interval": 86400
+    // },
     "cpu": {
         "format": "CPU: {usage}%",
         "tooltip": true
@@ -81,7 +103,7 @@
         "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "E: {ipaddr}",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected "
+        "format-disconnected": "Disconnected"
     },
     "custom/separator": {
         "format": " | "
