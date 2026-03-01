@@ -29,6 +29,14 @@
         // "custom/space",
         "tray",
     ],
+    "hyprland/window": {
+        "format": "{title}",
+        "icon": false,
+        "rewrite": {
+            "(.*) - Brave": "$1",
+            "Ghostty": "terminal",
+        },
+    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
