@@ -61,7 +61,7 @@ function yt-dlp-best
 
     # Run the command
     # Note: Fish automatically puts arguments into $argv
-    yt-dlp $argv[1] -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
+    yt-dlp $argv[1] --js-runtimes node -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"
 end
 
 function tmux_sessionizer
