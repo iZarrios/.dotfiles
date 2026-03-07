@@ -43,6 +43,7 @@ set -gx PATH "$HOME/.n/bin/node" $PATH
 set -gx PATH "$HOME/.local/bin/" $PATH
 set -gx PATH "$HOME/.opencode/bin" $PATH
 set -gx PATH "/usr/local/bin/" $PATH
+set -gx PATH "/opt/cuda/bin" $PATH
 
 
 function yt-dlp-best
