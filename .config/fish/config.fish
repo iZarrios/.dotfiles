@@ -112,6 +112,7 @@ function tmux_sessionizer
 end
 
 bind \cf tmux-sessionizer
+bind \cx\ce edit_command_buffer
 
 # Compilation flags
 # set -gx ARCHFLAGS "-arch x86_64"
