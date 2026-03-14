@@ -148,7 +148,6 @@ alias fman="compgen -c | fzf | xargs man"
 alias venv="source .venv/bin/activate"
 alias python="python3"
 alias py="python"
-alias start-tailscale='sudo systemctl start tailscaled && tailscale systray & disown'
 
 [ "$(uname -s)" = "Linux" ] && alias open='xdg-open'
 
