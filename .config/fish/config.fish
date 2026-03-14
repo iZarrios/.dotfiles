@@ -2,10 +2,11 @@ if not status is-interactive
     return 0
 end
 
-set -gx PYRIGHT_PYTHON_FORCE_VERSION "latest"
 set -gx PIP_REQUIRE_VIRTUALENV "true"
 
 set -gx DOTFILES_USER (whoami)
+
+set -gx JAVA_HOME "/usr/lib/jvm/java-17-openjdk"
 
 if set -q SSH_CONNECTION
     set -gx EDITOR "vim"
@@ -42,8 +43,13 @@ set -gx PATH "$HOME/.local/bin/go" $PATH
 set -gx PATH "$HOME/.n/bin/node" $PATH
 set -gx PATH "$HOME/.local/bin/" $PATH
 set -gx PATH "$HOME/.opencode/bin" $PATH
+set -gx PATH "$HOME/custom_build/android-studio/bin" $PATH
+
+set -gx NDK_ROOT "/home/biluka/Android/Sdk/ndk/21.1.6352462"
 set -gx PATH "/usr/local/bin/" $PATH
 set -gx PATH "/opt/cuda/bin" $PATH
+
+
 
 
 function yt-dlp-best
@@ -114,6 +120,14 @@ end
 bind \cf tmux-sessionizer
 bind \cx\ce edit_command_buffer
 
+# "Dummy" behavior (just the previous command, ignoring what's typed)
+bind \cp up-or-search
+bind \cn down-or-search
+
+# "Smart" behavior (searches history for matches to current input)
+bind \ep history-search-backward
+bind \en history-search-forward
+
 # Compilation flags
 # set -gx ARCHFLAGS "-arch x86_64"
 
@@ -161,6 +175,8 @@ fzf --fish | source
 
 # Remove the gretting message.
 set -U fish_greeting
+set -g fish_completion_smart_case 1
+
 
 # set -g fish_key_bindings fish_vi_key_bindings
 # set fish_vi_force_cursor 1
