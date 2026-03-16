@@ -148,9 +148,10 @@ alias fman="compgen -c | fzf | xargs man"
 alias venv="source .venv/bin/activate"
 alias python="python3"
 alias py="python"
+alias cd="z"
 
 [ "$(uname -s)" = "Linux" ] && alias open='xdg-open'
 
 # Sourcing some secret keys
 source "$HOME/secret.zsh"
-
+eval "$(zoxide init zsh)"
