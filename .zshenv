@@ -42,9 +42,11 @@ export PATH=$PATH:"$HOME/.cargo/bin"
 export PATH=$PATH:"$HOME/.local/scripts/"
 export PATH=$PATH:"$HOME/.local/bin/go"
 export PATH=$PATH:"$HOME/.n/bin/node"
-export PATH=$PATH:"/usr/local/bin/"
+export PATH=$PATH:"/usr/local/bin"
 export PATH=$PATH:"$HOME/.local/bin/"
 export PATH=$PATH:"$HOME/custom_build/llama.cpp/build/bin"
-# opencode
-export PATH=/home/biluka/.opencode/bin:$PATH
+export PATH=$PATH:"$HOME/custom_build/android-studio/bin"
+export PATH=$PATH:"$HOME/.opencode/bin"
+export PATH=$PATH:"$HOME/Android/Sdk/ndk/21.1.6352462"
+export PATH=$PATH:"/opt/cuda/bin"
 
