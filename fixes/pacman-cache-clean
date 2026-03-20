@@ -1,0 +1,8 @@
+you will need the paccache which is part of the pacman-contrib package
+
+sudo pacman -S pacman-contrib
+
+
+and then run
+
+sudo paccache -ruk0
