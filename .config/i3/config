@@ -14,7 +14,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:UbuntuMono Nerd 8
+font pango:Consolas  10
 # font pango:monospace 9
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -29,7 +29,7 @@ floating_modifier $mod
 # start a terminal
 
 # bindsym $mod+Return exec x-terminal-emulator
-bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec alacritty
 # bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
@@ -95,7 +95,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch between the two recent workspaces
-bindsym $mod+grave workspace back_and_forth
+bindsym $mod+Escape workspace back_and_forth
 
 
 # switch to workspace
@@ -171,7 +171,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # CUSTOM BINDINGS
-bindsym Print exec --no-startup-id flameshot gui
+bindsym Shift+F11 exec --no-startup-id flameshot gui
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -190,7 +190,7 @@ exec_always --no-startup-id "xset r rate 200 25"
 # external monitor only
 # exec_always --no-startup-id xrandr --output $laptop --off --output $ext_1 --mode 1920x1080 --rate 144 --primary
 
-exec_always --no-startup-id xrandr --output $ext_1 --mode 1920x1080 --rate 144 --primary
+exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 143.98 --primary
 
 # # laptop only
 # exec_always --no-startup-id xrandr --output $laptop --mode 1920x1080 --rate 60 --primary --output $ext_1 --off
