@@ -50,3 +50,5 @@ export PATH=$PATH:"$HOME/.opencode/bin"
 export PATH=$PATH:"$HOME/Android/Sdk/ndk/21.1.6352462"
 export PATH=$PATH:"/opt/cuda/bin"
 
+export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORM="xcb"
