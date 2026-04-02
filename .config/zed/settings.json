@@ -7,42 +7,59 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "language_models": {
+    "openai_compatible": {
+      "llama.cpp": {
+        "api_url": "http://localhost:10000/v1",
+        "available_models": [
+          {
+            "name": "Qwen3.5-9b",
+            "max_tokens": 32768,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 32768,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+    },
+  },
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)"
+    "dark": "Zed (Default)",
   },
   "terminal": {
     "font_size": 16.0,
     "font_family": "Consolas",
-    "font_fallbacks": [
-      "monospace"
-    ]
+    "font_fallbacks": ["monospace"],
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "base_keymap": "VSCode",
   "sticky_scroll": {
-    "enabled": false
+    "enabled": false,
   },
   "vertical_scroll_margin": 10.0,
   "gutter": {
-    "line_numbers": true
+    "line_numbers": true,
   },
   "minimap": {
-    "show": "never"
+    "show": "never",
   },
   "current_line_highlight": "all",
-  "buffer_font_fallbacks": [
-    "JetBrainsMono Nerd Font"
-  ],
+  "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "buffer_font_family": "Consolas",
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-3.5-turbo"
+      "provider": "llama.cpp",
+      "model": "Qwen3.5-9b",
     },
   },
   "vim_mode": true,
@@ -50,8 +67,18 @@
 
   "ui_font_size": 15,
   "buffer_font_size": 14.0,
-  "theme": "Terafox",
+  "theme": "Gruvbox Dark Hard",
   "autosave": "off",
   "format_on_save": "off",
-  "cursor_blink": false
+  "cursor_blink": false,
+  "show_edit_predictions": true,
+  "edit_predictions": {
+     "provider": "open_ai_compatible_api",
+     "open_ai_compatible_api": {
+       "api_url": "http://localhost:10000/v1/completions",
+       "model": "zeta-2",
+       "prompt_format": "infer",
+       "max_output_tokens": 64
+     }
+   }
 }
