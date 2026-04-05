@@ -116,6 +116,8 @@
 
   # ── System Packages ────────────────────────────────────────────────────
   # User-level tools (neovim, ripgrep, lazygit, etc.) live in home.nix.
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   # Only system-wide essentials go here.
   environment.systemPackages = with pkgs; [
     vim

@@ -42,7 +42,7 @@
     ninja
 
     # Editors
-    neovim
+    # neovim
 
     # Docker
     docker-compose
