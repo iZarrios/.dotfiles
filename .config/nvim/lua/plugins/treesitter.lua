@@ -4,8 +4,22 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ":TSUpdate",
   lazy = false,
+  branch = "main",
+  init = function()
+    local ensureInstalled = {
+      'lua', 'python', 'c', 'cpp',
+      -- ... your parsers
+    }
+    local alreadyInstalled = require('nvim-treesitter.config').get_installed()
+    local parsersToInstall = vim.iter(ensureInstalled)
+        :filter(function(parser)
+          return not vim.tbl_contains(alreadyInstalled, parser)
+        end)
+        :totable()
+    require('nvim-treesitter').install(parsersToInstall)
+  end,
   config = function()
-    require('nvim-treesitter.configs').setup({
+    require('nvim-treesitter').setup({
       ensure_installed = { "c", "lua", "comment", "python" },
       modules = {},
       ignore_install = {},
