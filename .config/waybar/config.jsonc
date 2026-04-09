@@ -27,15 +27,14 @@
         "custom/separator",
         // "custom/tailscale",
         // "custom/space",
-        "tray",
+        "tray"
     ],
     "hyprland/window": {
         "format": "{title}",
         "icon": false,
         "rewrite": {
-            "(.*) - Brave": "$1",
-            "Ghostty": "terminal",
-        },
+            "(.*) - Brave": "$1"
+        }
     },
     "tray": {
         // "icon-size": 21,
@@ -46,7 +45,7 @@
         "tooltip": true,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-            "mode": "year",
+            "mode": "month",
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
@@ -76,14 +75,6 @@
         "exec": "TZ='Africa/Cairo' date '+%I:%M %p\n%A'",
         "interval": 60
     },
-    // "custom/clock1": {
-    //     "tooltip": true,
-    //     "format": "{}",
-    //     // because we aren't returning json, waybar follows the i3 standard for status
-    //     // which means second line will be the tooltip hence why we use '\n'
-    //     "exec": "date '+%d-%m-%Y\n%A'",
-    //     "interval": 86400
-    // },
     "cpu": {
         "format": "CPU: {usage}%",
         "tooltip": true
@@ -94,7 +85,7 @@
     "disk": {
         "interval": 300, // update after one minute
         "path": "/",
-        "format": "Disk: {percentage_used}%",
+        "format": "Disk: {percentage_used}%"
     },
     "temperature": {
         "critical-threshold": 80,
@@ -118,18 +109,5 @@
     },
     "custom/space": {
         "format": " "
-    },
-    // "custom/tailscale" : {
-    //     "exec": "~/.config/waybar/waybar-tailscale.sh --status",
-    //     "on-click": "exec ~/.config/waybar/waybar-tailscale.sh --toggle",
-    //     "exec-on-event": true,
-    //     "format": "tailscale: {icon}",
-    //     "format-icons": {
-    //         "connected": "on",
-    //         "stopped": "off"
-    //     },
-    //     "tooltip": true,
-    //     "return-type": "json",
-    //     "interval": 3,
-    // },
+    }
 }
