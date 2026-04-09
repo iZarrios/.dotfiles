@@ -60,6 +60,12 @@
     };
   };
 
+  # ── Fonts ───────────────────────────────────────────────────────────────
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    noto-fonts
+  ];
+
   # ── Desktop Environment ────────────────────────────────────────────────
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = false;
