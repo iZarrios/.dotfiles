@@ -41,6 +41,9 @@
     cmake
     ninja
 
+    # Launcher
+    wmenu
+
     # Editors
     neovim
 
