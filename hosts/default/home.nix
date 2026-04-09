@@ -213,7 +213,7 @@
     "nvim".source       = ../../.config/nvim;
     "waybar".source     = ../../.config/waybar;
     "fish".source       = ../../.config/fish;
-    "fontconfig".source = ../../.config/fontconfig;
+    "fontconfig/conf.d/arabic-fonts.conf".source = ../../.config/fontconfig/conf.d/arabic-fonts.conf;
     "zed".source        = ../../.config/zed;
     "VSCodium".source   = ../../.config/VSCodium;
   };
