@@ -7,14 +7,19 @@
   home.username = "nix";
   home.homeDirectory = "/home/nix";
 
+  home.pointerCursor = {
+    name = "breeze_cursors";
+    package = pkgs.kdePackages.breeze;
+    size = 24;
+    gtk.enable = true;
+  };
+
   # ── Packages ────────────────────────────────────────────────────────────
   # These replace all the setup/*.sh install scripts.
   home.packages = with pkgs; [
-    # Terminals
-    alacritty
-    ghostty
 
     # Shell utilities
+    vlc
     ripgrep
     fd
     btop
@@ -24,13 +29,11 @@
     unzip
     tree
 
-    # Clipboard (Wayland + X11 — both installed so aliases work in either session)
+    # Clipboard
     wl-clipboard
     xclip
 
     # Languages & toolchains
-    go
-    gopls
     lua
     lua-language-server
     nodejs
@@ -40,17 +43,13 @@
     gcc
     cmake
     ninja
+    uv
 
-    # Launcher
-    wmenu
-
-    # Editors
+    tree-sitter
     neovim
+    obsidian
+    pavucontrol
 
-    # Docker
-    docker-compose
-
-    # Delta (git pager, referenced in your .gitconfig)
     delta
   ];
 
@@ -122,7 +121,7 @@
     };
 
     # initExtra runs at the end of .zshrc — for things that need the interactive shell.
-    initExtra = ''
+    initContent = ''
       # ── EDITOR — use vim over SSH, nvim locally ──
       if [[ -n $SSH_CONNECTION ]]; then
         export EDITOR='vim'
@@ -199,6 +198,7 @@
   # Basic enable — your .gitconfig is symlinked below for full control.
   programs.git = {
     enable = true;
+    signing.format = null;
   };
 
   # ── Dotfile Symlinks ────────────────────────────────────────────────────
@@ -210,13 +210,12 @@
   xdg.configFile = {
     "alacritty".source  = ../../.config/alacritty;
     "btop".source       = ../../.config/btop;
-    "ghostty".source    = ../../.config/ghostty;
     "hypr".source       = ../../.config/hypr;
     "i3".source         = ../../.config/i3;
     "nvim".source       = ../../.config/nvim;
     "waybar".source     = ../../.config/waybar;
     "fish".source       = ../../.config/fish;
-    "fontconfig/conf.d/arabic-fonts.conf".source = ../../.config/fontconfig/conf.d/arabic-fonts.conf;
+    #"fontconfig".source = ../../.config/fontconfig;
     "zed".source        = ../../.config/zed;
     "VSCodium".source   = ../../.config/VSCodium;
   };
@@ -229,7 +228,6 @@
     ".i3status.conf".source = ../../.i3status.conf;
     ".ideavimrc".source    = ../../.ideavimrc;
     ".Xresources".source   = ../../.Xresources;
-    # .tmux.conf is managed by programs.tmux above — no need to symlink it.
 
     # Scripts
     ".local/scripts/tmux-sessionizer" = {
