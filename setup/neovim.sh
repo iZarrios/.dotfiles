@@ -35,8 +35,7 @@ else
     git clone https://github.com/neovim/neovim.git
     cd neovim
     # installing dependencies
-    sudo apt update
-    sudo apt-get install ninja-build gettext cmake unzip curl -y
+    sudo pacman -S --needed ninja gettext cmake unzip curl --noconfirm
 fi
 
 # building neovim

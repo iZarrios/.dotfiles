@@ -12,8 +12,8 @@ if command -v cargo &> /dev/null; then
         git clone https://github.com/alacritty/alacritty.git
         cd alacritty
 
-        # src: https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu
-        sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
+        # src: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+        sudo pacman -S --needed cmake pkg-config freetype2 fontconfig libxcb libxkbcommon python --noconfirm
     fi
     cargo build --release
     ln -sf `realpath ./target/release`/alacritty ~/.local/bin/alacritty

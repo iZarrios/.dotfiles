@@ -13,7 +13,7 @@ if command -v zig &> /dev/null; then
         cd ghostty
 
         # src: https://ghostty.org/docs/install/build
-        sudo apt install libgtk-4-dev libadwaita-1-dev git blueprint-compiler gettext libxml2-utils
+        sudo pacman -S --needed gtk4 libadwaita git blueprint-compiler gettext libxml2 --noconfirm
     fi
     git pull
     zig build -Doptimize=ReleaseFast -Dapp-runtime=glfw
