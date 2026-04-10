@@ -36,6 +36,7 @@ vim.lsp.enable({
 -- -- })
 
 vim.diagnostic.config({
+    severity_sort = true,
     underline = true,
     signs = true,
     -- virtual lines are like virtual_text but more `fancy`
