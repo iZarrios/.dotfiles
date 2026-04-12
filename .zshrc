@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 # Set list of themes to pick from when loading at random
-ZSH_THEME="eastwood"
+ZSH_THEME="my_ys"
 # ZSH_THEME="robbyrussell"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
