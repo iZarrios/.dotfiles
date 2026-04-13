@@ -16,9 +16,8 @@
         "cpu",
         "custom/separator",
         "memory",
-        "battery",
-        "battery#bat2",
         "custom/separator",
+        "battery",
         "clock",
         "custom/separator",
         "custom/clock1",
@@ -81,6 +80,13 @@
     },
     "memory": {
         "format": "RAM: {}%"
+    },
+    "battery": {
+        "interval": 2,
+        "tooltip": true,
+        "format-time": "{H}:{M}",
+        "tooltip-format": "time: {time}\npower: {power}\nhealth:{health}",
+        "format": "BAT: {capacity}% | "
     },
     "disk": {
         "interval": 300, // update after one minute
