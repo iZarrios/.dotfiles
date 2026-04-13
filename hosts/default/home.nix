@@ -82,7 +82,8 @@
     # Oh My Zsh — Home Manager installs and manages it for you.
     oh-my-zsh = {
       enable = true;
-      theme = "eastwood";
+      custom = "$HOME/.oh-my-zsh/custom";
+      theme = "my_ys";
       plugins = [
         "git"
         "extract"
@@ -228,6 +229,7 @@
     ".i3status.conf".source = ../../.i3status.conf;
     ".ideavimrc".source    = ../../.ideavimrc;
     ".Xresources".source   = ../../.Xresources;
+    ".oh-my-zsh/custom/themes/my_ys.zsh-theme".source = ../../setup/my_ys.zsh-theme;
 
     # Scripts
     ".local/scripts/tmux-sessionizer" = {
