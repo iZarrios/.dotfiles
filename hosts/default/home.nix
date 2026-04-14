@@ -23,15 +23,15 @@
     ripgrep
     fd
     btop
+    htop
+    nvtop
     yazi
     lazygit
     yt-dlp
     unzip
-    tree
 
     # Clipboard
     wl-clipboard
-    xclip
 
     # Languages & toolchains
     lua
@@ -41,6 +41,8 @@
     cargo
     rustc
     gcc
+    clang
+    clang-tools
     cmake
     ninja
     uv
@@ -121,7 +123,6 @@
       open = "xdg-open";
     };
 
-    # initExtra runs at the end of .zshrc — for things that need the interactive shell.
     initContent = ''
       # ── EDITOR — use vim over SSH, nvim locally ──
       if [[ -n $SSH_CONNECTION ]]; then

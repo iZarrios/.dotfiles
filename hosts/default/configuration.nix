@@ -135,10 +135,8 @@
     curl
     wget
     ffmpeg
-    htop
     kitty
     alacritty
-    wofi
     wmenu
     networkmanagerapplet
 
@@ -146,6 +144,7 @@
     librewolf
     waybar
     hyprpaper
+    hyprsunset
 
 
     kdePackages.systemsettings
