@@ -39,28 +39,70 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "clock": {
-        // date module
+    // "clock": {
+    //     // date module
+    //     "tooltip": true,
+    //     "tooltip-format": "<tt>{calendar}</tt>",
+    //     "calendar": {
+    //         "mode": "month",
+    //         "mode-mon-col": 3,
+    //         "weeks-pos": "right",
+    //         "format": {
+    //             // "months": "<span color='#ffead3'><b>{}</b></span>",
+    //             "months": "<span color='#ffffff'><b>{}</b></span>",
+    //             "days": "<span color='#ecc6d9'><b>{}</b></span>",
+    //             "weeks": "<span color='#ffffff'>W{}</span>",
+    //             "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+    //             "today": "<span background='#0055ff' color='#ffffff'><b>{}</b></span>"
+    //         }
+    //     },
+    //     "actions": {
+    //         "on-click-right": "mode"
+    //     },
+    //     "format": "{:%d-%m-%Y}",
+    //     "timezone": "Africa/Cairo",
+    //     "interval": 86400
+    // },
+  "clock": {
         "tooltip": true,
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt>{calendar}</tt>",
+
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
-            "weeks-pos": "left",
+            "weeks-pos": "right",
+
             "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+                // SRC: https://man.archlinux.org/man/waybar-clock.5.en#CONFIGURATION
+                // Month Names: White text (Standard)
+                "months": "<span color='#ffffff'><b>{}</b></span>",
+
+                // Days of Month: Soft Gray (#a9b1d6 is the standard Tokyo Night gray, but let's use #565f89 for a slightly darker contrast on dark bg)
+                "days": "<span color='#565f89'><b>{}</b></span>",
+
+                // Week Numbers: White text with 'W' prefix (Standard)
+                "weeks": "<span color='#ffffff'>W{}</span>",
+
+                // Weekdays: Tokyo Night Purple (#bb9af7) - Matches the theme perfectly
+                "weekdays": "<span color='#bb9af7'><b>{}</b></span>",
+
+                // Today:
+                // Background: A slightly lighter blue to stand out against the dark bar (#364a80 is a nice Storm-blue accent)
+                // Text: White for high contrast
+                "today": "<span background='#364a80' color='#ffffff'><b>{}</b></span>"
             }
         },
-        "actions": {
-            "on-click-right": "mode"
-        },
+
+        // Date Format: Day-Month-Year
         "format": "{:%d-%m-%Y}",
         "timezone": "Africa/Cairo",
-        "interval": 86400
+
+        // Update every 24 hours
+        "interval": 86400,
+
+        "actions": {
+            "on-click-right": "mode"
+        }
     },
     "custom/clock1": {
         "tooltip": true,
