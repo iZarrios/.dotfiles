@@ -154,6 +154,7 @@
     kdePackages.breeze-icons
     kdePackages.kirigami
     kdePackages.kcmutils
+    kdePackages.okular
   ];
 
 
