@@ -1,0 +1,8 @@
+brave-bin
+gtk2
+gtkmm
+librewolf-bin
+paru
+paru-debug
+rustdesk-bin
+vscodium-bin
