@@ -53,6 +53,8 @@
     pavucontrol
 
     delta
+
+    libreoffice-still
   ];
 
   # ── Environment Variables ───────────────────────────────────────────────
