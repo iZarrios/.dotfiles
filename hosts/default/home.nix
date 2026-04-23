@@ -33,6 +33,17 @@
     # Clipboard
     wl-clipboard
 
+    # GUI apps (user-level — per-desktop-session)
+    kitty
+    wmenu
+    brave
+    librewolf
+    waybar
+    hyprpaper
+    hyprsunset
+    kdePackages.dolphin
+    kdePackages.okular
+
     # Languages & toolchains
     lua
     lua-language-server
@@ -53,6 +64,8 @@
     pavucontrol
 
     delta
+
+    rust-analyzer
 
     libreoffice-still
   ];

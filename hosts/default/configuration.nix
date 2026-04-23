@@ -135,26 +135,19 @@
     curl
     wget
     ffmpeg
-    kitty
     alacritty
-    wmenu
     networkmanagerapplet
-
-    brave
-    librewolf
-    waybar
-    hyprpaper
-    hyprsunset
-
 
     kdePackages.systemsettings
     kdePackages.qqc2-desktop-style
-    kdePackages.dolphin
     kdePackages.breeze
     kdePackages.breeze-icons
     kdePackages.kirigami
     kdePackages.kcmutils
-    kdePackages.okular
+
+    grim
+    slurp
+    jq
   ];
 
 
