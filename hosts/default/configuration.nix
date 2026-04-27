@@ -137,6 +137,7 @@
     ffmpeg
     alacritty
     networkmanagerapplet
+    brightnessctl
 
     kdePackages.systemsettings
     kdePackages.qqc2-desktop-style

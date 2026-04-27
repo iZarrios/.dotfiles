@@ -24,7 +24,6 @@
     fd
     btop
     htop
-    nvtop
     yazi
     lazygit
     yt-dlp
@@ -68,6 +67,7 @@
     rust-analyzer
 
     libreoffice-still
+    qbittorrent
   ];
 
   # ── Environment Variables ───────────────────────────────────────────────
