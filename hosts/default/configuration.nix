@@ -120,6 +120,7 @@
       "networkmanager"
       "input"
       "video"
+      "tailscale"
     ];
   };
 
@@ -157,6 +158,7 @@
   services.tailscale = {
     enable = true;
     extraUpFlags = [ "--operator=nix" ];
+    useRoutingFeatures = "client";
   };
 
   networking.nftables.enable = true;
