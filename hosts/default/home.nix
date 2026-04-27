@@ -50,9 +50,6 @@
     python3
     cargo
     rustc
-    gcc
-    clang
-    clang-tools
     cmake
     ninja
     uv
