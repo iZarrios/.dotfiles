@@ -188,5 +188,15 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
   ];
+  fonts.fontconfig = {
+      enable = true;
+      defaultFonts = {
+          monospace = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK KR" ];
+          sansSerif = [ "Noto Sans CJK KR" ];
+          serif     = [ "Noto Serif CJK KR" ];
+      };
+  };
 }
