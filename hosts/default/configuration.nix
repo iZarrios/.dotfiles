@@ -74,6 +74,9 @@
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
+  hardware.bluetooth.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -121,6 +124,8 @@
       "input"
       "video"
       "tailscale"
+      "audio"
+      "bluetooth"
     ];
   };
 
