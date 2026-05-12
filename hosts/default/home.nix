@@ -234,6 +234,12 @@
     "VSCodium".source   = ../../.config/VSCodium;
   };
 
+  xdg.mimeApps = {
+    defaultApplications = {
+      "inode/directory" = [ "dolphin.desktop" ];
+    };
+  };
+
   # ~/dotfiles (home directory root)
   home.file = {
     ".clang-format".source = ../../.clang-format;

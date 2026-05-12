@@ -76,6 +76,7 @@
   security.rtkit.enable = true;
 
   hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   services.pipewire = {
     enable = true;
@@ -102,6 +103,8 @@
       };
   };
   services.thermald.enable = true;
+  # services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
   powerManagement.powertop.enable = true;
 
   # Must be enabled at the system level so NixOS registers it as a valid login shell.
@@ -144,6 +147,7 @@
     alacritty
     networkmanagerapplet
     brightnessctl
+    blueman
 
     kdePackages.systemsettings
     kdePackages.qqc2-desktop-style
@@ -151,6 +155,7 @@
     kdePackages.breeze-icons
     kdePackages.kirigami
     kdePackages.kcmutils
+    kdePackages.kde-cli-tools
 
     grim
     slurp
