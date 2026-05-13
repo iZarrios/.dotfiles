@@ -104,7 +104,7 @@
             ],
             "right": [
                 {
-                    "compactMode": true,
+                    "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
@@ -113,15 +113,15 @@
                     "showCpuTemp": true,
                     "showCpuUsage": true,
                     "showDiskAvailable": false,
-                    "showDiskUsage": false,
-                    "showDiskUsageAsPercent": false,
+                    "showDiskUsage": true,
+                    "showDiskUsageAsPercent": true,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
-                    "showMemoryAsPercent": false,
+                    "showMemoryAsPercent": true,
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
                     "showSwapUsage": false,
-                    "textColor": "none",
+                    "textColor": "primary",
                     "useMonospaceFont": true,
                     "usePadding": false
                 },
@@ -417,7 +417,7 @@
     "network": {
         "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
-        "bluetoothHideUnnamedDevices": false,
+        "bluetoothHideUnnamedDevices": true,
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
