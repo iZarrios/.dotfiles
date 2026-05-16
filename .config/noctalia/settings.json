@@ -12,8 +12,8 @@
         "enableClipboardHistory": false,
         "enableClipboardSmartIcons": true,
         "enableSessionSearch": true,
-        "enableSettingsSearch": true,
-        "enableWindowsSearch": true,
+        "enableSettingsSearch": false,
+        "enableWindowsSearch": false,
         "iconMode": "tabler",
         "ignoreMouseInput": false,
         "overviewLayer": false,
@@ -21,7 +21,7 @@
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
-        "showCategories": true,
+        "showCategories": false,
         "showIconBackground": false,
         "sortByMostUsed": true,
         "terminalCommand": "alacritty -e",
@@ -126,11 +126,11 @@
                     "usePadding": false
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysHide",
                     "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
-                    "textColor": "none"
+                    "textColor": "primary"
                 },
                 {
                     "clockColor": "none",
