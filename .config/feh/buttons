@@ -1,0 +1,7 @@
+# Unbind the wheel from switching images
+prev_img
+next_img
+
+# Bind the wheel to zoom instead
+zoom_in 4
+zoom_out 5
