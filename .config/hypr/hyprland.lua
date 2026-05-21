@@ -237,7 +237,14 @@ hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 
-hl.bind(mainMod .. " + escape", hl.dsp.focus({ workspace = "previous" }))
+apply_invariant(
+  function()
+    hl.bind(mainMod .. " + escape", hl.dsp.focus({ workspace = "previous" }))
+  end,
+  function()
+    hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "previous" }))
+  end
+)
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload && killall waybar && waybar &"))
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd(lock), { locked = true })
 
