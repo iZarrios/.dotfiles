@@ -80,7 +80,7 @@ apply_invariant(
 
 local terminal    = "alacritty"
 local fileManager = "dolphin"
-local menu = "qs -c noctalia-shell ipc call launcher toggle"
+local menu        = "qs -c noctalia-shell ipc call launcher toggle"
 local lock        = "swaylock -k -l"
 
 -------------------
