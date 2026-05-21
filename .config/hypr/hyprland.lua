@@ -89,11 +89,11 @@ local lock        = "swaylock -k -l"
 
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("nm-applet")
-    hl.exec_cmd("hyprsunset -g 100 -t 5000")
-    hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("qs -c noctalia-shell")
-    hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets,ssh")
+  hl.exec_cmd("nm-applet")
+  hl.exec_cmd("hyprsunset -g 100 -t 5000")
+  hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("qs -c noctalia-shell")
+  hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets,ssh")
 end)
 
 -------------------------------
@@ -111,47 +111,47 @@ hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 -----------------------
 
 hl.config({
-    general = {
-        gaps_in  = 0,
-        gaps_out = 0,
-        border_size = 2,
-        col = {
-            active_border   = "rgba(76,120,153,1)",
-            inactive_border = "rgba(595959aa)",
-        },
-        resize_on_border = false,
-        allow_tearing    = false,
-        layout           = "dwindle",
+  general = {
+    gaps_in          = 0,
+    gaps_out         = 0,
+    border_size      = 2,
+    col              = {
+      active_border   = "rgba(76,120,153,1)",
+      inactive_border = "rgba(595959aa)",
     },
-    cursor = {
-        no_warps = true,
-    },
-    decoration = {
-        rounding       = 0,
-        rounding_power = 0,
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
-        shadow = { enabled = false },
-        blur   = { enabled = false },
-    },
-    animations = {
-        enabled = false,
-    },
-    dwindle = {
-        preserve_split = true,
-        force_split    = 2,
-    },
-    master = {
-        new_status = "master",
-    },
-    misc = {
-        force_default_wallpaper = 0,
-        disable_hyprland_logo   = true,
-        focus_on_activate       = false,
-    },
-    binds = {
-        workspace_back_and_forth = false,
-    },
+    resize_on_border = false,
+    allow_tearing    = false,
+    layout           = "dwindle",
+  },
+  cursor = {
+    no_warps = true,
+  },
+  decoration = {
+    rounding         = 0,
+    rounding_power   = 0,
+    active_opacity   = 1.0,
+    inactive_opacity = 1.0,
+    shadow           = { enabled = false },
+    blur             = { enabled = false },
+  },
+  animations = {
+    enabled = false,
+  },
+  dwindle = {
+    preserve_split = true,
+    force_split    = 2,
+  },
+  master = {
+    new_status = "master",
+  },
+  misc = {
+    force_default_wallpaper = 0,
+    disable_hyprland_logo   = true,
+    focus_on_activate       = false,
+  },
+  binds = {
+    workspace_back_and_forth = false,
+  },
 })
 
 ---------------
@@ -159,20 +159,20 @@ hl.config({
 ---------------
 
 hl.config({
-    input = {
-        kb_layout  = "us,ara",
-        kb_variant = "",
-        kb_model   = "",
-        kb_options = "grp:alt_shift_toggle",
-        kb_rules   = "",
-        repeat_rate  = 35,
-        repeat_delay = 200,
-        follow_mouse = 1,
-        sensitivity  = 0,
-        touchpad = {
-            natural_scroll = false,
-        },
+  input = {
+    kb_layout    = "us,ara",
+    kb_variant   = "",
+    kb_model     = "",
+    kb_options   = "grp:alt_shift_toggle",
+    kb_rules     = "",
+    repeat_rate  = 35,
+    repeat_delay = 200,
+    follow_mouse = 1,
+    sensitivity  = 0,
+    touchpad     = {
+      natural_scroll = false,
     },
+  },
 })
 
 -- hl.gesture({
@@ -182,8 +182,8 @@ hl.config({
 -- })
 
 hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
+  name        = "epic-mouse-v1",
+  sensitivity = -0.5,
 })
 
 ---------------------
@@ -200,23 +200,23 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.layout("togglesplit"))
 -- fullscreenstate 2 -1: Hypr fullscreen without forcing client presentation mode (Brave etc.)
 hl.bind(mainMod .. " + F", function()
-    local w = hl.get_active_window()
-    if not w then
-        return
-    end
+  local w = hl.get_active_window()
+  if not w then
+    return
+  end
 
-    if w.fullscreen ~= 0 then
-        hl.dispatch(hl.dsp.window.fullscreen_state({ internal = 0, client = 0, action = "set" }))
-    else
-        hl.dispatch(hl.dsp.window.fullscreen_state({ internal = 2, client = -1, action = "set" }))
-    end
+  if w.fullscreen ~= 0 then
+    hl.dispatch(hl.dsp.window.fullscreen_state({ internal = 0, client = 0, action = "set" }))
+  else
+    hl.dispatch(hl.dsp.window.fullscreen_state({ internal = 2, client = -1, action = "set" }))
+  end
 end)
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "right" }))
@@ -224,9 +224,9 @@ hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + semicolon", hl.dsp.focus({ direction = "down" }))
 
 for i = 1, 10 do
-    local key = i % 10
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
+  local key = i % 10
+  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -242,12 +242,15 @@ hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload && killall wa
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd(lock), { locked = true })
 
 hl.bind("SHIFT + F11", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
-hl.bind("SHIFT + F12", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/media/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'))
+hl.bind("SHIFT + F12",
+  hl.dsp.exec_cmd('grim -g "$(slurp)" ~/media/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+  { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+  { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
@@ -261,31 +264,32 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 --------------------------------
 
 hl.window_rule({
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
-    suppress_event = "maximize",
+  name           = "suppress-maximize-events",
+  match          = { class = ".*" },
+  suppress_event = "maximize",
 })
 
 hl.window_rule({
-    name  = "fix-xwayland-drags",
-    match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
-    no_focus = true,
+  name     = "fix-xwayland-drags",
+  match    = {
+    class      = "^$",
+    title      = "^$",
+    xwayland   = true,
+    float      = true,
+    fullscreen = false,
+    pin        = false,
+  },
+  no_focus = true,
 })
 
 hl.window_rule({
-    name  = "brave-bitwarden-login-popup",
-    match = {
-        class         = "^Brave.*$",
-        float         = true,
-        fullscreen    = false,
-        pin           = false,
-    },
-    no_focus = false,
-})
+  name     = "brave-bitwarden-login-popup",
+  match    = {
+    class      = "^Brave.*$",
+    float      = true,
+    fullscreen = false,
+    pin        = false,
+  },
+  no_focus = false,
+  })
+
