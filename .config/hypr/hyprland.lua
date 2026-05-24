@@ -66,7 +66,8 @@ apply_invariant(
 local terminal    = "alacritty"
 local fileManager = "dolphin"
 local menu        = "qs -c noctalia-shell ipc call launcher toggle"
-local lock        = "swaylock -k -l"
+local lock        = "qs -c noctalia-shell ipc call lockScreen lock"
+-- local lock        = "swaylock -k -l"
 
 -------------------
 ---- AUTOSTART ----
@@ -76,7 +77,7 @@ local lock        = "swaylock -k -l"
 hl.on("hyprland.start", function()
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("hyprsunset -g 100 -t 5000")
-  hl.exec_cmd("hyprpaper")
+  -- hl.exec_cmd("hyprpaper")
   hl.exec_cmd("qs -c noctalia-shell")
   hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets,ssh")
 end)
