@@ -279,10 +279,11 @@ hl.window_rule({
   name     = "brave-bitwarden-login-popup",
   match    = {
     class      = "^Brave.*$",
-    float      = true,
+    float      = false,
     fullscreen = false,
     pin        = false,
   },
+  float = true,
   no_focus = false,
 })
 
