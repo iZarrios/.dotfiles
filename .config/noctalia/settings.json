@@ -175,7 +175,7 @@
     "brightness": {
         "backlightDeviceMappings": [
         ],
-        "brightnessStep": 5,
+        "brightnessStep": 18,
         "enableDdcSupport": false,
         "enforceMinimum": true
     },
@@ -221,7 +221,7 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
@@ -229,7 +229,7 @@
                 "id": "weather-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "media-sysmon-card"
             }
         ],
@@ -316,7 +316,7 @@
         "avatarImage": "/home/biluka/.face",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
-        "clockStyle": "custom",
+        "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0,
         "enableBlurBehind": false,
@@ -352,8 +352,8 @@
         "language": "",
         "lockOnSuspend": true,
         "lockScreenAnimations": false,
-        "lockScreenBlur": 0,
-        "lockScreenCountdownDuration": 10000,
+        "lockScreenBlur": 1,
+        "lockScreenCountdownDuration": 15000,
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
@@ -589,7 +589,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "monospace",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.93,
+        "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
@@ -599,9 +599,9 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/biluka/Pictures/Wallpapers",
+        "directory": "~/media/wallpapers",
         "enableMultiMonitorDirectories": false,
-        "enabled": false,
+        "enabled": true,
         "favorites": [
         ],
         "fillColor": "#000000",
@@ -624,7 +624,7 @@
         "transitionEdgeSmoothness": 0,
         "transitionType": [
         ],
-        "useOriginalImages": false,
+        "useOriginalImages": true,
         "useSolidColor": false,
         "useWallhaven": false,
         "viewMode": "recursive",
