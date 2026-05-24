@@ -37,7 +37,7 @@ export TIME_STYLE=+%D\ %I:%M\ %p
 
 # PATH configuration
 export PATH=$N_PREFIX/bin:$PATH
-export PATH=$PATH:"$HOME/bin/go"
+export PATH=$PATH:"$HOME/custom_build/go/bin/"
 export PATH=$PATH:"$HOME/.cargo/bin"
 export PATH=$PATH:"$HOME/.local/scripts/"
 export PATH=$PATH:"$HOME/.local/bin/go"
