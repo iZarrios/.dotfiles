@@ -287,3 +287,14 @@ hl.window_rule({
   no_focus = false,
 })
 
+hl.window_rule({
+  name     = "blanket-starts-minimized",
+  match    = {
+    title      = "Blanket",
+    float      = false,
+    fullscreen = false,
+    pin        = false,
+  },
+  float = true,
+  no_focus = false,
+})
