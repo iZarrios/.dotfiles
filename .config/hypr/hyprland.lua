@@ -33,12 +33,12 @@ end
 -- local monitors = get_monitors()
 apply_invariant(
   function()
-        hl.monitor({
-          output   = "HDMI-A-1",
-          mode     = "1920x1080@144.00",
-          position = "0x0",
-          scale    = 1.0,
-        })
+    hl.monitor({
+      output   = "HDMI-A-1",
+      mode     = "1920x1080@144.00",
+      position = "0x0",
+      scale    = 1.0,
+    })
   end,
   function()
     hl.monitor({
@@ -283,5 +283,5 @@ hl.window_rule({
     pin        = false,
   },
   no_focus = false,
-  })
+})
 
