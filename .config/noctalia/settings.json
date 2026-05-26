@@ -133,6 +133,13 @@
                     "textColor": "primary"
                 },
                 {
+                    "applyToAllMonitors": false,
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Brightness",
+                    "textColor": "none"
+                },
+                {
                     "clockColor": "none",
                     "customFont": "",
                     "formatHorizontal": "h:mm AP ddd, MMM dd",
@@ -174,6 +181,10 @@
     },
     "brightness": {
         "backlightDeviceMappings": [
+            {
+                "device": "/sys/class/backlight/intel_backlight",
+                "output": "eDP-1"
+            }
         ],
         "brightnessStep": 18,
         "enableDdcSupport": false,
