@@ -7,6 +7,42 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "ssh_connections": [
+    {
+      "host": "pavi",
+      "username": "pavi",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/pavi"
+          ]
+        },
+        {
+          "paths": [
+            "/home/pavi/dev/quackir"
+          ]
+        }
+      ]
+    }
+  ],
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "language_models": {
     "openai_compatible": {
       "llama.cpp": {
@@ -57,6 +93,7 @@
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "buffer_font_family": "Consolas",
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "llama.cpp",
       "model": "Qwen3.5-9b",
