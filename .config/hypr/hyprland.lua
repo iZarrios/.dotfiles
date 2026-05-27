@@ -289,13 +289,15 @@ hl.window_rule({
 hl.window_rule({
   name     = "brave-bitwarden-login-popup",
   match    = {
-    title      = "Bitwarden",
-    float      = false,
+    class         = "^(brave|Brave|chromium|Chromium).*$",
+    initial_title = "^_crx_nngceckbapebfimnlniiiahkandclblb$",
     fullscreen = false,
     pin        = false,
   },
   float    = true,
   no_focus = false,
+  min_size = {500,500},
+  max_size = {500,500},
 })
 
 hl.window_rule({
