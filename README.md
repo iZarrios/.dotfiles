@@ -1,8 +1,10 @@
-# Dotfiles (NixOS + Stow) system configuration
+# Dotfiles (Arch + Stow, legacy NixOS)
 
-Declarative system and user configuration for NixOS, managed with [Flakes](https://nixos.wiki/wiki/Flakes) and [Home Manager](https://github.com/nix-community/home-manager).
+Personal dotfiles and machine setup, primarily for Arch Linux using GNU Stow and helper scripts.
 
-> This repo serves **two systems**: an Arch Linux setup (using GNU Stow + shell scripts) and a NixOS setup (using Flakes + Home Manager). Both share the same dotfiles.
+> This repo includes **two setups**: an actively used Arch Linux setup (GNU Stow + shell scripts) and a legacy NixOS setup (Flakes + Home Manager).
+>
+> **NixOS note:** the NixOS configuration is kept for reference and is **not actively maintained** anymore.
 
 ## Structure
 
@@ -24,7 +26,21 @@ Declarative system and user configuration for NixOS, managed with [Flakes](https
 └── ide_settings/                      # IDE settings (VS Code)
 ```
 
-## Fresh NixOS Install
+## Arch Linux Setup
+
+### stow
+
+```bash
+stow .
+```
+
+This symlinks all dotfiles (`.config/`, `.tmux.conf`, `.gitconfig`, etc.) into your home directory.
+
+## NixOS (Legacy / Unmaintained)
+
+This section is preserved for historical/reference use. It may be outdated.
+
+### Fresh NixOS Install
 
 ### 1. Install NixOS
 
@@ -109,17 +125,6 @@ sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 # Roll back to the previous one
 sudo nixos-rebuild switch --rollback
 ```
-
-## Arch Linux Setup
-
-### stow
-
-```bash
-stow .
-```
-
-This symlinks all dotfiles (`.config/`, `.tmux.conf`, `.gitconfig`, etc.) into your home directory.
-
 
 ## Secrets
 
