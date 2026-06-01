@@ -157,6 +157,7 @@ alias venv="source .venv/bin/activate"
 alias python="python3"
 alias py="python"
 alias cd="z"
+alias cat="bat"
 
 [ "$(uname -s)" = "Linux" ] && alias open='xdg-open'
 
