@@ -291,13 +291,13 @@ hl.window_rule({
   match    = {
     class         = "^(brave|Brave|chromium|Chromium).*$",
     initial_title = "^_crx_nngceckbapebfimnlniiiahkandclblb$",
-    fullscreen = false,
-    pin        = false,
+    fullscreen    = false,
+    pin           = false,
   },
   float    = true,
   no_focus = false,
-  min_size = {500,500},
-  max_size = {500,500},
+  min_size = { 500, 500 },
+  max_size = { 500, 500 },
 })
 
 hl.window_rule({
