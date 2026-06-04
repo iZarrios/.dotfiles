@@ -48,6 +48,7 @@ export PATH=$PATH:"$HOME/custom_build/llama.cpp/build/bin"
 export PATH=$PATH:"$HOME/custom_build/android-studio/bin"
 export PATH=$PATH:"$HOME/.opencode/bin"
 export PATH=$PATH:"$HOME/Android/Sdk/ndk/21.1.6352462"
+export PATH=$PATH:"$HOME/Android/Sdk/platform-tools/"
 export PATH=$PATH:"/opt/cuda/bin"
 
 export QT_QPA_PLATFORMTHEME=qt6ct
