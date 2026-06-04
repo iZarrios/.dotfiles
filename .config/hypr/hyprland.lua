@@ -114,7 +114,7 @@ hl.config({
     border_size      = 2,
     col              = {
       active_border   = "rgba(76,120,153,1)",
-      inactive_border = "rgba(595959aa)",
+      inactive_border = "rgba(89,89,89,0.67)",
     },
     resize_on_border = false,
     allow_tearing    = false,
