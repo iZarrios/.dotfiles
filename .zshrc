@@ -158,6 +158,7 @@ alias python="python3"
 alias py="python"
 alias cd="z"
 alias cat="bat"
+alias bc="py"
 
 [ "$(uname -s)" = "Linux" ] && alias open='xdg-open'
 
