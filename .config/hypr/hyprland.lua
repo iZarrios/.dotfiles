@@ -56,7 +56,7 @@ apply_invariant(
       disabled = false,
       output   = "DP-1",
       mode     = "2560x1440@100",
-      position = "0x0",
+      position = "auto",
       scale    = 1.0,
     })
 
@@ -64,7 +64,7 @@ apply_invariant(
       disabled = false,
       output   = "eDP-1",
       mode     = "1920x1080@60",
-      position = "0x0",
+      position = "auto",
       scale    = 1.0,
     })
   end
