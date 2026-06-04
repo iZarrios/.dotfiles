@@ -1,9 +1,9 @@
 If:
-  PathMatch: [".*\\.c$", ".*\\.h$"]
+  PathMatch: [".*\\.c$"]
 CompileFlags:
   Add: ["-std=c11"]
 
 If:
-  PathMatch: [".*\\.cpp$", ".*\\.cc$", ".*\\.cxx$", ".*\\.hpp$", ".*\\.hh$"]
+  PathMatch: [".*\\.cpp$", ".*\\.cc$", ".*\\.cxx$", ".*\\.hpp$", ".*\\.hh$", ".*\\.h$"]
 CompileFlags:
   Add: [-std=c++23, -Wall, -Wextra, -Wpedantic]
