@@ -77,6 +77,7 @@ apply_invariant(
 local terminal    = "alacritty"
 local fileManager = "dolphin"
 local menu        = "qs -c noctalia-shell ipc call launcher toggle"
+-- local menu        = "wmenu-run -f 'JetBrainsMono 9'"
 local lock        = "qs -c noctalia-shell ipc call lockScreen lock"
 -- local lock        = "swaylock -k -l"
 
