@@ -246,6 +246,7 @@ apply_invariant(
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload && killall waybar && waybar &"))
 hl.bind("CTRL + ALT + Q", hl.dsp.exec_cmd(lock), { locked = true })
 
+-- hl.bind("SHIFT + F11", hl.dsp.exec_cmd('QT_QPA_PLATFORM=wayland flameshot gui'))
 hl.bind("SHIFT + F11", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 hl.bind("SHIFT + F12",
   hl.dsp.exec_cmd('grim -g "$(slurp)" ~/media/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'))
