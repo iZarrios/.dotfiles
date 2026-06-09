@@ -142,7 +142,6 @@ fi
 
 alias ping-="ping 4.2.2.1"
 alias rp="realpath"
-alias fd="fdfind"
 alias gst="git status"
 alias lg="lazygit"
 alias tmux="tmux -2"
