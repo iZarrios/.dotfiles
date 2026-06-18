@@ -67,6 +67,20 @@ apply_invariant(
       position = "auto",
       scale    = 1.0,
     })
+
+    for i = 1, 9 do
+      hl.workspace_rule({
+        workspace = tostring(i),
+        monitor = "DP-1",
+        default = i == 1,
+      })
+    end
+
+    hl.workspace_rule({
+      workspace = "10",
+      monitor = "eDP-1",
+      default = true,
+    })
   end
 )
 
