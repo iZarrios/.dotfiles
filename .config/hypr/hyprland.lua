@@ -102,6 +102,7 @@ local lock        = "qs -c noctalia-shell ipc call lockScreen lock"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd("nm-applet")
+  hl.exec_cmd("kdeconnect-indicator")
   -- hl.exec_cmd("hyprsunset -g 100 -t 5000")
   -- hl.exec_cmd("hyprpaper")
   hl.exec_cmd("qs -c noctalia-shell")
