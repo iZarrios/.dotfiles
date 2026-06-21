@@ -164,7 +164,7 @@ return {
     },
     {
       "<leader>fg",
-      function() require('fff').live_grep() end,
+      function() require('fff').live_grep({ grep = { modes = { 'fuzzy', 'plain' } } }) end,
     },
     {
       "<leader>fc",
