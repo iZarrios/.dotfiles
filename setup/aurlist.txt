@@ -1,8 +1,14 @@
+accounts-qml-module
 brave-bin
+brave-origin-nightly-bin
 gtk2
 gtkmm
 librewolf-bin
+noctalia-qs
+noctalia-shell
+parsec-bin
 paru
 paru-debug
+qt6ct-kde
 rustdesk-bin
 vscodium-bin
