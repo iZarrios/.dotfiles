@@ -591,6 +591,14 @@
     },
     "templates": {
         "activeTemplates": [
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "kcolorscheme"
+            }
         ],
         "enableUserTheming": false
     },
