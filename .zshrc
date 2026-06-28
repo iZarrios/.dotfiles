@@ -160,7 +160,7 @@ alias cat="bat"
 alias bc="py"
 
 [ "$(uname -s)" = "Linux" ] && alias open='xdg-open'
+[[ -f "$HOME/secret.zsh" ]] && source "$HOME/secret.zsh"
 
-# Sourcing some secret keys
-source "$HOME/secret.zsh"
+
 eval "$(zoxide init zsh)"
