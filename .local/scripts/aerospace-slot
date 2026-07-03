@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/sh
 # dwm-style workspace slots for AeroSpace.
 #
 # Each monitor owns a contiguous block of workspaces (e.g. main = 1-10,
@@ -9,12 +9,15 @@
 #   aerospace-slot <offset>          switch every monitor to its slot <offset>
 #   aerospace-slot <offset> move     move focused window to the focused
 #                                    monitor's slot <offset>
+#   aerospace-slot back              toggle to the previously used slot
+#                                    (monitor-aware back-and-forth)
 #
 # Focus is preserved on the currently focused monitor when switching.
 
 AS=/opt/homebrew/bin/aerospace
-offset="${1:-0}"
-mode="${2:-}"
+# State lives in $TMPDIR (set to /private/ramdisk tmpfs in .zshenv).
+# Fallback matches that mount when AeroSpace invokes us without shell env.
+STATE="${TMPDIR:-/private/ramdisk}/aerospace-slot.prev"
 
 focused_mon="$("$AS" list-monitors --focused --format '%{monitor-id}')"
 
@@ -22,18 +25,45 @@ base_of() {
     "$AS" list-workspaces --monitor "$1" | sort -n | head -1
 }
 
-if [ "$mode" = "move" ]; then
+# Current slot = focused monitor's visible workspace minus its block base.
+current_slot() {
+    visible="$("$AS" list-workspaces --monitor "$focused_mon" --visible)"
     base="$(base_of "$focused_mon")"
-    exec "$AS" move-node-to-workspace "$((base + offset))"
-fi
+    echo "$((visible - base))"
+}
 
-# Switch non-focused monitors first, then the focused monitor last so that
-# focus ends up back where it started.
-for mon in $("$AS" list-monitors --format '%{monitor-id}'); do
-    [ "$mon" = "$focused_mon" ] && continue
-    base="$(base_of "$mon")"
+# Switch every monitor to the given slot, remembering the slot we left so
+# that `back` can return to it. Non-focused monitors are switched first, then
+# the focused monitor last, so focus ends up back where it started.
+switch_to() {
+    offset="$1"
+    cur="$(current_slot)"
+    if [ "$offset" != "$cur" ]; then
+        mkdir -p "$(dirname "$STATE")"
+        printf '%s\n' "$cur" > "$STATE"
+    fi
+
+    for mon in $("$AS" list-monitors --format '%{monitor-id}'); do
+        [ "$mon" = "$focused_mon" ] && continue
+        base="$(base_of "$mon")"
+        "$AS" workspace "$((base + offset))"
+    done
+
+    base="$(base_of "$focused_mon")"
     "$AS" workspace "$((base + offset))"
-done
+}
 
-base="$(base_of "$focused_mon")"
-exec "$AS" workspace "$((base + offset))"
+case "$1" in
+    back)
+        prev="$(cat "$STATE" 2>/dev/null || echo 0)"
+        switch_to "$prev"
+        ;;
+    *)
+        offset="${1:-0}"
+        if [ "$2" = "move" ]; then
+            base="$(base_of "$focused_mon")"
+            exec "$AS" move-node-to-workspace "$((base + offset))"
+        fi
+        switch_to "$offset"
+        ;;
+esac

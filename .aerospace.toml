@@ -184,8 +184,10 @@ on-mode-changed = []
     alt-shift-9 = 'exec-and-forget $HOME/.local/scripts/aerospace-slot 8 move'
     alt-shift-0 = 'exec-and-forget $HOME/.local/scripts/aerospace-slot 9 move'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-    alt-backtick = 'workspace-back-and-forth'
+    # Monitor-aware back-and-forth: toggles between the last two slots
+    # (e.g. ws 1 <-> ws 5, or 11 <-> 15) instead of the global
+    # workspace-back-and-forth, which would jump between monitors.
+    alt-backtick = 'exec-and-forget $HOME/.local/scripts/aerospace-slot back'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
