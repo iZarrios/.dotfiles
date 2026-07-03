@@ -1,0 +1,39 @@
+#! /usr/bin/env bash
+# dwm-style workspace slots for AeroSpace.
+#
+# Each monitor owns a contiguous block of workspaces (e.g. main = 1-10,
+# secondary = 11-20). A "slot" is an offset into that block, so slot 0 on
+# main is workspace 1 and slot 0 on secondary is workspace 11.
+#
+# Usage:
+#   aerospace-slot <offset>          switch every monitor to its slot <offset>
+#   aerospace-slot <offset> move     move focused window to the focused
+#                                    monitor's slot <offset>
+#
+# Focus is preserved on the currently focused monitor when switching.
+
+AS=/opt/homebrew/bin/aerospace
+offset="${1:-0}"
+mode="${2:-}"
+
+focused_mon="$("$AS" list-monitors --focused --format '%{monitor-id}')"
+
+base_of() {
+    "$AS" list-workspaces --monitor "$1" | sort -n | head -1
+}
+
+if [ "$mode" = "move" ]; then
+    base="$(base_of "$focused_mon")"
+    exec "$AS" move-node-to-workspace "$((base + offset))"
+fi
+
+# Switch non-focused monitors first, then the focused monitor last so that
+# focus ends up back where it started.
+for mon in $("$AS" list-monitors --format '%{monitor-id}'); do
+    [ "$mon" = "$focused_mon" ] && continue
+    base="$(base_of "$mon")"
+    "$AS" workspace "$((base + offset))"
+done
+
+base="$(base_of "$focused_mon")"
+exec "$AS" workspace "$((base + offset))"
