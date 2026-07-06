@@ -10,13 +10,8 @@ export PIP_REQUIRE_VIRTUALENV=true
 export DOTFILES_USER="`whoami`"
 
 # Editor settings
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-  export VISUAL=$EDITOR
-else
-  export EDITOR='nvim'
-  export VISUAL=$EDITOR
-fi
+export EDITOR='nvim'
+export VISUAL=$EDITOR
 
 # FZF settings
 export FZF_DEFAULT_OPTS="--extended --ansi --border=none"
