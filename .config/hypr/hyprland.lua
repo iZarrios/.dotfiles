@@ -46,10 +46,32 @@ end
 apply_invariant({
   biluka = function()
     hl.monitor({
-      output   = "DP-1",
-      mode     = "1920x1080@144.00",
-      position = "0x0",
+      output   = mon1,
+      mode     = "1920x1080@280.00",
+      position = "1080x0",
       scale    = 1.0,
+    })
+
+    hl.monitor({
+      output    = mon2,
+      mode      = "1920x1080@280.00",
+      position  = "0x0",
+      transform = 3,
+      scale     = 1.0,
+    })
+
+    for i = 1, 9 do
+      hl.workspace_rule({
+        workspace = tostring(i),
+        monitor = mon1,
+        default = i == 1,
+      })
+    end
+
+    hl.workspace_rule({
+      workspace = "10",
+      monitor = mon2,
+      default = true,
     })
   end,
   pavi = function()
