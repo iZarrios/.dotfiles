@@ -111,7 +111,7 @@ apply_invariant({
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal    = "alacritty"
+local terminal    = "kitty"
 local fileManager = "dolphin"
 -- local menu        = "qs -c noctalia-shell ipc call launcher toggle"
 local menu        = "wmenu-run -f 'JetBrainsMono 9'"
