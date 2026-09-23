@@ -13,9 +13,6 @@ vim.keymap.set("i", "kj", "<Esc>", opts)
 -- highlight last highlighted block again
 vim.keymap.set("n", "gV", "`[v`]")
 
-vim.keymap.set("n", "<C-h>", "<cmd>tabprev<CR>", opts)
-vim.keymap.set("n", "<C-l>", "<cmd>tabnext<CR>", opts)
-
 
 vim.keymap.set("n", "[d", function()
   vim.diagnostic.jump({
