@@ -45,6 +45,8 @@ end
 -- local monitors = get_monitors()
 apply_invariant({
   biluka = function()
+    local mon1 = "DP-3"
+    local mon2 = "HDMI-A-1"
     hl.monitor({
       output   = mon1,
       mode     = "1920x1080@280.00",
@@ -69,7 +71,7 @@ apply_invariant({
     end
 
     hl.workspace_rule({
-      workspace = "10",
+      workspace = "11",
       monitor = mon2,
       default = true,
     })
@@ -126,7 +128,7 @@ local lock        = "qs -c noctalia-shell ipc call lockScreen lock"
 hl.on("hyprland.start", function()
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("kdeconnect-indicator")
-  -- hl.exec_cmd("hyprsunset -g 100 -t 5000")
+  hl.exec_cmd("hyprsunset -g 100 -t 5000")
   -- hl.exec_cmd("hyprpaper")
   hl.exec_cmd("qs -c noctalia-shell")
   hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets,ssh")
