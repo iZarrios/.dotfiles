@@ -81,3 +81,5 @@ end)
 -- vim.keymap.set("n", "<leader>i", function()
 --     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
 -- end, { desc = "Toggle Inlay Hints" })
+
+vim.keymap.set('n', '<C-S-d>', 'Q*', { desc = "Multicursor: Add cursor to next matched word" })
