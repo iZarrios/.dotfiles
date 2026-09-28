@@ -63,21 +63,21 @@ vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
 
 vim.keymap.set("n", "<leader>b", function()
-    local command = vim.g.custom_build_command or ""
-    -- Open a terminal and run the command
-    vim.cmd("split | term " .. command)
-    -- Resize the terminal window
-    vim.cmd("resize 20")
+  local command = vim.g.custom_build_command or ""
+  -- Open a terminal and run the command
+  vim.cmd("split | term " .. command)
+  -- Resize the terminal window
+  vim.cmd("resize 20")
 end)
 
 vim.keymap.set("n", "<leader>bs", function()
-    -- prompt the user for compile command
-    local cmd = vim.fn.input("compile command: ", vim.g.custom_build_command or "")
+  -- prompt the user for compile command
+  local cmd = vim.fn.input("compile command: ", vim.g.custom_build_command or "")
 
-    ---@diagnostic disable-next-line: inject-field
-    vim.g.custom_build_command = cmd
+  ---@diagnostic disable-next-line: inject-field
+  vim.g.custom_build_command = cmd
 end)
 
-vim.keymap.set("n", "<leader>i", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
-end, { desc = "Toggle Inlay Hints" })
+-- vim.keymap.set("n", "<leader>i", function()
+--     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+-- end, { desc = "Toggle Inlay Hints" })
