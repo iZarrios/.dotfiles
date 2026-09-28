@@ -178,7 +178,6 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "editor.cursorSurroundingLines": 10,
   "terminal.integrated.fontFamily": "Consolas, monospace",
-  "terminal.integrated.fontSize": 16,
   "telemetry.telemetryLevel": "off",
   "C_Cpp.intelliSenseEngine": "disabled",
   "clangd.arguments": [
@@ -206,5 +205,7 @@
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "files.trimTrailingWhitespace": true,
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "Terafox"
+  "workbench.colorTheme": "Dark Modern",
+  "claudeCode.hideOnboarding": true,
+  "terminal.integrated.stickyScroll.enabled": false
 }
