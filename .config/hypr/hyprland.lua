@@ -130,9 +130,9 @@ apply_invariant({
 
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "qs -c noctalia-shell ipc call launcher toggle"
+local menu        = "noctalia msg panel-toggle launcher"
 -- local menu        = "wmenu-run -f 'JetBrainsMono 9'"
-local lock        = "qs -c noctalia-shell ipc call lockScreen lock"
+local lock        = "noctalia msg session lock"
 -- local lock        = "swaylock -k -l"
 
 -------------------
@@ -145,7 +145,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("kdeconnect-indicator")
   hl.exec_cmd("hyprsunset -g 100 -t 5000")
   -- hl.exec_cmd("hyprpaper")
-  hl.exec_cmd("qs -c noctalia-shell")
+  hl.exec_cmd("noctalia")
   hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets,ssh")
 end)
 

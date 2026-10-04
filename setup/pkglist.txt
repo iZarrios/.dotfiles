@@ -88,6 +88,7 @@ network-manager-applet
 ninja
 nlohmann-json
 nmap
+noctalia
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -110,7 +111,6 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 pipewire-v4l2
-polkit-kde-agent
 proton-vpn-gtk-app
 qbittorrent
 qemu-full

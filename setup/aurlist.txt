@@ -4,8 +4,6 @@ brave-origin-nightly-bin
 gtk2
 gtkmm
 librewolf-bin
-noctalia-qs
-noctalia-shell
 parsec-bin
 paru
 paru-debug

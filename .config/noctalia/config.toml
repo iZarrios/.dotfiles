@@ -1,0 +1,286 @@
+# Native Noctalia v5 configuration.
+#
+# This is the shared, hand-written base used by Arch and NixOS. The Settings UI
+# writes machine-local overrides to ~/.local/state/noctalia/settings.toml.
+
+[accessibility]
+ui_scale = 0.9
+high_contrast = false
+
+[shell]
+corner_radius_scale = 0.0
+font_family = "JetBrainsMono Nerd Font"
+time_format = "{:%I:%M %p}"
+date_format = "%a, %b %d"
+telemetry_enabled = false
+polkit_agent = true
+settings_show_advanced = true
+clipboard_enabled = false
+clipboard_auto_paste = "off"
+
+[shell.animation]
+enabled = false
+
+[shell.shadow]
+direction = "down_right"
+alpha = 0.0
+
+[shell.panel]
+transparency_mode = "solid"
+borders = false
+shadow = false
+launcher_placement = "floating"
+clipboard_placement = "floating"
+control_center_placement = "attached"
+wallpaper_placement = "attached"
+session_placement = "floating"
+launcher_position = "center"
+clipboard_position = "center"
+
+[shell.launcher]
+categories = false
+show_icons = true
+show_app_origin_indicator = false
+compact = true
+app_grid = false
+sort_by_usage = true
+pinned = []
+auto_paste = "off"
+
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+fill_color = "#000000"
+transition = []
+transition_duration = 500
+edge_smoothness = 0.0
+transition_on_startup = false
+directory = "~/media/wallpapers"
+
+# Last wallpaper used by the v4 shell. Keeping this explicit makes a fresh
+# Arch or NixOS installation start with the same desktop instead of Noctalia's
+# bundled wallpaper.
+[wallpaper.default]
+path = "~/media/wallpapers/1623616178306.jpg"
+
+[wallpaper.automation]
+enabled = false
+interval_seconds = 300
+order = "random"
+recursive = true
+
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "Oxocarbon"
+pure_black_dark = false
+
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids = []
+enable_community_templates = false
+community_ids = []
+
+[notification]
+enable_daemon = true
+show_app_name = true
+show_actions = true
+keep_dismissed_in_history = false
+layer = "overlay"
+scale = 0.9
+background_opacity = 1.0
+offset_x = 20
+offset_y = 8
+
+[osd]
+position = "top_right"
+orientation = "horizontal"
+scale = 0.9
+background_opacity = 1.0
+offset_x = 20
+offset_y = 8
+
+[lockscreen]
+enabled = true
+blurred_desktop = false
+blur_intensity = 1.0
+tint_intensity = 0.0
+
+[system.monitor]
+enabled = true
+cpu_poll_seconds = 2.0
+gpu_poll_seconds = 0.0
+memory_poll_seconds = 2.0
+network_poll_seconds = 3.0
+disk_poll_seconds = 10.0
+cpu_usage_activity_threshold = 70
+cpu_usage_critical_threshold = 90
+cpu_temp_activity_threshold = 70
+cpu_temp_critical_threshold = 90
+ram_pct_activity_threshold = 75
+ram_pct_critical_threshold = 90
+disk_used_pct_activity_threshold = 85
+disk_used_pct_critical_threshold = 95
+
+[calendar]
+enabled = false
+
+[control_center.calendar]
+show_events_card = true
+show_week_numbers = false
+
+[weather]
+enabled = false
+unit = "celsius"
+effects = true
+
+[audio]
+enable_overdrive = false
+enable_sounds = false
+sound_volume = 0.5
+
+[brightness]
+enable_ddcutil = false
+
+[nightlight]
+enabled = false
+force = false
+temperature_day = 6500
+temperature_night = 4000
+
+[location]
+auto_locate = false
+address = "Toronto, ON"
+
+[idle.behavior.lock]
+timeout = 660
+action = "lock"
+enabled = false
+
+[idle.behavior.screen-off]
+timeout = 600
+action = "screen_off"
+enabled = false
+
+[bar.main]
+position = "bottom"
+thickness = 30
+background_opacity = 0.93
+radius = 0
+margin_ends = 4
+margin_edge = 0
+padding = 4
+widget_spacing = 12
+scale = 1.0
+font_scale = 0.9
+shadow = false
+auto_hide = false
+reserve_space = true
+capsule = false
+start = ["workspaces"]
+center = []
+end = ["privacy", "group:system", "brightness", "clock", "tray", "notifications", "battery"]
+
+[[bar.main.capsule_group]]
+id = "system"
+members = ["cpu", "cpu-temp", "ram", "disk"]
+fill = "surface"
+border = ""
+opacity = 1.0
+padding = 4.0
+radius = 0
+
+[dock]
+enabled = false
+position = "bottom"
+background_opacity = 1.0
+shadow = false
+auto_hide = true
+reserve_space = false
+pinned = []
+
+[desktop_widgets]
+enabled = false
+
+[widget.workspaces]
+style = "regular"
+show_labels = true
+label_source = "id"
+max_label_chars = 2
+labels_only_when_occupied = false
+hide_when_empty = true
+# Keep focused and inactive workspaces equally sized so v5 renders a square
+# instead of stretching the focused workspace into a pill.
+pill_scale = 0.8
+active_pill_size = 1.0
+inactive_pill_size = 1.0
+capsule_radius = 0
+focused_color = "#f2f4f8"
+occupied_color = "#33b1ff"
+empty_color = "#33b1ff"
+
+[widget.tray]
+# Do not reserve a visible tile for idle/passive tray applications.
+hide_passive = true
+
+[widget.cpu]
+type = "sysmon"
+stat = "cpu_usage"
+font_scale = 0.8
+color = "#f2f4f8"
+highlight_color = "#ee5396"
+
+[widget.cpu-temp]
+type = "sysmon"
+stat = "cpu_temp"
+font_scale = 0.8
+color = "#f2f4f8"
+highlight_color = "#ee5396"
+
+[widget.ram]
+type = "sysmon"
+stat = "ram_pct"
+font_scale = 0.8
+color = "#f2f4f8"
+highlight_color = "#ee5396"
+
+[widget.disk]
+type = "sysmon"
+stat = "disk_used_pct"
+path = "/"
+font_scale = 0.8
+color = "#f2f4f8"
+highlight_color = "#ee5396"
+
+[widget.clock]
+format = "{:%a, %b %d  %I:%M %p}"
+tooltip_format = "{:%A, %B %d, %Y}"
+font_scale = 0.9
+
+[widget.brightness]
+font_scale = 0.8
+
+[widget.notifications]
+font_scale = 0.8
+
+[widget.battery]
+hide_when_plugged = false
+font_scale = 0.8
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "wallpaper"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "nightlight"
