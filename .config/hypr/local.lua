@@ -1,5 +1,5 @@
 local function getHostname()
-  local f = io.popen("/bin/hostnamectl hostname")
+  local f = io.popen("hostnamectl hostname 2>/dev/null || hostname")
   if f == nil then
     return ""
   end

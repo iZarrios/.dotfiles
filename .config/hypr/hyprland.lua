@@ -12,7 +12,13 @@ local get_hostname = (function()
       return cached_hostname
     end
 
-    local f = io.popen("/bin/hostnamectl hostname")
+    local env_hostname = os.getenv("HOSTNAME")
+    if env_hostname and env_hostname ~= "" then
+      cached_hostname = env_hostname
+      return cached_hostname
+    end
+
+    local f = io.popen("hostnamectl hostname 2>/dev/null || hostname")
     if f == nil then
       return nil
     end
@@ -105,6 +111,15 @@ apply_invariant({
       workspace = "10",
       monitor = "eDP-1",
       default = true,
+    })
+  end,
+  nixos = function()
+    -- Safe laptop default. Replace this after checking `hyprctl monitors all`.
+    hl.monitor({
+      output = "",
+      mode = "preferred",
+      position = "auto",
+      scale = "auto",
     })
   end
 })
