@@ -132,7 +132,7 @@ local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "noctalia msg panel-toggle launcher"
 -- local menu        = "wmenu-run -f 'JetBrainsMono 9'"
-local lock        = "/usr/bin/noctalia msg session lock"
+local lock        = "noctalia msg session lock"
 -- local lock        = "swaylock -k -l"
 
 -------------------
