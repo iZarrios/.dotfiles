@@ -1,50 +1,66 @@
 {
-  description = "nix's NixOS configuration";
+  description = "Shared Arch dotfiles and the nixos laptop configuration";
 
   inputs = {
-    # Using nixos-unstable for the latest packages (closer to Arch's rolling model).
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Home Manager — manages user-level dotfiles and programs declaratively.
     home-manager = {
       url = "github:nix-community/home-manager";
-      # Make home-manager use the same nixpkgs as the system, avoiding duplicate downloads.
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland 0.55+ is required by .config/hypr/hyprland.lua.
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  outputs = { nixpkgs, home-manager, hyprland, ... }:
-  {
-    # Define your NixOS system(s) here.
-    # "nixos" is the hostname — change it to whatever you set during install.
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+    # Native Noctalia v5. Its package is used directly so Arch and NixOS run
+    # the same generation of the shell and share config.toml.
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-      modules = [
-        # System-level configuration (packages, services, boot, etc.)
-        ./hosts/default/configuration.nix
+    oh-my-zsh = {
+      url = "github:ohmyzsh/ohmyzsh";
+      flake = false;
+    };
 
-        # Hyprland bleeding-edge — this module overrides the nixpkgs version
-        # so `programs.hyprland.enable = true` uses the flake's build.
-        hyprland.nixosModules.default
+    zsh-autosuggestions = {
+      url = "github:zsh-users/zsh-autosuggestions";
+      flake = false;
+    };
 
-        # Home Manager as a NixOS module — this means `home-manager switch` is
-        # part of `nixos-rebuild switch`, so everything stays in sync.
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;   # Use the system-level nixpkgs
-          home-manager.useUserPackages = true;  # Install user packages to /etc/profiles
-          home-manager.users.nix = import ./hosts/default/home.nix;
-
-          # Pass extra arguments to home.nix if needed later:
-          # home-manager.extraSpecialArgs = { inherit inputs; };
-        }
-      ];
+    fast-syntax-highlighting = {
+      url = "github:zdharma-continuum/fast-syntax-highlighting";
+      flake = false;
     };
   };
+
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
+      username = "nixos";
+    in
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs username; };
+
+        modules = [
+          ./hosts/nixos/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "hm-backup";
+              extraSpecialArgs = { inherit inputs username; };
+              users.${username} = import ./hosts/nixos/home.nix;
+            };
+          }
+        ];
+      };
+    };
 }

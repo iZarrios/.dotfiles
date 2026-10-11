@@ -1,4 +1,4 @@
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # Language server settings
 export PYRIGHT_PYTHON_FORCE_VERSION=latest
@@ -30,22 +30,30 @@ export GOBIN="$HOME/.local/bin/go"
 # +%I:%M %p
 export TIME_STYLE=+%D\ %I:%M\ %p
 
-# PATH configuration
-export PATH=$N_PREFIX/bin:$PATH
-export PATH=$PATH:"$HOME/custom_build/go/bin/"
-export PATH=$PATH:"$HOME/.cargo/bin"
-export PATH=$PATH:"$HOME/.local/scripts/"
-export PATH=$PATH:"$HOME/.local/bin/go"
-export PATH=$PATH:"$HOME/.n/bin/node"
-export PATH=$PATH:"/usr/local/bin"
-export PATH=$PATH:"$HOME/.local/bin/"
-export PATH=$PATH:"$HOME/custom_build/llama.cpp/build/bin"
-export PATH=$PATH:"$HOME/custom_build/android-studio/bin"
-export PATH=$PATH:"$HOME/.opencode/bin"
-export PATH=$PATH:"$HOME/Android/Sdk/ndk/21.1.6352462"
-export PATH=$PATH:"$HOME/Android/Sdk/platform-tools/"
-export PATH=$PATH:"$HOME/custom_build/llama.cpp/build/bin"
-export PATH=$PATH:"/opt/cuda/bin"
+# Add locally installed tools only when their directories exist. This keeps the
+# same file usable on a clean NixOS laptop without shadowing Nix packages with
+# nonexistent Arch paths.
+typeset -U path PATH
+for dotfiles_path in \
+    "$N_PREFIX/bin" \
+    "$HOME/custom_build/go/bin" \
+    "$HOME/.cargo/bin" \
+    "$HOME/.local/scripts" \
+    "$HOME/.local/bin/go" \
+    "$HOME/.n/bin/node" \
+    "/usr/local/bin" \
+    "$HOME/.local/bin" \
+    "$HOME/custom_build/llama.cpp/build/bin" \
+    "$HOME/custom_build/android-studio/bin" \
+    "$HOME/.opencode/bin" \
+    "$HOME/Android/Sdk/ndk/21.1.6352462" \
+    "$HOME/Android/Sdk/platform-tools" \
+    "$HOME/custom_build/clion-2026.2.0.1/bin" \
+    "/opt/cuda/bin"
+do
+    [[ -d "$dotfiles_path" ]] && path+=("$dotfiles_path")
+done
+unset dotfiles_path
 
 export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_QPA_PLATFORM="xcb"

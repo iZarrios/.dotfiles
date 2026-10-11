@@ -21,6 +21,20 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
+# NixOS configuration and documentation are repository metadata, not dotfiles.
+^/flake\.nix$
+^/flake\.lock$
+^/hosts($|/)
+^/modules($|/)
+^/nixos\.md$
+
+# Local tool state, credentials, and source checkouts must never be stowed.
+^/\.agents($|/)
+^/\.aws($|/)
+^/\.codex($|/)
+^/\.pi($|/)
+^/noctalia($|/)
+
 custom_build
 setup
 ide_settings
